@@ -1,0 +1,143 @@
+[meta title:"Hass Filtern" description:"NLP am Beispiel von Online-Kommentaren erklärt" /]
+
+
+[FilterHeader
+  subtitle:"Das automatsierte Filtern von Online-Kommentaren wird als Lösung verkauft, um Hass aus dem Internet zu löschen. Auf dieser Webseite erklären wir die Hintergründe und and Hand von auf 15 Millionen die Änderung von XX."
+  fullWidth:true
+  author:"Johannes Filter"
+  authorLink:"https://johannesfilter.com"
+  date:"15. Dezember 2019"
+  background:"#222222"
+  color:"#ffffff"
+/]
+
+
+[MovingTexts /]
+
+// https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/victory-theme/grayscale.js
+
+[derived name:'scatter-theme' value:`{
+  axis:{
+    style: {
+      axis: {
+        fill: 'transparent',
+        stroke: 'transparent'
+      },
+      grid: {
+        stroke: 'transparent',
+      },
+      tickLabels: {
+        stroke: 'transparent',
+        fill: 'transparent'
+      }
+    }
+  },
+  labels: {
+    fontFamily: 'lato',
+    fontSize: 5,
+    letterSpacing: 'normal',
+    padding: 10,
+    fill: 'charcoal',
+    stroke: "transparent"
+  }
+}` /]
+
+
+Mit dem Beginn des Web 2.0 steigt die Anzahl der Kommentarmöglichkeiten. Doch die zunehmen Verrohnung zu umgehen, schalten Zeitungen die Funktion ab. Die Soziale Medien leben jedoch von der Interaktionsmöglihckeit. Die Hoffnung ist groß, durch technische vollautomatiserte 
+
+Das automatisierte Filtern von Online-Kommentaren wird als Lösung verkauft, um den Hass im Netz zu verigern.
+
+Für den Computer sind die Zeichen nur 0 oder 1. Wie erlernt er die Beudeutung der Wörter?
+
+## Beudeutung durch Kontext
+
+Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) stellt Mitte des 20. Jahrhunerts einige Theoreme auf.
+<https://en.wikiquote.org/wiki/John_Rupert_Firth>
+
+[Aside]
+> You shall know a word by the company it keeps. 
+[/Aside]
+
+> Du sollst ein Wort von der Begleitung kennen, die sie führt. 
+
+[Aside]
+> The complete meaning of a word is always contextual, and no study of meaning apart from context can be taken seriously. 
+[/Aside]
+
+> The complete meaning of a word is always contextual, and no study of meaning apart from context can be taken seriously. 
+
+Der Kontext entscheidet über die wahre Beudeutung eines Wortes. Und ein Wort kann durch 
+
+[Aside]
+> Meaning by collocation is an abstraction at the syntagmatic level and is not directly concerned with the conceptual or idea approach to the meaning of words. One of the meanings of _night_ is its collocability with _dark_, and of _dark_, of course, collocation with _night_.
+[/Aside]
+
+> Meaning by collocation is an abstraction at the syntagmatic level and is not directly concerned with the conceptual or idea approach to the meaning of words. One of the meanings of _night_ is its collocability with _dark_, and of _dark_, of course, collocation with _night_.
+
+Die Kollokation kommt einerm besondern Gewicht hinzu.
+
+Diese Hyphoesen liegen einive Verahren aus dem Berepch der automatiserten Sprachverarbeitung (Natural Language Processing)
+
+## Word Embeddings
+
+Ein Verfahren das wir hier in Kürze 
+
+Lorem lroem lroem
+
+[Table
+    data:`[{ age: 8 },{ age: 11 },{ age: 9 },{ age: 6 },{ age: 12 }]`
+    columns:`[
+        {
+            Header: 'Age',
+            accessor: 'age',
+            getProps: (state, rowInfo, column) => {
+                return {
+                    style: {
+                        background: rowInfo && rowInfo.row.age > 10 ? 'red' : null,
+                    },
+                };
+            },
+        }
+    ]`
+/]
+
+
+[var name:"firstScatter" value:`{data: [], tokens:[]}` /]
+[var name:"firstScatterLoad" value:`true` /]
+[DataLoader value:firstScatter src:"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=hallo&n=100" load:firstScatterLoad /]
+
+[Graphic style:`{padding: 50}` fullWidth:true]
+  [Chart type:`"scatter"` data:`firstScatter.data` labels:`firstScatter.tokens.splice(0, 1)` theme:scatter-theme /]
+[/Graphic]
+
+## Ausschnitte
+
+
+[var name:"myDynamicData" value:`{data: [], tokens:[]}` /]
+[var name:"shouldLoad" value:`true` /]
+[var name:"numMax" value:`10` /]
+
+[DataLoader value:myDynamicData src:"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=hallo" load:shouldLoad /]
+
+[var name:"scrollerIndex" value:0 /]
+[Scroller currentStep:scrollerIndex]
+  [Graphic style:`{padding: 50}`]
+      [Chart type:`"scatter"` data:`myDynamicData.data.slice(0, 1 + scrollerIndex * scrollerIndex)` labels:`myDynamicData.tokens.slice(0, 1 + scrollerIndex * scrollerIndex)` theme:scatter-theme /]
+  [/Graphic]
+
+  [Step]## Hey, neat, here's some data![/Step]
+  [Step]## ...   [/Step]
+  [Step]## ...  What's that more data?![/Step]
+  [Step]## ...  What's that more data?![/Step]
+
+[/Scroller]
+
+## Veränderung über die Zeit
+
+
+
+[hr /]
+
+# Posts
+
+* [Post 1](./post-1/) - note, you'll need to compile the post before this link will work.
