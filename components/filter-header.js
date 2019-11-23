@@ -8,11 +8,12 @@ class FilterHeader extends React.PureComponent {
   }
 
   componentDidMount() {
-    const width = this.myInput.current.offsetWidth;
-
-    this.setState({
-      svgElement: `<svg class="fancy-text" viewBox="0 0 ${width} 400"><symbol id="s-text"><text text-anchor="middle" x="50%" y="50%">KOMMENTARE</text></symbol><g class = "g-ants">  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use></g></svg>`
-    });
+    setTimeout(() => {
+      const width = this.myInput.current.offsetWidth;
+      this.setState({
+        svgElement: `<svg class="fancy-text" viewBox="0 0 ${width} 400"><symbol id="s-text"><text text-anchor="middle" x="50%" y="50%">KOMMENTARE</text></symbol><g class = "g-ants">  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use></g></svg>`
+      });
+    }, 10);
   }
 
   render() {

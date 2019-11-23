@@ -31,7 +31,6 @@ class MovingTexts extends D3Component {
     req.onload = function() {
       var jsonResponse = JSON.parse(req.responseText);
       tokens = jsonResponse.tokens;
-      console.log(jsonResponse);
     };
     req.send(null);
 
