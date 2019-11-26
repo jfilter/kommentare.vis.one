@@ -1,4 +1,4 @@
-[meta title:"Hass Filtern" description:"NLP am Beispiel von Online-Kommentaren erklärt" /]
+[meta title:"Kommentare" description:"NLP am Beispiel von Online-Kommentaren erklärt" /]
 
 
 [FilterHeader
@@ -84,6 +84,13 @@ Ein Verfahren das wir hier in Kürze
 
 Lorem lroem lroem
 
+[var name:"q" value:"merkel" /]
+[TextInput value:q /]
+
+
+[var name:"radioVal" value:"test1" /]
+[Radio value:radioVal options:`["test1", "test2"]`  /]
+
 [Table
     data:`[{ age: 8 },{ age: 11 },{ age: 9 },{ age: 6 },{ age: 12 }]`
     columns:`[
@@ -104,7 +111,8 @@ Lorem lroem lroem
 
 [var name:"firstScatter" value:`{data: [], tokens:[]}` /]
 [var name:"firstScatterLoad" value:`true` /]
-[DataLoader value:firstScatter src:"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=hallo&n=100" load:firstScatterLoad /]
+
+[DataLoader value:firstScatter src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + q + "&n=100"` load:firstScatterLoad /]
 
 [Graphic style:`{padding: 50}` fullWidth:true]
   [Chart type:`"scatter"` data:`firstScatter.data` labels:`firstScatter.tokens.splice(0, 1)` theme:scatter-theme /]

@@ -3,29 +3,31 @@ const d3 = require("d3");
 
 class DataLoader extends D3Component {
   loadData(props) {
-    d3.json(props.src).then(parsed => {
-      const { tokens } = parsed;
-      // const data = parsed.vectors.map((xx, i) => {
-      //   return { x: xx[0], y: xx[1], label: tokens[i] };
-      // });
-
-      const data = parsed.vectors.map((xx, i) => {
-        return { x: xx[0], y: xx[1] };
+    if (
+      !"value" in props ||
+      !"prevSrc" in props.value ||
+      props.value.prevSrc != props.src
+    ) {
+      d3.json(props.src).then(parsed => {
+        const { tokens } = parsed;
+        const data = parsed.vectors.map((xx, i) => {
+          return { x: xx[0], y: xx[1] };
+        });
+        props.updateProps({
+          value: { data, tokens, prevSrc: props.src }
+        });
       });
-      props.updateProps({ value: { data, tokens }, load: false });
-    });
+    } else {
+      props.updateProps({ load: false });
+    }
   }
 
   initialize(node, props) {
-    if (props.load) {
-      this.loadData(props);
-    }
+    this.loadData(props);
   }
 
   update(props, oldProps) {
-    if (props.load) {
-      this.loadData(props);
-    }
+    this.loadData(props);
   }
 }
 
