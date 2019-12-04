@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "d3": "^5.14.2",
-    "idyll": "^4.8.0",
+    "idyll": "^4.8.1",
     "idyll-d3-component": "^2.1.0",
     "idyll-vega-lite": "^1.0.2",
     "vega": "^5.8.1",

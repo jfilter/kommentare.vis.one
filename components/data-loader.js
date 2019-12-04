@@ -10,11 +10,20 @@ class DataLoader extends D3Component {
     ) {
       d3.json(props.src).then(parsed => {
         const { tokens } = parsed;
-        const data = parsed.vectors.map((xx, i) => {
-          return { x: xx[0], y: xx[1] };
-        });
+        let data = {};
+        if ("vectors" in parsed) {
+          data = parsed.vectors.map((xx, i) => {
+            return { x: xx[0], y: xx[1] };
+          });
+        }
+
+        let sims = {};
+        if ("sims" in parsed) {
+          sims = parsed.sims;
+        }
+
         props.updateProps({
-          value: { data, tokens, prevSrc: props.src }
+          value: { data, tokens, sims, prevSrc: props.src }
         });
       });
     } else {

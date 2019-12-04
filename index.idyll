@@ -2,7 +2,7 @@
 
 
 [FilterHeader
-  subtitle:"Das automatsierte Filtern von Online-Kommentaren wird als Lösung verkauft, um Hass aus dem Internet zu löschen. Auf dieser Webseite erklären wir die Hintergründe und and Hand von auf 15 Millionen die Änderung von XX."
+  subtitle:"Das automatisierte Filtern von Kommentaren soll Hass aus dem Netz zu löschen. Wir erklären am Beispiel wie technische Verfahren heute funktionien. Dafür haben wir 15 Millionen Kommentare analysiert."
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
@@ -17,7 +17,7 @@
 // https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/victory-theme/grayscale.js
 
 [derived name:'scatter-theme' value:`{
-  axis:{
+  axis: {
     style: {
       axis: {
         fill: 'transparent',
@@ -32,13 +32,17 @@
       }
     }
   },
-  labels: {
-    fontFamily: 'lato',
-    fontSize: 5,
-    letterSpacing: 'normal',
-    padding: 10,
-    fill: 'charcoal',
-    stroke: "transparent"
+  scatter: {
+    style: {
+      labels: {
+        fontFamily: 'lato',
+        fontSize: 10,
+        letterSpacing: 'normal',
+        padding: 10,
+        fill: 'charcoal',
+        stroke: "transparent"
+      }
+    }
   }
 }` /]
 
@@ -87,36 +91,47 @@ Lorem lroem lroem
 [var name:"q" value:"merkel" /]
 [TextInput value:q /]
 
+[var name:"qSelect" value:"merkel" /]
+[br /][Display value:qSelect /][br /][br /]
 
-[var name:"radioVal" value:"test1" /]
-[Radio value:radioVal options:`["test1", "test2"]`  /]
+[var name:"chooseQ" value:`{tokens:[]}` /]
+[var name:"chooseQLoad" value:`true` /]
+[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` load:chooseQLoad /]
+
+[Radio value:qSelect options:`chooseQ.tokens` /]
+
+[var name:"qTable" value:`{tokens:[], sims: []}` /]
+[var name:"qTableLoad" value:`true` /]
+[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + qSelect + "&n=10"` load:qTableLoad /]
+
+[br /]
 
 [Table
-    data:`[{ age: 8 },{ age: 11 },{ age: 9 },{ age: 6 },{ age: 12 }]`
+    data:`qTable.tokens.map((k, i) => ({token: k, sim: qTable.sims[i]}));`
     columns:`[
         {
-            Header: 'Age',
-            accessor: 'age',
+            Header: 'Wort',
+            accessor: 'token',
             getProps: (state, rowInfo, column) => {
                 return {
                     style: {
-                        background: rowInfo && rowInfo.row.age > 10 ? 'red' : null,
+                        background: rowInfo && rowInfo.row.sim > 10 ? 'red' : null,
+                    },
+                };
+            },
+        },{
+            Header: 'Ähnlichkeit',
+            accessor: 'sim',
+            getProps: (state, rowInfo, column) => {
+                return {
+                    style: {
+                        background: rowInfo && rowInfo.row.sim > 10 ? 'red' : null,
                     },
                 };
             },
         }
     ]`
 /]
-
-
-[var name:"firstScatter" value:`{data: [], tokens:[]}` /]
-[var name:"firstScatterLoad" value:`true` /]
-
-[DataLoader value:firstScatter src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + q + "&n=100"` load:firstScatterLoad /]
-
-[Graphic style:`{padding: 50}` fullWidth:true]
-  [Chart type:`"scatter"` data:`firstScatter.data` labels:`firstScatter.tokens.splice(0, 1)` theme:scatter-theme /]
-[/Graphic]
 
 ## Ausschnitte
 
@@ -125,7 +140,7 @@ Lorem lroem lroem
 [var name:"shouldLoad" value:`true` /]
 [var name:"numMax" value:`10` /]
 
-[DataLoader value:myDynamicData src:"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=hallo" load:shouldLoad /]
+[DataLoader value:myDynamicData src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + qSelect + "&n=100"` load:shouldLoad /]
 
 [var name:"scrollerIndex" value:0 /]
 [Scroller currentStep:scrollerIndex]
@@ -140,6 +155,18 @@ Lorem lroem lroem
 
 [/Scroller]
 
+## HUGE
+
+[var name:"firstScatter" value:`{data: [], tokens:[]}` /]
+[var name:"firstScatterLoad" value:`true` /]
+
+[DataLoader value:firstScatter src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + qSelect + "&n=100"` load:firstScatterLoad /]
+
+[Graphic style:`{padding: 50}` fullWidth:true]
+  [Chart type:`"scatter"` data:`firstScatter.data` labels:`firstScatter.tokens.splice(0, 1)` theme:scatter-theme /]
+[/Graphic]
+
+
 ## Veränderung über die Zeit
 
 
@@ -148,4 +175,6 @@ Lorem lroem lroem
 
 # Posts
 
+* Änderung über die Zeit
+* Hintergrund: Daten & Verfahren
 * [Post 1](./post-1/) - note, you'll need to compile the post before this link will work.

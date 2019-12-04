@@ -90,3 +90,15 @@ body {
     stroke-dashoffset: -35%;
   }
 }
+
+input[type="radio"] {
+  left: -999em;
+  position: absolute;
+}
+
+label {
+  margin-right: 1rem;
+  word-break: keep-all;
+  hyphens: none;
+  cursor: pointer;
+}

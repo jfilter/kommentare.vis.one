@@ -8,7 +8,7 @@ class Incrementer extends React.PureComponent {
   }
 
   render() {
-    return <div onClick={this.increment.bind(this)}>Click me.</div>;
+    return <div>{<button type="button">Click Me!</button>}</div>;
   }
 }
 
