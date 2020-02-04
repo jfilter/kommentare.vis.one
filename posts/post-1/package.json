@@ -14,9 +14,9 @@
     ]
   },
   "dependencies": {
-    "idyll": "^4.0.0",
-    "idyll-d3-component": "^2.0.0",
-    "d3": "^4.0.0"
+    "d3": "^4.0.0",
+    "idyll": "^4.10.0",
+    "idyll-d3-component": "^2.0.0"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"

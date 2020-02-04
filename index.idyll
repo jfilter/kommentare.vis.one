@@ -2,11 +2,11 @@
 
 
 [FilterHeader
-  subtitle:"Das automatisierte Filtern von Kommentaren soll Hass aus dem Netz zu löschen. Wir erklären am Beispiel wie technische Verfahren heute funktionien. Dafür haben wir 15 Millionen Kommentare analysiert."
+  subtitle:"Das automatisierte Filtern von Kommentaren soll Hass aus dem Netz zu löschen. Wir erklären an Beispielen wie heutige Verfahren technisch  funktionieren. Zudem haben wir 15 Millionen Kommentare analysiert, wie sich die Sprache über die letzten zehn Jahre in der Kommentarspalte verändert hat."
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
-  date:"15. Dezember 2019"
+  date:"15. Februar 2020"
   background:"#222222"
   color:"#ffffff"
 /]
@@ -46,14 +46,23 @@
   }
 }` /]
 
+Machine Learning wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Aktuell ist jedoch nocht nicht klar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen.
 
-Mit dem Beginn des Web 2.0 steigt die Anzahl der Kommentarmöglichkeiten. Doch die zunehmen Verrohnung zu umgehen, schalten Zeitungen die Funktion ab. Die Soziale Medien leben jedoch von der Interaktionsmöglihckeit. Die Hoffnung ist groß, durch technische vollautomatiserte 
+In den Kommentarspalten des Internet tobt der Hass. Um diesen zu einzudämmen, müssen Kommentare manuell geprüft werden. Weil dies viele Redaktionen überfordert, schließen sie die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt Machine Learning Besserung, indem automatisiert Kommentare ausgewertet werden. Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind rassistisch.
 
-Das automatisierte Filtern von Online-Kommentaren wird als Lösung verkauft, um den Hass im Netz zu verigern.
+Weil die zugrundeliegenden Mechanismen für Laien schwer zu durchdringen sind, bereiten wir diese pädagogisch auf, damit sich mehr Menschen in die Debatte um Machine Learning einbringen können.
 
-Für den Computer sind die Zeichen nur 0 oder 1. Wie erlernt er die Beudeutung der Wörter?
+## Computer 
+
+Wie lernt eine Maschiene die Bedeutung von Wörter? Wie wird eine Computer intelligent? Wie kann mithilfe von Machine Learning Kommentare gelöscht werden? 
+
+Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Viele Programmen arbtien mit Text als eine Folge von Zeichen – als Buchstaben und Zahlen. Man könn also davon ausgehen.
+
+Hier werden wir auf Wortebene arbeiten. Also Text wird mithilfe von Tokenizern in Wör
 
 ## Beudeutung durch Kontext
+
+Wie kommt man von Wörtern zu Kontext?
 
 Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) stellt Mitte des 20. Jahrhunerts einige Theoreme auf.
 <https://en.wikiquote.org/wiki/John_Rupert_Firth>
@@ -84,25 +93,27 @@ Diese Hyphoesen liegen einive Verahren aus dem Berepch der automatiserten Sprach
 
 ## Word Embeddings
 
-Ein Verfahren das wir hier in Kürze 
+Ein Verfahren in kürze. Es wird gesehe, welche Wörter mit welchen anderen Wörtern in gleichem Text vorkommt. Anhand des Musters kann man z. B. Synomme erkennen. 
 
-Lorem lroem lroem
+Und auch Haus und Wohnunge.
 
-[var name:"q" value:"merkel" /]
+Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein Beispiel (genr emitmachen)
+
+## Auswahl
+
+[Radio value:q options:`['merkel', 'mittelmeer', 'skandal', 'diesel', 'manager']` /]
+
+
+[var name:"q" value:"" /]
 [TextInput value:q /]
 
-[var name:"qSelect" value:"merkel" /]
-[br /][Display value:qSelect /][br /][br /]
-
 [var name:"chooseQ" value:`{tokens:[]}` /]
-[var name:"chooseQLoad" value:`true` /]
-[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` load:chooseQLoad /]
+[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
 
-[Radio value:qSelect options:`chooseQ.tokens` /]
+[Radio value:q options:`q === '' ? [] : chooseQ.tokens.slice(1)` /]
 
 [var name:"qTable" value:`{tokens:[], sims: []}` /]
-[var name:"qTableLoad" value:`true` /]
-[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + qSelect + "&n=10"` load:qTableLoad /]
+[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + q + "&n=10"` timeout:1000 /]
 
 [br /]
 
@@ -135,17 +146,15 @@ Lorem lroem lroem
 
 ## Ausschnitte
 
+Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe
 
-[var name:"myDynamicData" value:`{data: [], tokens:[]}` /]
-[var name:"shouldLoad" value:`true` /]
-[var name:"numMax" value:`10` /]
-
-[DataLoader value:myDynamicData src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + qSelect + "&n=100"` load:shouldLoad /]
+[var name:"nearest_small" value:`{data: [], tokens:[]}` /]
+[DataLoader value:nearest_small src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + q + "&n=10"` timeout:2000  /]
 
 [var name:"scrollerIndex" value:0 /]
 [Scroller currentStep:scrollerIndex]
   [Graphic style:`{padding: 50}`]
-      [Chart type:`"scatter"` data:`myDynamicData.data.slice(0, 1 + scrollerIndex * scrollerIndex)` labels:`myDynamicData.tokens.slice(0, 1 + scrollerIndex * scrollerIndex)` theme:scatter-theme /]
+      [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * scrollerIndex)` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * scrollerIndex)` theme:scatter-theme /]
   [/Graphic]
 
   [Step]## Hey, neat, here's some data![/Step]
@@ -157,24 +166,22 @@ Lorem lroem lroem
 
 ## HUGE
 
-[var name:"firstScatter" value:`{data: [], tokens:[]}` /]
-[var name:"firstScatterLoad" value:`true` /]
-
-[DataLoader value:firstScatter src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + qSelect + "&n=100"` load:firstScatterLoad /]
+[var name:"nearest_large" value:`{data: [], tokens:[]}` /]
+[DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:2500 /]
 
 [Graphic style:`{padding: 50}` fullWidth:true]
-  [Chart type:`"scatter"` data:`firstScatter.data` labels:`firstScatter.tokens.splice(0, 1)` theme:scatter-theme /]
+  [Chart type:`"scatter"` data:`nearest_large.data` labels:`nearest_large.tokens.splice(0, 1)` theme:scatter-theme /]
 [/Graphic]
 
 
 ## Veränderung über die Zeit
 
-
+Hier Teasern wir ein paar Beispiele.
 
 [hr /]
 
 # Posts
 
-* Änderung über die Zeit
+* Veränderung über die Zeit
 * Hintergrund: Daten & Verfahren
 * [Post 1](./post-1/) - note, you'll need to compile the post before this link will work.
