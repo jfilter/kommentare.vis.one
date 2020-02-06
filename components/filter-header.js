@@ -10,8 +10,9 @@ class FilterHeader extends React.PureComponent {
   componentDidMount() {
     setTimeout(() => {
       const width = this.myInput.current.offsetWidth;
+      const height = width > 768 ? 400 : (window.innerHeight * 2) / 3;
       this.setState({
-        svgElement: `<svg class="fancy-text" viewBox="0 0 ${width} 400"><symbol id="s-text"><text text-anchor="middle" x="50%" y="50%">KOMMENTARE</text></symbol><g class = "g-ants">  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use></g></svg>`
+        svgElement: `<svg class="fancy-text" viewBox="0 0 ${width} ${height}"><symbol id="s-text"><text text-anchor="middle" x="50%" y="50%">KOMMENTARE</text></symbol><g class="g-ants">  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use></g></svg>`
       });
     }, 10);
   }
@@ -26,17 +27,30 @@ class FilterHeader extends React.PureComponent {
       >
         <div dangerouslySetInnerHTML={{ __html: this.state.svgElement }} />
 
-        <h1 className={"hed"}>{this.props.title}</h1>
         {this.props.subtitle && (
-          <h2 className={"dek"}>{this.props.subtitle}</h2>
+          <h2
+            className={"dek"}
+            style={{
+              background: "#222222",
+              position: "relative",
+              padding: "0.5rem"
+            }}
+          >
+            {this.props.subtitle}
+          </h2>
         )}
         {this.props.author && (
-          <div className={"byline"}>
-            von <a href={this.props.authorLink}>{this.props.author}</a>
+          <div
+            className={"byline"}
+            style={{
+              background: "#222222",
+              position: "relative",
+              padding: "0.5rem"
+            }}
+          >
+            von <a href={this.props.authorLink}>{this.props.author}</a>,{" "}
+            {this.props.date}
           </div>
-        )}
-        {this.props.date && (
-          <div className={"idyll-pub-date"}>{this.props.date}</div>
         )}
       </div>
     );
