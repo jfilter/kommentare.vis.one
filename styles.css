@@ -121,3 +121,23 @@ label {
   hyphens: none;
   cursor: pointer;
 }
+
+@media (min-width: 768px) {
+  img {
+    width: 80%;
+  }
+
+  img:first-of-type {
+    width: 50%;
+  }
+}
+
+img + em {
+  font-size: small;
+  text-align: right;
+  float: right;
+}
+
+h6 {
+  color: white;
+}

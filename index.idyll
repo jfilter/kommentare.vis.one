@@ -50,6 +50,12 @@ Machine Learning wird als Lösung verkauft, um Hass aus dem Internet zu filtern.
 
 In den Kommentarspalten des Internet tobt der Hass. Um diesen zu einzudämmen, müssen Kommentare manuell geprüft werden. Weil dies viele Redaktionen überfordert, schließen sie die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt Machine Learning Besserung, indem automatisiert Kommentare ausgewertet werden. Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind rassistisch.
 
+
+![](/static/images/news.png)
+*[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de/workshops/newsbusters/))*
+
+###### bla
+
 Weil die zugrundeliegenden Mechanismen für Laien schwer zu durchdringen sind, bereiten wir diese pädagogisch auf, damit sich mehr Menschen in die Debatte um Machine Learning einbringen können.
 
 ## Computer 
@@ -57,6 +63,13 @@ Weil die zugrundeliegenden Mechanismen für Laien schwer zu durchdringen sind, b
 Wie lernt eine Maschiene die Bedeutung von Wörter? Wie wird eine Computer intelligent? Wie kann mithilfe von Machine Learning Kommentare gelöscht werden? 
 
 Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Viele Programmen arbtien mit Text als eine Folge von Zeichen – als Buchstaben und Zahlen. Man könn also davon ausgehen.
+
+
+![](/static/images/computer.png)
+*[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
+
+###### bla
+
 
 Hier werden wir auf Wortebene arbeiten. Also Text wird mithilfe von Tokenizern in Wör
 
