@@ -7,9 +7,6 @@
     "layout": "centered",
     "css": "styles.css",
     "authorView": false,
-    "googleFonts": [
-      "Lato"
-    ],
     "output": "docs/"
   },
   "dependencies": {
