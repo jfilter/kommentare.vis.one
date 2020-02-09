@@ -1,4 +1,4 @@
-import React from "react";
+const React = require("react");
 
 class FilterHeader extends React.PureComponent {
   constructor(props) {
@@ -25,6 +25,8 @@ class FilterHeader extends React.PureComponent {
         className={"article-header"}
         style={{ background, color }}
       >
+        {/* this is dirty */}
+        <script defer src="/static/js/chroma.min.js" />
         <div dangerouslySetInnerHTML={{ __html: this.state.svgElement }} />
 
         {this.props.subtitle && (

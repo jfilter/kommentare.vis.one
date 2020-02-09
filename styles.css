@@ -28,18 +28,6 @@
   }
 }
 
-/*  */
-
-/* .idyll-root {
-  position: relative;
-} */
-
-/* .idyll-text-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
-
 .article-header svg {
   display: block;
   position: absolute;
@@ -206,4 +194,26 @@ img + em {
 
 h6 {
   color: white;
+}
+
+label {
+  padding: 0.1rem 0.2rem;
+  border: 0.1rem solid lightgray;
+  margin: 0.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+#auswahl + div,
+#auswahl + div + input + div + div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.ReactTable .rt-thead.-header {
+  box-shadow: none;
+  border-bottom: 0.5rem solid lightgray;
 }

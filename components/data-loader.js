@@ -25,6 +25,7 @@ class DataLoader extends D3Component {
 
   initialize(node, props) {
     this.currentSrc = "";
+    this.loadData(props);
   }
 
   update(props, oldProps) {

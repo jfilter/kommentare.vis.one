@@ -34,6 +34,9 @@
   },
   scatter: {
     style: {
+      data: {
+        fill: "grey"
+      },
       labels: {
         fontFamily: 'lato',
         fontSize: 10,
@@ -46,9 +49,9 @@
   }
 }` /]
 
-Machine Learning wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Aktuell ist jedoch nocht nicht klar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen.
-
 In den Kommentarspalten des Internet tobt der Hass. Um diesen zu einzudämmen, müssen Kommentare manuell geprüft werden. Weil dies viele Redaktionen überfordert, schließen sie die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt Machine Learning Besserung, indem automatisiert Kommentare ausgewertet werden. Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind rassistisch.
+
+Machine Learning wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Aktuell ist jedoch nocht nicht klar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen.
 
 
 ![](/static/images/news.png)
@@ -117,18 +120,22 @@ Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein 
 [Radio value:q options:`['merkel', 'mittelmeer', 'skandal', 'diesel', 'manager']` /]
 
 
-[var name:"q" value:"" /]
+[var name:"q" value:"merkel" /]
 [TextInput value:q /]
 
 [var name:"chooseQ" value:`{tokens:[]}` /]
 [DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
 
-[Radio value:q options:`q === '' ? [] : chooseQ.tokens.slice(1)` /]
+// cut of first token if it's the same
+
+[Radio value:q options:`q === '' ? [] : (chooseQ.tokens[0] == q ? chooseQ.tokens.slice(1) : chooseQ.tokens)` /]
 
 [var name:"qTable" value:`{tokens:[], sims: []}` /]
-[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + q + "&n=10"` timeout:1000 /]
+[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=10"` timeout:1000 /]
 
 [br /]
+
+Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
 
 [Table
     data:`qTable.tokens.map((k, i) => ({token: k, sim: qTable.sims[i]}));`
@@ -136,20 +143,15 @@ Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein 
         {
             Header: 'Wort',
             accessor: 'token',
-            getProps: (state, rowInfo, column) => {
-                return {
-                    style: {
-                        background: rowInfo && rowInfo.row.sim > 10 ? 'red' : null,
-                    },
-                };
-            },
         },{
             Header: 'Ähnlichkeit',
             accessor: 'sim',
+            Cell: props => (props.row.sim * 100).toFixed(2) + "%",
             getProps: (state, rowInfo, column) => {
                 return {
                     style: {
-                        background: rowInfo && rowInfo.row.sim > 10 ? 'red' : null,
+                        background: window.chroma.scale(['white', [42,42,123]])(rowInfo.row.sim),
+                        color:  rowInfo.row.sim > 0.4 ? 'white': 'black'
                     },
                 };
             },
@@ -162,7 +164,7 @@ Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein 
 Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
-[DataLoader value:nearest_small src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + q + "&n=10"` timeout:2000  /]
+[DataLoader value:nearest_small src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=10"` timeout:2000  /]
 
 [var name:"scrollerIndex" value:0 /]
 [Scroller currentStep:scrollerIndex]
@@ -180,16 +182,41 @@ Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sond
 ## HUGE
 
 [var name:"nearest_large" value:`{data: [], tokens:[]}` /]
-[DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:2500 /]
+[DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=100"` timeout:2500 /]
 
 [Graphic style:`{padding: 50}` fullWidth:true]
-  [Chart type:`"scatter"` data:`nearest_large.data` labels:`nearest_large.tokens.splice(0, 1)` theme:scatter-theme /]
+  [Chart type:`"scatter"` data:`nearest_large.data` labels:`[nearest_large.tokens[0]]` theme:scatter-theme events:`[
+      {
+        target: "data",
+        eventHandlers: {
+          onMouseOver: () => {
+            return [{
+              target: "labels",
+              mutation: (props) => {
+                return {text: nearest_large.tokens[props.index]};
+              }
+            }];
+          },
+          onMouseOut: () => {
+            return [{
+              target: "labels",
+              mutation: (props) => {
+                return {text: props.index === 0 ? nearest_large.tokens[0] : null}
+              }
+            }];
+          }
+        }
+      }
+    ]`
+/]
 [/Graphic]
 
 
 ## Veränderung über die Zeit
 
 Hier Teasern wir ein paar Beispiele.
+
+[Video q:q /]
 
 [hr /]
 
