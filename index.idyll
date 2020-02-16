@@ -11,7 +11,6 @@
   color:"#ffffff"
 /]
 
-
 [MovingTexts /]
 
 // https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/victory-theme/grayscale.js
@@ -35,13 +34,15 @@
   scatter: {
     style: {
       data: {
-        fill: "grey"
+        fill: "black",
+        cursor: 'pointer',
+        opacity: 0.8
       },
       labels: {
         fontFamily: 'lato',
-        fontSize: 10,
+        fontSize: () => Math.max(window.screen.width, window.innerWidth) < 768 ? 20 :  8,
         letterSpacing: 'normal',
-        padding: 10,
+        padding: 3,
         fill: 'charcoal',
         stroke: "transparent"
       }
@@ -164,12 +165,14 @@ Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
 Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
-[DataLoader value:nearest_small src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=10"` timeout:2000  /]
+[DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n="` timeout:2000/]
 
 [var name:"scrollerIndex" value:0 /]
+
+
 [Scroller currentStep:scrollerIndex]
-  [Graphic style:`{padding: 50}`]
-      [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * scrollerIndex)` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * scrollerIndex)` theme:scatter-theme /]
+  [Graphic]
+      [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` /]
   [/Graphic]
 
   [Step]## Hey, neat, here's some data![/Step]
@@ -184,8 +187,8 @@ Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sond
 [var name:"nearest_large" value:`{data: [], tokens:[]}` /]
 [DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=100"` timeout:2500 /]
 
-[Graphic style:`{padding: 50}` fullWidth:true]
-  [Chart type:`"scatter"` data:`nearest_large.data` labels:`[nearest_large.tokens[0]]` theme:scatter-theme events:`[
+[Graphic fullWidth:true]
+  [Chart type:`"scatter"` data:`nearest_large.data` size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` labels:`[nearest_large.tokens[0]]` theme:scatter-theme events:`[
       {
         target: "data",
         eventHandlers: {
@@ -216,7 +219,7 @@ Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sond
 
 Hier Teasern wir ein paar Beispiele.
 
-[Video q:q /]
+[Video q:q fullWidth:true/]
 
 [hr /]
 

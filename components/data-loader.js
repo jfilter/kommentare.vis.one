@@ -2,8 +2,8 @@ const D3Component = require("idyll-d3-component");
 const d3 = require("d3");
 
 class DataLoader extends D3Component {
-  loadData(props) {
-    d3.json(props.src).then(parsed => {
+  loadData(src, props) {
+    d3.json(src).then(parsed => {
       const { tokens } = parsed;
       let data = {};
       if ("vectors" in parsed) {
@@ -24,15 +24,19 @@ class DataLoader extends D3Component {
   }
 
   initialize(node, props) {
+    this.w = Math.max(window.screen.width, window.innerWidth);
     this.currentSrc = "";
-    this.loadData(props);
+    this.loadData(props.src, props);
   }
 
   update(props, oldProps) {
-    this.currentSrc = props.src;
-    if (props.src !== oldProps.src) {
+    let { src } = props;
+    if (props.small == true) src += this.w > 768 ? 9 : 6;
+
+    this.currentSrc = src;
+    if (src !== oldProps.src) {
       setTimeout(() => {
-        if (props.src === this.currentSrc) this.loadData(props);
+        if (src === this.currentSrc) this.loadData(src, props);
       }, props.timeout);
     }
   }

@@ -217,3 +217,12 @@ input[type="text"] {
   box-shadow: none;
   border-bottom: 0.5rem solid lightgray;
 }
+
+video {
+  object-fit: contain;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+}
