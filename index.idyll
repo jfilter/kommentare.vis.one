@@ -2,7 +2,7 @@
 
 
 [FilterHeader
-  subtitle:"Das automatisierte Filtern von Kommentaren soll Hass aus dem Netz zu löschen. Wir erklären an Beispielen wie heutige Verfahren technisch  funktionieren. Zudem haben wir 15 Millionen Kommentare analysiert, wie sich die Sprache über die letzten zehn Jahre in der Kommentarspalte verändert hat."
+  subtitle:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt interaktiv wie Computer die Bedeutung von Wörtern lernen."
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
@@ -12,6 +12,8 @@
 /]
 
 [MovingTexts /]
+
+// Zudem haben wir 15 Millionen Kommentare analysiert, wie sich die Sprache über die letzten zehn Jahre in der Kommentarspalte verändert hat.
 
 // https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/victory-theme/grayscale.js
 
@@ -50,24 +52,24 @@
   }
 }` /]
 
-In den Kommentarspalten des Internet tobt der Hass. Um diesen zu einzudämmen, müssen Kommentare manuell geprüft werden. Weil dies viele Redaktionen überfordert, schließen sie die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt Machine Learning Besserung, indem automatisiert Kommentare ausgewertet werden. Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind rassistisch.
+In den Kommentarspalten des Internet tobt der Hass. Um diesen zu einzudämmen, müssen Kommentare manuell geprüft werden. Weil dies viele Zeitungsredaktionen überfordert, schließen sie die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt Maschinelles Lernen (engl. *Machine Learning*) Besserung, indem automatisiert Kommentare ausgewertet werden.
 
-Machine Learning wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Aktuell ist jedoch nocht nicht klar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen.
-
+Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch. Zudem ist aktuell ist noch nicht klar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen. Mit dieser Webseite werden einzelne Verfahren der Computerlinguistik (oder Verarbeitung natürlicher Sprache (engl. *Natural-Language Processing* )) funktioniert.
 
 ![](/static/images/news.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de/workshops/newsbusters/))*
 
-###### bla
+###### ignore please
 
-Weil die zugrundeliegenden Mechanismen für Laien schwer zu durchdringen sind, bereiten wir diese pädagogisch auf, damit sich mehr Menschen in die Debatte um Machine Learning einbringen können.
+## Was ist Maschinelles Lernen?
+Mit dem Aufkommen der Informationstechnolgie im 20. Jahrhunert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mithilfe von Programm-Code gelöst. Programmieren formulieren Algorithmen als Schritt-für-Schritt Rezzept, welche man sich als Kochrezept vorstellen sollte. Wie würde das am Beispiel Hass-Kommentaren aussehen? Ein Ansatz: Man schreibt eine lange Liste von Beleidigungen auf. Wenn eine Beleidigung in einem Kommentar vorkommt, wird dieser gelöscht. Nur lässt sich der Ansatz leicht austricksen, in dem man immer neue Wörter kreiert. Außderm würde die Länge der Liste ausuffern.
 
-## Computer 
+Mithilfe von Maschinellem Lernen, soll der Computer anhand von Trainingsdaten lernen. Es gibt auch hier untersschiedliche Verfahren. Wir fokusieren uns auf einen
 
-Wie lernt eine Maschiene die Bedeutung von Wörter? Wie wird eine Computer intelligent? Wie kann mithilfe von Machine Learning Kommentare gelöscht werden? 
 
-Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Viele Programmen arbtien mit Text als eine Folge von Zeichen – als Buchstaben und Zahlen. Man könn also davon ausgehen.
+## Sprache und Computer, Represeation
 
+Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Aus 0 und 1 werden Zeichen. Und aus Zeichen werde Buchstaben. Mit Buchstaben kann man Wörter und damit ganze Texte bauen. Für unseren Fall wollen wir einen Text als eine Liste von Wörtern betrachten. Dafür muss im ersten Schritt aus einem Text wöter bauen. Wie kommen wir dann von Wörtern auf Bedeutung? 
 
 ![](/static/images/computer.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
@@ -75,14 +77,11 @@ Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch 
 ###### bla
 
 
-Hier werden wir auf Wortebene arbeiten. Also Text wird mithilfe von Tokenizern in Wör
-
 ## Beudeutung durch Kontext
 
-Wie kommt man von Wörtern zu Kontext?
+Wir sehen uns an, welchen unterschiedlichen Kontexten Wörter vorkommt. Dabei beruft sich die Computerlinguistik auf Theomreke von Liniguisten aus den 50er Jahren. Wie kommt man von Wörtern zu Kontext?
 
 Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) stellt Mitte des 20. Jahrhunerts einige Theoreme auf.
-<https://en.wikiquote.org/wiki/John_Rupert_Firth>
 
 [Aside]
 > You shall know a word by the company it keeps. 
@@ -116,9 +115,19 @@ Und auch Haus und Wohnunge.
 
 Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein Beispiel (genr emitmachen)
 
+Es gibt unterschiedliche Verfahren. Ein einfaches: Man zählt wie oft welche andere Wörter bei einer Festengrößer Vorkommen. z. B.
+
+Dann stellt man eine Tabelle auf und kann sehen, welche Wörter wie oft vorkommen. Dass kann man bentuzen mut eine sog. Einbettung aufzustellen.
+
+Jeder Worter werden 500 Werte von 0-1 zugeweiesen. Damit kann dann lustige Sachen machen. Zum Beispiel kann man Wörter ansehen, die in ähnlcihen Kontexten vorkommen. Das können Synomme sein oder auch irgendwie verwandte Wörter.
+
+## Probleme
+
+Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
+
 ## Auswahl
 
-[Radio value:q options:`['merkel', 'mittelmeer', 'skandal', 'diesel', 'manager']` /]
+[Radio value:q options:`['merkel', 'mittelmeer', 'mieten', 'diesel', 'manager']` /]
 
 
 [var name:"q" value:"merkel" /]
@@ -132,7 +141,7 @@ Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein 
 [Radio value:q options:`q === '' ? [] : (chooseQ.tokens[0] == q ? chooseQ.tokens.slice(1) : chooseQ.tokens)` /]
 
 [var name:"qTable" value:`{tokens:[], sims: []}` /]
-[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=10"` timeout:1000 /]
+[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n=10"` timeout:1000 /]
 
 [br /]
 
@@ -165,7 +174,7 @@ Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
 Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
-[DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n="` timeout:2000/]
+[DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n="` timeout:2000/]
 
 [var name:"scrollerIndex" value:0 /]
 
@@ -185,7 +194,7 @@ Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sond
 ## HUGE
 
 [var name:"nearest_large" value:`{data: [], tokens:[]}` /]
-[DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + chooseQ.tokens[0] + "&n=100"` timeout:2500 /]
+[DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n=100"` timeout:2500 /]
 
 [Graphic fullWidth:true]
   [Chart type:`"scatter"` data:`nearest_large.data` size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` labels:`[nearest_large.tokens[0]]` theme:scatter-theme events:`[
@@ -223,8 +232,8 @@ Hier Teasern wir ein paar Beispiele.
 
 [hr /]
 
-# Posts
+## Übersicht
 
-* Veränderung über die Zeit
-* Hintergrund: Daten & Verfahren
-* [Post 1](./post-1/) - note, you'll need to compile the post before this link will work.
+* **[Teil I: Einführung](./)**
+* [Teil II: Veränderung über die Zeit](./zeit/)
+* [Teil III: Hintergrund über Daten & Verfahren](./hintergrund/)

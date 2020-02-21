@@ -1,5 +1,5 @@
 {
-  "name": "post-1",
+  "name": "hintergrund",
   "version": "1.0.0",
   "license": "MIT",
   "idyll": {
@@ -7,7 +7,7 @@
     "layout": "centered",
     "css": "styles.css",
     "authorView": false,
-    "output": "../../docs/post-1/",
+    "output": "../../docs/hintergrund/",
     "components": [
       "../../components/",
       "components"

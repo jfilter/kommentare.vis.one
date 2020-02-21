@@ -1,0 +1,43 @@
+[meta title:"Veränderung der Kommentare" description:"Short description of your project" /]
+
+[Header
+  fullWidth:true
+  title:"So ändert sich die Sprache in den Kommentaren"
+  subtitle:"Über 10 Millionen Kommentare aus Deutschen Online wurden analyisert."
+  author:"Your Name Here"
+  authorLink:"https://idyll-lang.org"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+## Auswahl
+
+[Radio value:q options:`['merkel', 'mittelmeer', 'skandal', 'diesel', 'manager']` /]
+
+[var name:"q" value:"merkel" /]
+[TextInput value:q /]
+
+[var name:"chooseQ" value:`{tokens:[]}` /]
+[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
+
+// cut of first token if it's the same
+
+[Radio value:q options:`q === '' ? [] : (chooseQ.tokens[0] == q ? chooseQ.tokens.slice(1) : chooseQ.tokens)` /]
+
+
+[Video q:q fullWidth:true/]
+
+[hr /]
+
+## Was genau sehe ich hier?
+
+In der Mitte gibt es ein Begriff. Für den wird dargestellt, wie sich die ähnlichen Begriffe über die Zeit geändert haben. Dafür wurden auf 9 Millionen Kommentare von 2010 bis 2019 traniert. Und jweilt die Scheiben in 2 Jahren eingestellt. 
+
+[hr /]
+
+## Übersicht
+
+* [Teil I: Einführung](./)
+* **[Teil II: Veränderung über die Zeit](./zeit/)**
+* [Teil III: Hintergrund über Daten & Verfahren](./hintergrund/)

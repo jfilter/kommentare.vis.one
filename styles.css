@@ -17,6 +17,10 @@
       url("/static/fonts/lato-v16-latin-regular.svg#Lato") format("svg"); /* Legacy iOS */
 }
 
+body {
+  font-family: Lato;
+}
+
 .d3-component svg {
   background: #ddd;
   max-height: 300px;
@@ -33,10 +37,6 @@
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-body {
-  font-family: Lato;
 }
 
 .aside {
@@ -174,6 +174,16 @@ label {
   word-break: keep-all;
   hyphens: none;
   cursor: pointer;
+  padding: 0.1rem 0.2rem;
+  border: 0.1rem solid lightgray;
+  margin: 0.5rem;
+}
+
+#auswahl + div,
+#auswahl + div + input + div + div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -196,21 +206,8 @@ h6 {
   color: white;
 }
 
-label {
-  padding: 0.1rem 0.2rem;
-  border: 0.1rem solid lightgray;
-  margin: 0.5rem;
-}
-
 input[type="text"] {
   width: 100%;
-}
-
-#auswahl + div,
-#auswahl + div + input + div + div {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -0.5rem;
 }
 
 .ReactTable .rt-thead.-header {
@@ -225,4 +222,6 @@ video {
 .video-container {
   display: flex;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }

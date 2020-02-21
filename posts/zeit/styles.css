@@ -1,0 +1,67 @@
+/* lato-regular - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/static/fonts/lato-v16-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Lato Regular"), local("Lato-Regular"),
+    url("/static/fonts/lato-v16-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/static/fonts/lato-v16-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("/static/fonts/lato-v16-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/static/fonts/lato-v16-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/static/fonts/lato-v16-latin-regular.svg#Lato") format("svg"); /* Legacy iOS */
+}
+
+body {
+  font-family: Lato;
+}
+
+.d3-component svg {
+  background: #ddd;
+  max-height: 300px;
+}
+
+@media all and (max-width: 1000px) {
+  .d3-component svg {
+    max-height: 200px;
+  }
+}
+
+/* typeahead */
+input[type="radio"] {
+  left: -999em;
+  position: absolute;
+}
+
+label {
+  margin-right: 1rem;
+  word-break: keep-all;
+  hyphens: none;
+  cursor: pointer;
+  padding: 0.1rem 0.2rem;
+  border: 0.1rem solid lightgray;
+  margin: 0.5rem;
+}
+
+#auswahl + div,
+#auswahl + div + input + div + div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+video {
+  object-fit: contain;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
