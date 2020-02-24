@@ -127,7 +127,7 @@ Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So h
 
 ## Auswahl
 
-[Radio value:q options:`['merkel', 'mittelmeer', 'mieten', 'diesel', 'manager']` /]
+[Radio value:q options:`['merkel', 'mittelmeer', 'miete', 'afd', 'migrant', 'überwachung']` /]
 
 
 [var name:"q" value:"merkel" /]
@@ -237,3 +237,7 @@ Hier Teasern wir ein paar Beispiele.
 * **[Teil I: Einführung](./)**
 * [Teil II: Veränderung über die Zeit](./zeit/)
 * [Teil III: Hintergrund über Daten & Verfahren](./hintergrund/)
+
+[hr /]
+
+[Thanks/]

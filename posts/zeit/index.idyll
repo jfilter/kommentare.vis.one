@@ -1,30 +1,32 @@
-[meta title:"Veränderung der Kommentare" description:"Short description of your project" /]
+[meta title:"Sprache in den Kommentaren" description:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben." url:"https://kommentare.vis.one" twitterHandle:"@fil_ter" shareImageUrl:"todo" /]
 
 [Header
   fullWidth:true
-  title:"So ändert sich die Sprache in den Kommentaren"
-  subtitle:"Über 10 Millionen Kommentare aus Deutschen Online wurden analyisert."
-  author:"Your Name Here"
-  authorLink:"https://idyll-lang.org"
-  date:`(new Date()).toDateString()`
+  title:"Sprache in den Kommentaren"
+  subtitle:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben."
   background:"#222222"
   color:"#ffffff"
    /]
 
-## Auswahl
+Für fast 50.000 Wörter zeigen wir, wie sich Sprache geändert hat. Dafür haben wir knapp 10 Millionen Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I]() wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Wortvectoren angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
 
-[Radio value:q options:`['merkel', 'mittelmeer', 'skandal', 'diesel', 'manager']` /]
+## Bitte ein Wort Auswählen
+
+[Radio value:q options:`['merkel', 'mittelmeer', 'miete', 'afd', 'migrant', 'überwachung']` /]
+
+oder eigenes eingeben:
 
 [var name:"q" value:"merkel" /]
-[TextInput value:q /]
+[TextInput value:q  /]
 
 [var name:"chooseQ" value:`{tokens:[]}` /]
-[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
+[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead_videos/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
 
 // cut of first token if it's the same
 
 [Radio value:q options:`q === '' ? [] : (chooseQ.tokens[0] == q ? chooseQ.tokens.slice(1) : chooseQ.tokens)` /]
 
+[hr/]
 
 [Video q:q fullWidth:true/]
 
@@ -32,12 +34,17 @@
 
 ## Was genau sehe ich hier?
 
-In der Mitte gibt es ein Begriff. Für den wird dargestellt, wie sich die ähnlichen Begriffe über die Zeit geändert haben. Dafür wurden auf 9 Millionen Kommentare von 2010 bis 2019 traniert. Und jweilt die Scheiben in 2 Jahren eingestellt. 
+In der Mitte gibt es ein Begriff. Für den wird dargestellt, wie sich die ähnlichen Begriffe über die Zeit geändert haben. Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise synomyune sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet.
+
 
 [hr /]
 
 ## Übersicht
 
-* [Teil I: Einführung](./)
-* **[Teil II: Veränderung über die Zeit](./zeit/)**
-* [Teil III: Hintergrund über Daten & Verfahren](./hintergrund/)
+* [Teil I: Einführung](/)
+* **[Teil II: Veränderung über die Zeit](/zeit/)**
+* [Teil III: Hintergrund über Daten & Verfahren](/hintergrund/)
+
+[hr /]
+
+[Thanks/]
