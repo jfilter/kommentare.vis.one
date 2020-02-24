@@ -86,3 +86,17 @@ video {
   height: 100vh;
   margin-top: 2rem;
 }
+
+/* improve default header for mobile */
+
+@media (max-width: 992px) {
+  .article-header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .dek {
+    padding: 0 0.5rem;
+  }
+}
