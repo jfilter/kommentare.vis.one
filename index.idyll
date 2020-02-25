@@ -1,4 +1,4 @@
-[meta title:"Kommentare" description:"NLP am Beispiel von Online-Kommentaren erklärt" /]
+[meta title:"Einführung – Kommentare.vis.one" description:"NLP am Beispiel von Online-Kommentaren erklärt" /]
 
 
 [FilterHeader
@@ -125,16 +125,17 @@ Jeder Worter werden 500 Werte von 0-1 zugeweiesen. Damit kann dann lustige Sache
 
 Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
 
-## Auswahl
+## Bitte ein Wort auswählen
 
 [Radio value:q options:`['merkel', 'mittelmeer', 'miete', 'afd', 'migrant', 'überwachung']` /]
 
+oder eigenes eingeben:
 
 [var name:"q" value:"merkel" /]
-[TextInput value:q /]
+[TextInput value:q  /]
 
 [var name:"chooseQ" value:`{tokens:[]}` /]
-[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
+[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead_videos/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
 
 // cut of first token if it's the same
 
@@ -234,9 +235,9 @@ Hier Teasern wir ein paar Beispiele.
 
 ## Übersicht
 
-* **[Teil I: Einführung](./)**
-* [Teil II: Veränderung über die Zeit](./zeit/)
-* [Teil III: Hintergrund über Daten & Verfahren](./hintergrund/)
+* **[Teil I: Einführung](/)**
+* [Teil II: Veränderung in den Kommentaren](/zeit/)
+* [Teil III: Hintergrund zu Daten & Verfahren](/hintergrund/)
 
 [hr /]
 

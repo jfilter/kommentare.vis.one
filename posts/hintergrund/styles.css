@@ -1,10 +1,36 @@
-.d3-component svg {
-  background: #ddd;
-  max-height: 300px;
+/* lato-regular - latin */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/static/fonts/lato-v16-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Lato Regular"), local("Lato-Regular"),
+    url("/static/fonts/lato-v16-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/static/fonts/lato-v16-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("/static/fonts/lato-v16-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("/static/fonts/lato-v16-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/static/fonts/lato-v16-latin-regular.svg#Lato") format("svg"); /* Legacy iOS */
 }
 
-@media all and (max-width: 1000px) {
-  .d3-component svg {
-    max-height: 200px;
+body {
+  font-family: Lato;
+}
+
+/* improve default header for mobile */
+
+@media (max-width: 992px) {
+  .article-header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .dek {
+    padding: 0 0.5rem;
   }
 }

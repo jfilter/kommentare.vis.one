@@ -1,34 +1,40 @@
-[meta title:"Post 1" description:"Short description of your project" /]
+[meta title:"Hintergrund – Kommentare.vis.one" description:"Short description of your project" /]
 
 [Header
   fullWidth:true
-  title:"Post 1"
-  subtitle:"Welcome to Idyll. Open index.idyll to start writing"
-  author:"Your Name Here"
-  authorLink:"https://idyll-lang.org"
-  date:`(new Date()).toDateString()`
+  title:"Hintergrund zu Daten & Verfahren"
+  subtitle:"Hier werden alle Fragen beantwortet"
   background:"#222222"
   color:"#ffffff"
    /]
 
-## Introduction
+## Hintergrund
 
 This is an Idyll post. It is generated via
 the file `index.idyll`. To compile this post using
 idyll, run the command `idyll` inside of this directory.
 
-[var name:"q" value:"merkel" /]
-[TextInput value:q /]
+##  bdf
 
-[var name:"qSelect" value:"merkel" /]
-[br /][Display value:qSelect /][br /][br /]
+df
 
-[var name:"chooseQ" value:`{tokens:[]}` /]
-[var name:"chooseQLoad" value:`true` /]
-[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead/german_comments_2010_2019_100k?q=" + q + "&n=100"` load:chooseQLoad /]
+## Fragen & Antworten
 
-[Radio value:qSelect options:`chooseQ.tokens` /]
+df
 
-[FullWidth]
-  ... put your content here ...
-[/FullWidth]
+[hr /]
+
+Bei offenen Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben.
+
+[hr /]
+
+
+## Übersicht
+
+* [Teil I: Einführung](/)
+* [Teil II: Veränderung in den Kommentaren](/zeit/)
+* **[Teil III: Hintergrund zu Daten & Verfahren](/hintergrund/)**
+
+[hr /]
+
+[Thanks/]

@@ -163,6 +163,7 @@ body {
     margin: 20rem auto 3rem;
   }
 }
+
 /* typeahead */
 input[type="radio"] {
   left: -999em;
@@ -177,10 +178,30 @@ label {
   padding: 0.1rem 0.2rem;
   border: 0.1rem solid lightgray;
   margin: 0.5rem;
+
+  background-color: grey;
+  color: white;
 }
 
-#auswahl + div,
-#auswahl + div + input + div + div {
+#bitte-ein-wort-auswählen + div label {
+  /* border: none; */
+  background-color: whitesmoke;
+  color: black;
+}
+
+#bitte-ein-wort-auswählen + div {
+  padding-bottom: 2rem;
+}
+
+input[type="text"] {
+  /* background-color: grey; */
+  width: 100%;
+  /* color: white; */
+  text-align: center;
+}
+
+#bitte-ein-wort-auswählen + div,
+input[type="text"] + div + div {
   display: flex;
   flex-wrap: wrap;
   margin: -0.5rem;
@@ -204,10 +225,6 @@ img + em {
 
 h6 {
   color: white;
-}
-
-input[type="text"] {
-  width: 100%;
 }
 
 .ReactTable .rt-thead.-header {

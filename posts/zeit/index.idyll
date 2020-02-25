@@ -1,8 +1,8 @@
-[meta title:"Sprache in den Kommentaren" description:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben." url:"https://kommentare.vis.one" twitterHandle:"@fil_ter" shareImageUrl:"todo" /]
+[meta title:"Veränderung – Kommentare.vis.one" description:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben." url:"https://kommentare.vis.one" twitterHandle:"@fil_ter" shareImageUrl:"todo" /]
 
 [Header
   fullWidth:true
-  title:"Sprache in den Kommentaren"
+  title:"Veränderung in den Kommentaren"
   subtitle:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben."
   background:"#222222"
   color:"#ffffff"
@@ -10,7 +10,7 @@
 
 Für fast 50.000 Wörter zeigen wir, wie sich Sprache geändert hat. Dafür haben wir knapp 10 Millionen Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I]() wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Wortvectoren angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
 
-## Bitte ein Wort Auswählen
+## Bitte ein Wort auswählen
 
 [Radio value:q options:`['merkel', 'mittelmeer', 'miete', 'afd', 'migrant', 'überwachung']` /]
 
@@ -42,8 +42,8 @@ In der Mitte gibt es ein Begriff. Für den wird dargestellt, wie sich die ähnli
 ## Übersicht
 
 * [Teil I: Einführung](/)
-* **[Teil II: Veränderung über die Zeit](/zeit/)**
-* [Teil III: Hintergrund über Daten & Verfahren](/hintergrund/)
+* **[Teil II: Veränderung in den Kommentaren](/zeit/)**
+* [Teil III: Hintergrund zu Daten & Verfahren](/hintergrund/)
 
 [hr /]
 
