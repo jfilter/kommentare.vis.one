@@ -2,7 +2,7 @@
 
 
 [FilterHeader
-  subtitle:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt interaktiv wie Computer die Bedeutung von Wörtern lernen."
+  subtitle:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschienen' die Bedeutung von Wörtern erlernen."
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
@@ -52,9 +52,7 @@
   }
 }` /]
 
-In den Kommentarspalten des Internet tobt der Hass. Um diesen zu einzudämmen, müssen Kommentare manuell geprüft werden. Weil dies viele Zeitungsredaktionen überfordert, schließen sie die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt Maschinelles Lernen (engl. *Machine Learning*) Besserung, indem automatisiert Kommentare ausgewertet werden.
-
-Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch. Zudem ist aktuell ist noch nicht klar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen. Mit dieser Webseite werden einzelne Verfahren der Computerlinguistik (oder Verarbeitung natürlicher Sprache (engl. *Natural-Language Processing* )) funktioniert.
+In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsredaktionen manuell die Kommentare. Doch aufgrund finanzieller Engpässe, schließen viele Zeitungen die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt die automatisierte Kommentareauswertung Besserung. Jedoch ist aktuell noch unklar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen. Mit dieser Webseite werden einzelne Verfahren des Machinelles Lernens am Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprachen, Computerlinguistik (oder Verarbeitung natürlicher Sprache (engl. *Natural-Language Processing* )) funktioniert.
 
 ![](/static/images/news.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de/workshops/newsbusters/))*
@@ -62,14 +60,23 @@ Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausge
 ###### ignore please
 
 ## Was ist Maschinelles Lernen?
-Mit dem Aufkommen der Informationstechnolgie im 20. Jahrhunert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mithilfe von Programm-Code gelöst. Programmieren formulieren Algorithmen als Schritt-für-Schritt Rezzept, welche man sich als Kochrezept vorstellen sollte. Wie würde das am Beispiel Hass-Kommentaren aussehen? Ein Ansatz: Man schreibt eine lange Liste von Beleidigungen auf. Wenn eine Beleidigung in einem Kommentar vorkommt, wird dieser gelöscht. Nur lässt sich der Ansatz leicht austricksen, in dem man immer neue Wörter kreiert. Außderm würde die Länge der Liste ausuffern.
 
-Mithilfe von Maschinellem Lernen, soll der Computer anhand von Trainingsdaten lernen. Es gibt auch hier untersschiedliche Verfahren. Wir fokusieren uns auf einen
+Mit dem Aufkommen der Informationstechnolgie im 20. Jahrhundert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mithilfe von Programm-Code gelöst. Programmier:innen formulieren einen sogennanten Algorithmus, welche eine Schritt-für-Schritt-Rezept darstellt. Ähnlich zu einem Kochrezept werden Schritte festgelegt. Wie könnte ein Algorithmus aussehen, der Hasskommentare finden sollte? Ein Ansatz:
 
+1. Man schreibt eine lange Liste von Beleidigungen auf.
+2. Wenn eine Beleidigung in einem Kommentar vorkommt, wird der Kommentar aussortiert.
 
-## Sprache und Computer, Represeation
+Nur lässt sich der Ansatz leicht austricksen, in dem man immer neue Wörter kreiert. Außderm würde die Länge der Liste ausufern. 
 
-Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Aus 0 und 1 werden Zeichen. Und aus Zeichen werde Buchstaben. Mit Buchstaben kann man Wörter und damit ganze Texte bauen. Für unseren Fall wollen wir einen Text als eine Liste von Wörtern betrachten. Dafür muss im ersten Schritt aus einem Text wöter bauen. Wie kommen wir dann von Wörtern auf Bedeutung? 
+In diesem Zusammenhang gibt es eine neue Art Probleme zu Lösungen. Man füttert den Computer mit Daten und der Computer soll selbst lernen, welche Wörter als Beleidung zählt. Ansätze dieser Art nennt man Maschinelles Lernen (engl. *Machine Learning*). Es gibt zwei Arten von Maschine Learning: 
+1. Trainingsdaten werden manuell annotiert und die Maschiene soll lernen von diesen zu extrapolieren
+2. Es werden keine Daten extra annotiert, sondern von Information auf alten geschlossen werden.
+
+Wir fokussieren auf den 2. Ansatz. Aus einer großen Menge an Text soll der Computer Wörter erlernen.
+
+## Sprache, Computer und Representation
+
+Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Aus 0 und 1 werden Zeichen. Und aus Zeichen werde Buchstaben. Mit Buchstaben kann man Wörter und damit ganze Texte bauen. Für unseren Fall wollen wir einen Text als eine Liste von Wörtern betrachten. Wie kommen wir dann von Wörtern auf Bedeutung? 
 
 ![](/static/images/computer.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
@@ -77,11 +84,9 @@ Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch 
 ###### bla
 
 
-## Beudeutung durch Kontext
+## Bedeutung durch Kontext
 
-Wir sehen uns an, welchen unterschiedlichen Kontexten Wörter vorkommt. Dabei beruft sich die Computerlinguistik auf Theomreke von Liniguisten aus den 50er Jahren. Wie kommt man von Wörtern zu Kontext?
-
-Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) stellt Mitte des 20. Jahrhunerts einige Theoreme auf.
+Die Grundlegende Ansatz: Die Kolokation von Wörtern. Also welche Wörter werden mit welchen anderen Wörter im gleichen Satz auf. Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) stellt Mitte des 20. Jahrhunerts einige Theoreme auf.
 
 [Aside]
 > You shall know a word by the company it keeps. 
@@ -93,7 +98,7 @@ Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_
 > The complete meaning of a word is always contextual, and no study of meaning apart from context can be taken seriously. 
 [/Aside]
 
-> The complete meaning of a word is always contextual, and no study of meaning apart from context can be taken seriously. 
+> Die vollständige Bedeutung eines Wortes ist immer kontextabhängig, und keine Studie über die Bedeutung außer dem Kontext kann ernst genommen werden. 
 
 Der Kontext entscheidet über die wahre Beudeutung eines Wortes. Und ein Wort kann durch 
 
@@ -101,29 +106,34 @@ Der Kontext entscheidet über die wahre Beudeutung eines Wortes. Und ein Wort ka
 > Meaning by collocation is an abstraction at the syntagmatic level and is not directly concerned with the conceptual or idea approach to the meaning of words. One of the meanings of _night_ is its collocability with _dark_, and of _dark_, of course, collocation with _night_.
 [/Aside]
 
-> Meaning by collocation is an abstraction at the syntagmatic level and is not directly concerned with the conceptual or idea approach to the meaning of words. One of the meanings of _night_ is its collocability with _dark_, and of _dark_, of course, collocation with _night_.
+> Die Bedeutung durch Kollokation ist eine Abstraktion auf der syntagmatischen Ebene und hat nichts mit der begrifflichen oder ideellen Annäherung an die Bedeutung von Wörtern zu tun. Eine der Bedeutungen von _Nacht_ ist die Kollokationsfähigkeit mit _dunkel_, und von _dunkel_ natürlich die Kollokation mit _Nacht_.
 
-Die Kollokation kommt einerm besondern Gewicht hinzu.
+Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wird ermittelt, welche Wörter in ähnlichen Kontexten vorkommt. Am Ende hat man ein Modell bei dem man zu jedem Wort 500 Werte von 0 bis 1 hat. Details werden hier nicht erklärt.
 
-Diese Hyphoesen liegen einive Verahren aus dem Berepch der automatiserten Sprachverarbeitung (Natural Language Processing)
+// ## Word Embeddings
 
-## Word Embeddings
 
-Ein Verfahren in kürze. Es wird gesehe, welche Wörter mit welchen anderen Wörtern in gleichem Text vorkommt. Anhand des Musters kann man z. B. Synomme erkennen. 
+// Ein Verfahren in kürze. Es wird gesehe, welche Wörter mit welchen anderen Wörtern in gleichem Text vorkommt. Anhand des Musters kann man z. B. Synomme erkennen. 
 
-Und auch Haus und Wohnunge.
+// Und auch Haus und Wohnunge.
 
-Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein Beispiel (genr emitmachen)
+// Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein Beispiel (genr emitmachen)
 
-Es gibt unterschiedliche Verfahren. Ein einfaches: Man zählt wie oft welche andere Wörter bei einer Festengrößer Vorkommen. z. B.
+// Es gibt unterschiedliche Verfahren. Ein einfaches: Man zählt wie oft welche andere Wörter bei einer Festengrößer Vorkommen. z. B.
 
-Dann stellt man eine Tabelle auf und kann sehen, welche Wörter wie oft vorkommen. Dass kann man bentuzen mut eine sog. Einbettung aufzustellen.
+// Dann stellt man eine Tabelle auf und kann sehen, welche Wörter wie oft vorkommen. Dass kann man bentuzen mut eine sog. Einbettung aufzustellen.
 
-Jeder Worter werden 500 Werte von 0-1 zugeweiesen. Damit kann dann lustige Sachen machen. Zum Beispiel kann man Wörter ansehen, die in ähnlcihen Kontexten vorkommen. Das können Synomme sein oder auch irgendwie verwandte Wörter.
+// Jeder Worter werden 500 Werte von 0-1 zugeweiesen. Damit kann dann lustige Sachen machen. Zum Beispiel kann man Wörter ansehen, die in ähnlcihen Kontexten vorkommen. Das können Synomme sein oder auch irgendwie verwandte Wörter.
 
-## Probleme
+## Der Bias (Probleme)
+
+ Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch
 
 Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
+
+## Mitmachen
+
+Um besser zu verstehen um was es geht, haben wir selbst ein Embedding traniert. Auf XXX kommentaren von Online-Zeitungen. Probieren Sie es aus um es besser zu verstehen.
 
 ## Bitte ein Wort auswählen
 
@@ -172,27 +182,29 @@ Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
 
 ## Ausschnitte
 
-Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe
+Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe, desto näher sind sie zusammen. Die Achsen haben kein Bedeutung.
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
 [DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n="` timeout:2000/]
 
 [var name:"scrollerIndex" value:0 /]
 
-
 [Scroller currentStep:scrollerIndex]
   [Graphic]
       [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` /]
   [/Graphic]
 
-  [Step]## Hey, neat, here's some data![/Step]
-  [Step]## ...   [/Step]
-  [Step]## ...  What's that more data?![/Step]
-  [Step]## ...  What's that more data?![/Step]
-
+  [Step]## die nähesten[/Step]
+  [Step]## mehr[/Step]
+  [Step]## noch mehr[/Step]
+  [Step]## jetzt all[/Step]
 [/Scroller]
 
-## HUGE
+[hr/]
+
+Das war die Limiterung auf ein paar wenige. Hier ein größer Ausblick. (Auf Desktop mit Mauss drüber)
+
+[hr/]
 
 [var name:"nearest_large" value:`{data: [], tokens:[]}` /]
 [DataLoader value:nearest_large src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n=100"` timeout:2500 /]
@@ -224,10 +236,15 @@ Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sond
 /]
 [/Graphic]
 
+[hr/]
+
 
 ## Veränderung über die Zeit
 
-Hier Teasern wir ein paar Beispiele.
+Doch wir haben nicht nur ein Embedding trainiert, sondern insgesamt fünf. Somit können wir über sehen, wie sich die Embeddings über die Zeit verändert haben. Weiter geht es mit den Änderungen in Teil II. Hier am Beispiel von [Display value:q/].
+
+[hr/]
+
 
 [Video q:q fullWidth:true/]
 
