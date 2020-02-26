@@ -10,17 +10,31 @@
 
 ## Hintergrund
 
-This is an Idyll post. It is generated via
-the file `index.idyll`. To compile this post using
-idyll, run the command `idyll` inside of this directory.
+Auf dieser Seite werden weitergehende Informationen aufgelistet. Und Fragen beantwortet. Bei offenen Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben. 
 
-##  bdf
+### Wie genau werden Embeddings erstellt?
 
-df
+Nachfolgend ist nur eine Möglichkeit dargestellt. Wie so oft gibt es unterschiedliche Verfahren. 
 
-## Fragen & Antworten
+Zunächst werden die häufigsten 50.000 Wörter ausgenocht. Es werden jedoch Wörter herausgefiltert, denen keine Bedeutung zugemessen wird. Sogenannte Stopwords. Dann erstellt man eine Matrix. Auf der linken Seite alle Wörter und auf der Rechten seite alle andern. Dann geht man über den Trainingstext rüber. Dafür seprarit man erst Sätze. Dann geht man über alle Setze drüber und zählt welche Wörter wie oft vorkommn.
 
-df
+## Kann ich die Embeddings haben?
+
+Ja, sie stehen zum Download bereit. Es gibt ein Embedding für alle Kommentare. Und 5 Für die Zeitepochen. Sie stehen unter CC-0-Lizenz, können also ohne Namensnennung verwendet werden.
+
+## Wie genau sind die Filme entstanden?
+
+Dafür msuste man XX
+
+## Woher kommen die Daten?
+
+Die Daten wurden aus dem Internet geladen. 
+
+## Ist die Software zuhaben?
+
+Ja, sie ist hier:
+
+Es gibt auch ein Extra-Python-Packet
 
 [hr /]
 

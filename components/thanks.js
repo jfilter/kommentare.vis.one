@@ -7,6 +7,12 @@ class Thanks extends React.PureComponent {
         von <a href="//johannesfilter.com">Johannes Filter</a> (
         <a href="//twitter.com/fil_ter">@fil_ter</a>)<br></br>
         <br></br>
+        Johannes Filter ist ein freiberuflicher Softwareentwickler und Aktivist
+        für Informationsfreiheit, Civic Tech und Open Data. Er studierte
+        Informatik am Hasso-Plattner-Institut in Potsdam und lebte während
+        seines Studiums in Tallinn (Estland) und Madrid (Spanien).
+        <br></br>
+        <br></br>
         Diese Arbeit ist im Rahmen des{" "}
         <a href="https://prototypefund.de/">Prototypefund</a> entstanden und
         wurde vom{" "}
