@@ -137,7 +137,7 @@ Um besser zu verstehen um was es geht, haben wir selbst ein Embedding traniert. 
 
 ## Bitte ein Wort auswählen
 
-[Radio value:q options:`['merkel', 'mittelmeer', 'miete', 'afd', 'migrant', 'überwachung']` /]
+[Radio value:q options:`['merkel', 'mittelmeer', 'mieten', 'afd', 'migrant', 'überwachung']` /]
 
 oder eigenes eingeben:
 

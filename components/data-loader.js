@@ -33,7 +33,7 @@ class DataLoader extends D3Component {
     let { src } = props;
     if (props.small == true) src += this.w > 768 ? 9 : 6;
 
-    this.currentSrc = props.src;
+    this.currentSrc = src;
     if (src !== oldProps.src) {
       setTimeout(() => {
         if (src === this.currentSrc) this.loadData(src, props);
