@@ -69,10 +69,10 @@ Mit dem Aufkommen der Informationstechnolgie im 20. Jahrhundert wurden immer meh
 Nur lässt sich der Ansatz leicht austricksen, in dem man immer neue Wörter kreiert. Außderm würde die Länge der Liste ausufern. 
 
 In diesem Zusammenhang gibt es eine neue Art Probleme zu Lösungen. Man füttert den Computer mit Daten und der Computer soll selbst lernen, welche Wörter als Beleidung zählt. Ansätze dieser Art nennt man Maschinelles Lernen (engl. *Machine Learning*). Es gibt zwei Arten von Maschine Learning: 
-1. Trainingsdaten werden manuell annotiert und die Maschiene soll lernen von diesen zu extrapolieren
-2. Es werden keine Daten extra annotiert, sondern von Information auf alten geschlossen werden.
+1. Trainingsdaten werden manuell annotiert und die Maschiene soll lernen von diesen zu extrapolieren ("überwachtes Lernen")
+2. Es werden keine Daten extra annotiert, sondern von Information auf alten geschlossen werden. ("unüberwachtes Lernen")
 
-Wir fokussieren auf den 2. Ansatz. Aus einer großen Menge an Text soll der Computer Wörter erlernen.
+Wir fokussieren auf den 2. Ansatz. Aus einer großen Menge an Text soll der Computer Wörter erlernen. Wir sehen uns nicht an, wie Kommentare als Hass klassifiert wird. Es geht zunächst darum, zu verstehen, wie die Maschiene Wörter versteht.
 
 ## Sprache, Computer und Representation
 
@@ -80,6 +80,12 @@ Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch 
 
 ![](/static/images/computer.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
+
+Damit wir mit den Daten arbeiten können, muss der Text in Wörter zerlegt werden. Mit einem `Tokenizer` werden die Wörter aufgeteilt. In einfachen Fällen, wird am Whitespace getrennt. Arbei bei Satzzeichen wird es kompliziert. Ist ein Punkt nun ein Satzende oder teile einer Abkürzung? Über die Jahre gibt es für viel Sprachen hand-crafted Tokenizer. Es geht darum den Text in atomare Stücke zu unterteilen. Hier ein Beispiel. 
+
+[SVG src:"/static/images/tokenizer.svg" /]
+
+Und mit Wörtern, wie geht es jetzt weiter?
 
 ###### bla
 
@@ -108,7 +114,20 @@ Der Kontext entscheidet über die wahre Beudeutung eines Wortes. Und ein Wort ka
 
 > Die Bedeutung durch Kollokation ist eine Abstraktion auf der syntagmatischen Ebene und hat nichts mit der begrifflichen oder ideellen Annäherung an die Bedeutung von Wörtern zu tun. Eine der Bedeutungen von _Nacht_ ist die Kollokationsfähigkeit mit _dunkel_, und von _dunkel_ natürlich die Kollokation mit _Nacht_.
 
-Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wird ermittelt, welche Wörter in ähnlichen Kontexten vorkommt. Am Ende hat man ein Modell bei dem man zu jedem Wort 500 Werte von 0 bis 1 hat. Details werden hier nicht erklärt.
+Konrekt kann man das den Beispielen verstehen.
+
+> Ich esse gerne **Fisch**. 
+
+> Ich esse gerne **Bananen**.
+
+> Ich esse gerne **Brot**.
+
+Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschiene, dass die beiden Wörter in einem gewissen Maaße ähnlich sind. In diesem Fall, geht es um Lebensmitteln. Und so erlernt die Maschiene die Wörter.
+
+[SVG src:"/static/images/window.svg" /]
+
+
+Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wird ermittelt, welche Wörter in ähnlichen Kontexten vorkommt. Am Ende hat man ein Modell bei dem man zu jedem Wort 500 Werte von 0 bis 1 hat. Details werden hier nicht erklärt. Nur so viel: Es wird ein Matrix aufgestellt, in ertem Schritt gezählt.
 
 // ## Word Embeddings
 
@@ -125,13 +144,19 @@ Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wi
 
 // Jeder Worter werden 500 Werte von 0-1 zugeweiesen. Damit kann dann lustige Sachen machen. Zum Beispiel kann man Wörter ansehen, die in ähnlcihen Kontexten vorkommen. Das können Synomme sein oder auch irgendwie verwandte Wörter.
 
-## Der Bias (Probleme)
+## Reicht der Kontext um Sprache zu verstehen?
+
+Also die Bedeutung kommt nur
 
  Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch
 
 Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
 
-## Mitmachen
+In dem Sinne spiegelt die Daten den Rassismus der Geselschaft wieder. Es verstäkrt ihn aber auch.
+
+## Wie gut Können Maschiene Sprache verstehen? Mitmachen!
+
+Um besser zu Verstehen, was abgeht jetzt hier was.
 
 Um besser zu verstehen um was es geht, haben wir selbst ein Embedding traniert. Auf XXX kommentaren von Online-Zeitungen. Probieren Sie es aus um es besser zu verstehen.
 
