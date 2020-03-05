@@ -217,7 +217,8 @@ input[type="text"] + div + div {
   }
 }
 
-img + em {
+img + em,
+span.isvg + em {
   font-size: small;
   text-align: right;
   float: right;

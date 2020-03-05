@@ -30,6 +30,16 @@ Dafür msuste man XX
 
 Die Daten wurden aus dem Internet geladen. 
 
+## Kann mithilfe von Word Embeddings sprache verstanden werden?
+
+Nein
+
+Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch
+
+Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
+
+In dem Sinne spiegelt die Daten den Rassismus der Geselschaft wieder. Es verstäkrt ihn aber auch.
+
 ## Ist die Software zuhaben?
 
 Ja, es gibt ein Python-Packet für die Word Embeddings. [hier/]

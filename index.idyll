@@ -13,8 +13,6 @@
 
 [MovingTexts /]
 
-// Zudem haben wir 15 Millionen Kommentare analysiert, wie sich die Sprache über die letzten zehn Jahre in der Kommentarspalte verändert hat.
-
 // https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/victory-theme/grayscale.js
 
 [derived name:'scatter-theme' value:`{
@@ -81,13 +79,16 @@ Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch 
 ![](/static/images/computer.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
 
+###### ignore please
+
 Damit wir mit den Daten arbeiten können, muss der Text in Wörter zerlegt werden. Mit einem `Tokenizer` werden die Wörter aufgeteilt. In einfachen Fällen, wird am Whitespace getrennt. Arbei bei Satzzeichen wird es kompliziert. Ist ein Punkt nun ein Satzende oder teile einer Abkürzung? Über die Jahre gibt es für viel Sprachen hand-crafted Tokenizer. Es geht darum den Text in atomare Stücke zu unterteilen. Hier ein Beispiel. 
 
 [SVG src:"/static/images/tokenizer.svg" /]
+*Text wird durch einen Tokenizer in Wörter aufgeteilt*
+
+###### ignore please
 
 Und mit Wörtern, wie geht es jetzt weiter?
-
-###### bla
 
 
 ## Bedeutung durch Kontext
@@ -125,34 +126,14 @@ Konrekt kann man das den Beispielen verstehen.
 Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschiene, dass die beiden Wörter in einem gewissen Maaße ähnlich sind. In diesem Fall, geht es um Lebensmitteln. Und so erlernt die Maschiene die Wörter.
 
 [SVG src:"/static/images/window.svg" /]
+*Über jedes Wort wird iteriert*
+
+###### ignore please
+
 
 
 Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wird ermittelt, welche Wörter in ähnlichen Kontexten vorkommt. Am Ende hat man ein Modell bei dem man zu jedem Wort 500 Werte von 0 bis 1 hat. Details werden hier nicht erklärt. Nur so viel: Es wird ein Matrix aufgestellt, in ertem Schritt gezählt.
 
-// ## Word Embeddings
-
-
-// Ein Verfahren in kürze. Es wird gesehe, welche Wörter mit welchen anderen Wörtern in gleichem Text vorkommt. Anhand des Musters kann man z. B. Synomme erkennen. 
-
-// Und auch Haus und Wohnunge.
-
-// Daraus kann man sagen, um zu erkluaren wie ähnlich sich wörter sind. Hier ein Beispiel (genr emitmachen)
-
-// Es gibt unterschiedliche Verfahren. Ein einfaches: Man zählt wie oft welche andere Wörter bei einer Festengrößer Vorkommen. z. B.
-
-// Dann stellt man eine Tabelle auf und kann sehen, welche Wörter wie oft vorkommen. Dass kann man bentuzen mut eine sog. Einbettung aufzustellen.
-
-// Jeder Worter werden 500 Werte von 0-1 zugeweiesen. Damit kann dann lustige Sachen machen. Zum Beispiel kann man Wörter ansehen, die in ähnlcihen Kontexten vorkommen. Das können Synomme sein oder auch irgendwie verwandte Wörter.
-
-## Reicht der Kontext um Sprache zu verstehen?
-
-Also die Bedeutung kommt nur
-
- Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch
-
-Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
-
-In dem Sinne spiegelt die Daten den Rassismus der Geselschaft wieder. Es verstäkrt ihn aber auch.
 
 ## Wie gut Können Maschiene Sprache verstehen? Mitmachen!
 
@@ -205,9 +186,9 @@ Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
     ]`
 /]
 
-## Ausschnitte
+## Strukturen abbilden
 
-Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sondern auch die Beziehungen untereinandern. Die Achsen haben keine Bedeutung. Doch je ähnlciher sich Begriffe, desto näher sind sie zusammen. Die Achsen haben kein Bedeutung.
+Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es werden jedoch die Strukturen zwischen den Begriffen verschleiert. Eine Projektion auf die Ebene bietet hier besseren Einblick. Hier ist zu beachten, dass Begriffe desto ähnlicher sich die Begriffe sind, desto näher sind sie zusammen. Die Achsen haben hier keine Bedeutung.
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
 [DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n="` timeout:2000/]
@@ -227,7 +208,9 @@ Doch kann man nicht nur ein Wort und die Beziehuungen zu andern darstellen. Sond
 
 [hr/]
 
-Das war die Limiterung auf ein paar wenige. Hier ein größer Ausblick. (Auf Desktop mit Mauss drüber)
+In der Folge ein größerer Ausschnitt. 
+
+Mitte der Maus über die Punkte, um die Namen zu erhalten.
 
 [hr/]
 
@@ -266,12 +249,9 @@ Das war die Limiterung auf ein paar wenige. Hier ein größer Ausblick. (Auf Des
 
 ## Veränderung über die Zeit
 
-Doch wir haben nicht nur ein Embedding trainiert, sondern insgesamt fünf. Somit können wir über sehen, wie sich die Embeddings über die Zeit verändert haben. Weiter geht es mit den Änderungen in Teil II. Hier am Beispiel von [Display value:q/].
+Im weiteren Verlauf haben wir uns angesehen, wie sich die Sprache verändert hat.
 
-[hr/]
-
-
-[Video q:q fullWidth:true/]
+[👉 Weiter mit Teil II](/zeit/)
 
 [hr /]
 

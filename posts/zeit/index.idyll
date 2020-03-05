@@ -8,6 +8,8 @@
   color:"#ffffff"
    /]
 
+ nicht nur ein Word Embedding sondern fünf erstellt. Dafür haben wir die Daten aufgeteilt, je zwei Jahre 
+
 Für fast 50.000 Wörter zeigen wir, wie sich Sprache geändert hat. Dafür haben wir knapp 10 Millionen Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I]() wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Wortvectoren angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
 
 ## Bitte ein Wort auswählen
