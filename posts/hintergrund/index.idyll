@@ -8,43 +8,47 @@
   color:"#ffffff"
    /]
 
-## Hintergrund
+## Hintergrundinformationen zu Kommentare.vis.one
 
 Auf dieser Seite werden weitergehende Informationen aufgelistet. Und Fragen beantwortet. Bei offenen Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben. 
 
-### Wie genau werden Embeddings erstellt?
+### Was sind Word Embeddings?
 
-Nachfolgend ist nur eine Möglichkeit dargestellt. Wie so oft gibt es unterschiedliche Verfahren. 
+Word Embedding stehen für Verfahren, bei denen Wörtern ein Vektor zugewiesen wird. Ein Vektor ist eine feste Anzahl (z. B. 300) von Werten zwischen -1 und 1. In diesem Vektorraum sind ähnliche Wörter enger zusammen. Mit Word Embeddings werden aus Wörter Zahlen.
 
-Zunächst werden die häufigsten 50.000 Wörter ausgenocht. Es werden jedoch Wörter herausgefiltert, denen keine Bedeutung zugemessen wird. Sogenannte Stopwords. Dann erstellt man eine Matrix. Auf der linken Seite alle Wörter und auf der Rechten seite alle andern. Dann geht man über den Trainingstext rüber. Dafür seprarit man erst Sätze. Dann geht man über alle Setze drüber und zählt welche Wörter wie oft vorkommn.
+### Wie genau wurden die Word Embeddings erstellt?
 
-## Kann ich die Embeddings haben?
+Es gibt unterschiedliche Verfahren wie Word Embeddings erstellt werden, doch das Grundprinzip ist das Gleiche. Basierend auf einer großen Menge an Text wird automatisch analysiery, werde Wörtern mit welchen anderen Wörter vorkommt. Das wird dadurch erreicht, indem man über alle Sätze iterirt. In einer gewissen Fenstegrößer werden Koolokatione vermerkt.
 
-Ja, sie stehen zum Download bereit. Es gibt ein Embedding für alle Kommentare. Und 5 Für die Zeitepochen. Sie stehen unter CC-0-Lizenz, können also ohne Namensnennung verwendet werden.
+[Die Süddeutsche Zeitung erklärt Word Embeddings für ihne Auswertung ausführlich.](https://projekte.sueddeutsche.de/artikel/politik/so-haben-wir-den-bundestag-ausgerechnet-e893391/)
 
-## Wie genau sind die Filme entstanden?
+Im Gegensatz zu der der Süddeutsche Zeitung wurden für diese Analyse ein Verfahrn verwendet, welches Wordpaare zählt (PPMI/SVD). Für Interessierte gibt ein [wissenschaftliche Paper Hintergrundinformationen](https://www.aclweb.org/anthology/Q15-1016/).
 
-Dafür msuste man XX
+### Bilden Word Embeddings die Realität ab?
 
-## Woher kommen die Daten?
+Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten ab. Die Sprache in den Kommentaren steht nichts zwangsläufig würde die Wahrheit oder Realität ab. 
 
-Die Daten wurden aus dem Internet geladen. 
+Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern.
 
-## Kann mithilfe von Word Embeddings sprache verstanden werden?
+### Woher kommen die Daten?
 
-Nein
+Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019.
 
-Die aktuellen Verfahren sind jedoch unausgegoren. So können sie leicht „ausgetrickst“ werden oder sind zum Teil rassistisch
+### Wie wurde der Text bearbeitet?
 
-Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern. 
+Zunächste wurden Wörter ohne Bedeutung, sogennante "Stop Words", wie z. B. Artikel entfernt. Zudem wurden alle Wörter auf ihren Wortstamm zurückgeführt ("lemmatized"). Also z. B. das Plural-S entfernt bei Verben auf den Infinitiv ersetzt. Hier kommt es durch die automatiserte Verabeitung manchmal zu Fehlern. Zudem wurden alle Wörter klein geschrieben und Ziffern durch 0 ersetzt. Da im Deutschen Wörter in unterschiedliche Formen vorkommen (z. B. Konjugation), wurden somit die Anzahl an unterschiedlichen Wörter reduziert, um bessere Ergebnisse auf kleinen Text-Corpora zu erzielen.
 
-In dem Sinne spiegelt die Daten den Rassismus der Geselschaft wieder. Es verstäkrt ihn aber auch.
+### Kann ich die Word Embeddings haben?
 
-## Ist die Software zuhaben?
+Ja, sie stehen zum Download bereit. Es gibt ein Embedding für alle Kommentare. Und 5 Für die Zeitepochen. Sie stehen unter [CC-0-Lizenz](https://creativecommons.org/share-your-work/public-domain/cc0/), können also ohne Namensnennung verwendet werden.
 
-Ja, es gibt ein Python-Packet für die Word Embeddings. [hier/]
+👉 https://data.jfilter.de/nlp/kommentare/
 
-Der Code zum erstellen der Filme findet sich hier: 
+### Kann ich die Software benutzen?
+
+Ja, sämtliche verwendete und programmierte Software steht unter Open-Source-Lizenz.
+
+Hier eine Übersicht über den verwendeten Code: https://github.com/jfilter/ptf
 
 [hr /]
 

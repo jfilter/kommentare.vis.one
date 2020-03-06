@@ -14,7 +14,7 @@ class Thanks extends React.PureComponent {
         <br></br>
         <br></br>
         Diese Arbeit ist im Rahmen des{" "}
-        <a href="https://prototypefund.de/">Prototypefund</a> entstanden und
+        <a href="https://prototypefund.de/">Prototype Fund</a> entstanden und
         wurde vom{" "}
         <a href="https://www.bmbf.de/">
           Bundesministerium für Bildung und Forschung

@@ -50,7 +50,7 @@
   }
 }` /]
 
-In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsredaktionen manuell die Kommentare. Doch aufgrund finanzieller Engpässe, schließen viele Zeitungen die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt die automatisierte Kommentareauswertung Besserung. Jedoch ist aktuell noch unklar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen. Mit dieser Webseite werden einzelne Verfahren des Machinelles Lernens am Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprachen, Computerlinguistik (oder Verarbeitung natürlicher Sprache (engl. *Natural-Language Processing* )) funktioniert.
+In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsredaktionen manuell die Kommentare. Doch aufgrund finanzieller Engpässe, schließen viele Zeitungen die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt die automatisierte Kommentareauswertung Besserung. Jedoch ist aktuell noch unklar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen. Mit dieser Webseite werden einzelne Verfahren des Machinelles Lernens am Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprachen, Computerlinguistik (oder engl. *Natural-Language Processing*) funktioniert.
 
 ![](/static/images/news.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de/workshops/newsbusters/))*
@@ -72,24 +72,23 @@ In diesem Zusammenhang gibt es eine neue Art Probleme zu Lösungen. Man füttert
 
 Wir fokussieren auf den 2. Ansatz. Aus einer großen Menge an Text soll der Computer Wörter erlernen. Wir sehen uns nicht an, wie Kommentare als Hass klassifiert wird. Es geht zunächst darum, zu verstehen, wie die Maschiene Wörter versteht.
 
-## Sprache, Computer und Representation
-
-Auf der untersten Ebene werden Daten als 0 oder 1 abgespeichert. Es gibt jedoch Abstraktionseben die darauf aufbauen. Aus 0 und 1 werden Zeichen. Und aus Zeichen werde Buchstaben. Mit Buchstaben kann man Wörter und damit ganze Texte bauen. Für unseren Fall wollen wir einen Text als eine Liste von Wörtern betrachten. Wie kommen wir dann von Wörtern auf Bedeutung? 
-
 ![](/static/images/computer.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
 
 ###### ignore please
 
-Damit wir mit den Daten arbeiten können, muss der Text in Wörter zerlegt werden. Mit einem `Tokenizer` werden die Wörter aufgeteilt. In einfachen Fällen, wird am Whitespace getrennt. Arbei bei Satzzeichen wird es kompliziert. Ist ein Punkt nun ein Satzende oder teile einer Abkürzung? Über die Jahre gibt es für viel Sprachen hand-crafted Tokenizer. Es geht darum den Text in atomare Stücke zu unterteilen. Hier ein Beispiel. 
+## Sprache, Computer und Representation
+
+Für dem Computer gibt es nur Nullen oder Einzen. Entweder Strom fließt oder nicht. In den Betriebssytemen der Computer sind jedoch Abstraktionsmodelle eingebaut, sodass sich kein Entwickler mit dem Fließen von Strom beschäftigen muss. Wir gehen davon aus, dass Text vorliegt. Im ersten Schritt unterteilen wir den Text in Wörter.
+
+Mit einem sogennanten Tokenizer wird der Text in  Wörter aufgeteilt. In einfachen Fällen, wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Ist ein Punkt nun ein Satzende (und damit das vorherigen Buchstaben ein Wort) oder teile einer Abkürzung (und damit nicht zwangsläufig ein eigenes Wort)? Die Schwierigkeit erkennt man an diesem Beispiel.
 
 [SVG src:"/static/images/tokenizer.svg" /]
 *Text wird durch einen Tokenizer in Wörter aufgeteilt*
 
 ###### ignore please
 
-Und mit Wörtern, wie geht es jetzt weiter?
-
+Jetzt haben wir Wörter. Im nächsten Abschnitt führen wir uns, wie genau die Bedeutung entsteht.
 
 ## Bedeutung durch Kontext
 

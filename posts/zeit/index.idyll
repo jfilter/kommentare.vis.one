@@ -3,14 +3,19 @@
 [Header
   fullWidth:true
   title:"Veränderung in den Kommentaren"
-  subtitle:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben."
+  subtitle:"Wie sich Wörter in den Kommentarspalten änderten."
   background:"#222222"
   color:"#ffffff"
    /]
 
+
+
+
+
+Für fast 50.000 Wörter zeigen wir, wie sich Sprache geändert hat. Dafür haben wir knapp 10 Millionen Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I](/) wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Word Embeddings angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
+
  nicht nur ein Word Embedding sondern fünf erstellt. Dafür haben wir die Daten aufgeteilt, je zwei Jahre 
 
-Für fast 50.000 Wörter zeigen wir, wie sich Sprache geändert hat. Dafür haben wir knapp 10 Millionen Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I]() wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Wortvectoren angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
 
 ## Bitte ein Wort auswählen
 
@@ -30,7 +35,7 @@ oder eigenes eingeben:
 
 [hr/]
 
-[Video q:q fullWidth:true/]
+[Video q:`q.toLowerCase().replace(new RegExp("[0-9]", "g"), "0")` fullWidth:true/]
 
 [hr /]
 
