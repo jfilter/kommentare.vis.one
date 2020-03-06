@@ -1,4 +1,4 @@
-[meta title:"Einführung – Kommentare.vis.one" description:"NLP am Beispiel von Online-Kommentaren erklärt" /]
+[meta title:"Einführung – Kommentare.vis.one" description:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschienen' die Bedeutung von Wörtern erlernen." /]
 
 
 [FilterHeader
@@ -6,7 +6,7 @@
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
-  date:"15. Februar 2020"
+  date:"15. März 2020"
   background:"#222222"
   color:"#ffffff"
 /]
@@ -198,16 +198,16 @@ Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es 
   [/Graphic]
 
   [Step]#### nur der Fokus [/Step]
-  [Step]#### die Nähesten[/Step]
-  [Step]#### mehr Näheste[/Step]
-  [Step]#### alle[/Step]
+  [Step]#### die nähesten Wörter[/Step]
+  [Step]#### mehr Wörter[/Step]
+  [Step]#### noch mehr Wörter[/Step]
 [/Scroller]
 
 [hr/]
 
-In der Folge ein größerer Ausschnitt. 
+Das ist nur ein Auschhnitt. In der Folge ein größere Ausschnitt. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
 
-Mitte der Maus über die Punkte, um die Namen zu erhalten.
+
 
 [hr/]
 
@@ -240,6 +240,14 @@ Mitte der Maus über die Punkte, um die Namen zu erhalten.
     ]`
 /]
 [/Graphic]
+
+[Conditional if:`nearest_small.data.length !== 7`]
+  Mitte der Maus über die Punkte fahren, um die Wörter zu sehen. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
+[/Conditional]
+
+[Conditional if:`nearest_small.data.length === 7`]
+  [Ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
+[/Conditional]
 
 [hr/]
 
