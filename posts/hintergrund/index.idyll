@@ -30,9 +30,28 @@ Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten a
 
 Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern.
 
+### Wie wird die Ähnlichkeit zwischen Wörtern errechnet?
+
+Da die Wörter aus Vektoren (eine Reihe von Zahlen (z. B. 500)) bestehen, dient der Winkel als Zeichen der Ähnlichkeit. Mithilfe des [Kosinus-Ähnlichkeit](https://de.wikipedia.org/wiki/Kosinus-%C3%84hnlichkeit) wird diese errechnet.
+
+### Wie kann die ähnliches Begriffe auf einer Ebene dargestellt werden?
+
+Um die Begriffe auf einer Ebene zubringen, brauch man Vektoren die aus zwei Dimensionen bestehen (für die X-Ache und Y-Achse). Dazu benutzen wird das Verfahen der Dimeionsreduktion. Dieses "komprimiert" die Daten so, dass möglichst wenige Informationen verloren werden. Es wird [Hauptkomponentenanalyse (Principal Component Analyse (PCA))](https://de.wikipedia.org/wiki/Hauptkomponentenanalyse) verwendet.
+
 ### Woher kommen die Daten?
 
-Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019.
+Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019. Ingesamt gibt es über 13 Millionen Kommentare bestehend aus rund 45 Millionen Sätze. Die Sätze verteilen sich auf folgendermaßen über die Zeit:
+
+2010-2011:  ~3 Millionen Sätze
+
+2012-2013:  ~4.5 Millionen Sätze
+
+2014-2015:  ~8 Millionen Sätze
+
+2016-2017:  ~14 Millionen Sätze
+
+2018-2019:  ~15 Millionen Sätze
+
 
 ### Wie wurde der Text bearbeitet?
 
@@ -40,9 +59,25 @@ Zunächste wurden Wörter ohne Bedeutung, sogennante "Stop Words", wie z. B. Art
 
 ### Kann ich die Word Embeddings haben?
 
-Ja, sie stehen zum Download bereit. Es gibt ein Embedding für alle Kommentare. Und 5 Für die Zeitepochen. Sie stehen unter [CC-0-Lizenz](https://creativecommons.org/share-your-work/public-domain/cc0/), können also ohne Namensnennung verwendet werden.
+Ja, sie stehen zum Download bereit. Es gibt ein Embedding für alle Kommentare. Und 5 Für die zwei-jährigen Zeitepochen. Sie stehen unter [CC-0-Lizenz](https://creativecommons.org/share-your-work/public-domain/cc0/), können also ohne Namensnennung verwendet werden.
 
 👉 https://data.jfilter.de/nlp/kommentare/
+
+Die Word Embeddings wurden mit der eigens entwickelten Bibliothek [hyperhyper](https://github.com/jfilter/hyperhyper) entwickelt. 
+
+Folgende Parameter wurden für das Embedding mit allen Kommentaren verwendet: 
+
+```
+window: 10, dynamic_window: 'decay', decay_rate: 0.375, delete_oov: true, subsample: 'deter', subsample_factor: 7.268e-05, neg: 1.5, eig: 0.3, dim: 500
+```
+
+Und diese 
+
+```
+window: 10, dynamic_window: 'decay', decay_rate: 0.33, delete_oov: true, subsample: 'deter', subsample_factor: 7e-05, neg: 1, eig: 0.35, dim: 500
+```
+
+Die Hyperparameter wurden durch Experimente auf [Evaluationsdaten](https://github.com/jfilter/hyperhyper/tree/master/hyperhyper/evaluation_datasets/de) herausgefunden.
 
 ### Kann ich die Software benutzen?
 

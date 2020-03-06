@@ -134,17 +134,15 @@ Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschien
 Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wird ermittelt, welche Wörter in ähnlichen Kontexten vorkommt. Am Ende hat man ein Modell bei dem man zu jedem Wort 500 Werte von 0 bis 1 hat. Details werden hier nicht erklärt. Nur so viel: Es wird ein Matrix aufgestellt, in ertem Schritt gezählt.
 
 
-## Wie gut Können Maschiene Sprache verstehen? Mitmachen!
+## Wie gut kann die Machine Beudeutungen erlenen? Ausprobieren!
 
-Um besser zu Verstehen, was abgeht jetzt hier was.
-
-Um besser zu verstehen um was es geht, haben wir selbst ein Embedding traniert. Auf XXX kommentaren von Online-Zeitungen. Probieren Sie es aus um es besser zu verstehen.
+Auf Grundlage von über 13 Millionen deutscher Online-Kommentare, gibt es nachfolgend die Möglichkeit die Macht von Word Embeddings auszuprobieren.
 
 ## Bitte ein Wort auswählen
 
 [Radio value:q options:`['merkel', 'mittelmeer', 'mieten', 'afd', 'migrant', 'überwachung']` /]
 
-oder eigenes eingeben:
+oder eigenes Wort eingeben:
 
 [var name:"q" value:"merkel" /]
 [TextInput value:q  /]
@@ -187,7 +185,7 @@ Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
 
 ## Strukturen abbilden
 
-Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es werden jedoch die Strukturen zwischen den Begriffen verschleiert. Eine Projektion auf die Ebene bietet hier besseren Einblick. Hier ist zu beachten, dass Begriffe desto ähnlicher sich die Begriffe sind, desto näher sind sie zusammen. Die Achsen haben hier keine Bedeutung.
+Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es werden jedoch die Strukturen zwischen den Begriffen verschleiert. Eine Projektion auf die Ebene bietet hier besseren Einblick. Hier ist zu beachten, dass Begriffe desto ähnlicher sich die Begriffe sind, desto näher sind sie zusammen. Die Achsen haben hier keine Bedeutung. [Hier erklären wir, wie genau es eine Ebene abgebildet werden kann.](/hintergrund/#todo)
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
 [DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n="` timeout:2000/]
@@ -199,10 +197,10 @@ Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es 
       [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` /]
   [/Graphic]
 
-  [Step]## die nähesten[/Step]
-  [Step]## mehr[/Step]
-  [Step]## noch mehr[/Step]
-  [Step]## jetzt all[/Step]
+  [Step]#### nur der Fokus [/Step]
+  [Step]#### die Nähesten[/Step]
+  [Step]#### mehr Näheste[/Step]
+  [Step]#### alle[/Step]
 [/Scroller]
 
 [hr/]
