@@ -1,8 +1,8 @@
-[meta title:"Einführung – Kommentare.vis.one" description:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschienen' die Bedeutung von Wörtern erlernen." /]
+[meta title:"Wie Maschinen Kommentare verstehen – Kommentare.vis.one" description:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschinen' die Bedeutung von Wörtern erlernen." url:"https://kommentare.vis.one/" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/images/preview.png" /]
 
 
 [FilterHeader
-  subtitle:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschienen' die Bedeutung von Wörtern erlernen."
+  subtitle:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschinen' die Bedeutung von Wörtern erlernen."
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
@@ -159,7 +159,7 @@ oder eigenes Wort eingeben:
 
 [br /]
 
-Die 10 ähnlichsten Wörter zu [Display value:`chooseQ.tokens[0]`/]:
+Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/]:
 
 [Table
     data:`qTable.tokens.map((k, i) => ({token: k, sim: qTable.sims[i]}));`

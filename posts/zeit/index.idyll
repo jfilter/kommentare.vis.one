@@ -1,9 +1,9 @@
-[meta title:"Veränderung – Kommentare.vis.one" description:"Eine Analyse wie sich Wörter in der Kommentarspalte geändert haben." url:"https://kommentare.vis.one" twitterHandle:"@fil_ter" shareImageUrl:"todo" /]
+[meta title:"Veränderung in der Kommentarspalte – Kommentare.vis.one" description:"Wie sich die Bedeutung von Wörtern in Online-Kommentaren ändert (2010 – 2019)" url:"https://kommentare.vis.one/zeit/" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/images/preview_zeit.png" /]
 
 [Header
   fullWidth:true
-  title:"Veränderung in den Kommentaren"
-  subtitle:"Wie sich Wörter in den Kommentarspalten änderten."
+  title:"Veränderung in der Kommentarspalte"
+  subtitle:"Wie sich die Bedeutung von Wörtern in Online-Kommentaren ändert (2010 – 2019)"
   background:"#222222"
   color:"#ffffff"
    /]
@@ -16,11 +16,11 @@ Für fast 50.000 Wörter zeigen wir, wie sich Sprache in Kommentare geändert ha
 
 ## Bitte ein Wort auswählen
 
-[Radio value:q options:`['merkel', 'mittelmeer', 'mieten', 'afd', 'migrant', 'überwachung']` /]
+[Radio value:q options:`['mittelmeer', 'mieten', 'fdp', 'cdu', 'afd', 'spd', 'csu', 'migrant', 'überwachung', 'banker']` /]
 
-oder eigenes eingeben:
+oder eigenes Wort eingeben:
 
-[var name:"q" value:"merkel" /]
+[var name:"q" value:"mittelmeer" /]
 [TextInput value:q  /]
 
 [var name:"chooseQ" value:`{tokens:[]}` /]

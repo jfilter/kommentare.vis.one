@@ -9,8 +9,8 @@ class Thanks extends React.PureComponent {
         <br></br>
         Johannes Filter wohnt in Berlin, ist freiberuflicher Softwareentwickler
         und Aktivist für Informationsfreiheit, Civic Tech und Open Data. Er
-        studierte Informatik am Hasso-Plattner-Institut in Potsdam sowie in
-        Tallinn (Estland) und Madrid (Spanien).
+        studierte Informatik (MSc) am Hasso-Plattner-Institut in Potsdam sowie
+        in Tallinn (Estland) und Madrid (Spanien).
         <br></br>
         <br></br>
         Diese Arbeit ist im Rahmen des{" "}
