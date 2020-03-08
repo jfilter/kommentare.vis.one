@@ -9,9 +9,9 @@
    /]
 
 
-Für fast 50.000 Wörter zeigen wir, wie sich Sprache in Kommentare geändert hat. Dafür haben wir über 10 Millionen Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I](/) wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Word Embeddings angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
+Für fast 50.000 Wörter zeigen wir, wie sich Sprache in Kommentare geändert hat. Dafür haben wir über 13 Millionen Online-Kommentare analysiert. Dies ist Teil II des Web-Projekts zu Kommentaren und Machine Learning. In [Teil I](/) wurden in das Thema eingeführt. Jetzt haben wir das Verfahren der Word Embeddings angewandt. Wir haben trainiert. Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus steht ein Wort, zudem ähnliche Wörter. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe.
 
- nicht nur ein Word Embedding sondern fünf erstellt. Dafür haben wir die Daten aufgeteilt, je zwei Jahre 
+In der Mitte gibt es ein Begriff. Für den wird dargestellt, wie sich die ähnlichen Begriffe über die Zeit geändert haben. Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise synomyune sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet.
 
 
 ## Bitte ein Wort auswählen
@@ -36,9 +36,12 @@ oder eigenes Wort eingeben:
 
 [hr /]
 
-## Was genau sehe ich hier?
+## Was genau sehe ich hier? Wie wurde es erstellt?
 
-In der Mitte gibt es ein Begriff. Für den wird dargestellt, wie sich die ähnlichen Begriffe über die Zeit geändert haben. Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise synomyune sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet.
+Im ersten Schritt wruden fünf Word Embeddings erstellt. Dafür wurden zwei-jährige Epochen von 2010 bis 2019 geteilt. Dann wurde trainiert. Dann wurde für jede Epoche die umliegenden Wörter bestimmt und auf eine 2D-Ebene projeziert. Dann wurden die ein Video gerendet. Zudem gibt es Wörter die auftauchen oder verschwinden. Für die Embeddings wurden jeweils nur die 50k Häufigsten Wörter auserwählt. Daher verschwinden dieses.
+
+Es gibt teilweise ein Zooming-Effekt, der verwirrend sein kann. Das kommt dadruch zustanden, dass die gesamte Fläche ausgefült werdden soll.
+
 
 
 [hr /]

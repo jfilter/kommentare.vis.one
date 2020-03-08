@@ -4,8 +4,15 @@ class Thanks extends React.PureComponent {
   render() {
     return (
       <p>
-        von <a href="//johannesfilter.com">Johannes Filter</a> (
-        <a href="//twitter.com/fil_ter">@fil_ter</a>)<br></br>
+        <a href="//johannesfilter.com">von Johannes Filter</a>,{" "}
+        <a href="//twitter.com/fil_ter">auf Twitter folgen</a>,{" "}
+        <small>
+          <a href="https://johannesfilter.com/impressum/">Impressum</a>,{" "}
+          <a href="https://johannesfilter.com/privacy/#german">
+            Datenschutzerklärung
+          </a>
+        </small>
+        <br></br>
         <br></br>
         Johannes Filter wohnt in Berlin, ist freiberuflicher Softwareentwickler
         und Aktivist für Informationsfreiheit, Civic Tech und Open Data. Er
