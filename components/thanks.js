@@ -4,8 +4,10 @@ class Thanks extends React.PureComponent {
   render() {
     return (
       <p>
-        <a href="//johannesfilter.com">von Johannes Filter</a>,{" "}
-        <a href="//twitter.com/fil_ter">auf Twitter folgen</a>,{" "}
+        Ein Online-Projekt{" "}
+        <a href="//johannesfilter.com">von Johannes Filter</a>, Johannes{" "}
+        <a href="//twitter.com/fil_ter">auf Twitter folgen</a>
+        <br></br>
         <small>
           <a href="https://johannesfilter.com/impressum/">Impressum</a>,{" "}
           <a href="https://johannesfilter.com/privacy/#german">

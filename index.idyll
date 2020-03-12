@@ -2,7 +2,7 @@
 
 
 [FilterHeader
-  subtitle:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschinen' die Bedeutung von Wörtern erlernen."
+  subtitle:"Machine Learning wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt, wie Computer die Bedeutung von Wörtern erlernen."
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
@@ -50,55 +50,73 @@
   }
 }` /]
 
-In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsredaktionen manuell die Kommentare. Doch aufgrund finanzieller Engpässe, schließen viele Zeitungen die Kommentarfunktion gleich ganz ab. In diesem Kontext gelobt die automatisierte Kommentareauswertung Besserung. Jedoch ist aktuell noch unklar, welche Aufgaben wir den Maschinen überlassen wollen. Damit es darüber eine gesellschaftliche Debatte gibt, müssen zuerst breite Teile der Bevölkerung die dahinter liegenden technischen Mechanismen verstehen. Mit dieser Webseite werden einzelne Verfahren des Machinelles Lernens am Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprachen, Computerlinguistik (oder engl. *Natural-Language Processing*) funktioniert.
+In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsredaktionen manuell die Kommentare. Das ist personal- und zeitaufwendig. Und bei manchen Themen, ist es für die Medienhäuser kaum noch möglich, die Vielzahl an Kommentaren zu moderieren. Da wird dann die Kommentarfunktion mitunter einfach ganz abgeschaltet, um sich vor einer Flut an Hass-Kommentaren zu schützen.  
+
+Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Mit dieser Webseite werden einzelne Verfahren des Machine Learning am Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprache. Die Diszipling heißt Computerlinguistik (oder engl. Natural-Language Processing). Machine Learning wird auch bei der Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt. Darüber geht es hier nicht.
 
 ![](/static/images/news.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de/workshops/newsbusters/))*
 
 ###### ignore please
 
-## Was ist Maschinelles Lernen?
+## Was ist Machine Learning?
 
-Mit dem Aufkommen der Informationstechnolgie im 20. Jahrhundert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mithilfe von Programm-Code gelöst. Programmier:innen formulieren einen sogennanten Algorithmus, welche eine Schritt-für-Schritt-Rezept darstellt. Ähnlich zu einem Kochrezept werden Schritte festgelegt. Wie könnte ein Algorithmus aussehen, der Hasskommentare finden sollte? Ein Ansatz:
+Mit dem Aufkommen der Informationstechnologie im 20. Jahrhundert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mithilfe von Programm-Codes gelöst. Programmier:innen formulieren einen sogennannten Algorithmus, welches eine Schritt-für-Schritt-Rezept darstellt. Ähnlich zu einem Kochrezept werden Schritte festgelegt. Wie könnte ein Algorithmus aussehen, der Hasskommentare finden sollte? Ein Ansatz:
 
 1. Man schreibt eine lange Liste von Beleidigungen auf.
 2. Wenn eine Beleidigung in einem Kommentar vorkommt, wird der Kommentar aussortiert.
 
-Nur lässt sich der Ansatz leicht austricksen, in dem man immer neue Wörter kreiert. Außderm würde die Länge der Liste ausufern. 
+Nur lässt sich der Ansatz leicht austricksen. Hasskommentare die leichte Abwandlungen beinhalter, würde durchs Raster fallen. Zum Beispiel könnten Trolle einzelne Buchstaben durch Zahlen ersetzen. Aus Beleidigung wird Bele1digung. Für den Menschen ist es einfach die Manipulation zuerkennen, für den Computer schwer. Außerderm würde die Länge der Liste ausufern. Und dann heißt es nicht, dass nicht jedes mal, wenn ein bestimmte Beleidung auftaucht, diese auch negativ gemeint ist. So würde es viele falsche Treffer geben.
 
-In diesem Zusammenhang gibt es eine neue Art Probleme zu Lösungen. Man füttert den Computer mit Daten und der Computer soll selbst lernen, welche Wörter als Beleidung zählt. Ansätze dieser Art nennt man Maschinelles Lernen (engl. *Machine Learning*). Es gibt zwei Arten von Maschine Learning: 
-1. Trainingsdaten werden manuell annotiert und die Maschiene soll lernen von diesen zu extrapolieren ("überwachtes Lernen")
-2. Es werden keine Daten extra annotiert, sondern von Information auf alten geschlossen werden. ("unüberwachtes Lernen")
+Mit dem Maschinellen Lernen möchte man, dem Computer die Bedeutung von Wörtern erlernen lassen, sodass der Computer die Zusammenhänge verstehen kann. Man füttert den Computer mit Daten und der Computer soll selbst lernen, welche Wörter als Beleidigung eingeordnet werden sollen. Das nennt man Machine Learning (engl. Machine Learning). Es gibt zwei Arten von Maschinellem Lernen.
 
-Wir fokussieren auf den 2. Ansatz. Aus einer großen Menge an Text soll der Computer Wörter erlernen. Wir sehen uns nicht an, wie Kommentare als Hass klassifiert wird. Es geht zunächst darum, zu verstehen, wie die Maschiene Wörter versteht.
+### 1. Unüberwachtes Machine Learning
+
+Für Verfahren dieser Art werden zum Beispiel große Textmengen werden aus dem Internet automatisiert heruntergeladen. Oder stammen z. B. von Artikeln aus digitalen Zeitungsarchiven. Hier wird versucht, irgendwas aus den großen Textmengen zu machen, ohne dass der Text von Menschen inspiziert bzw. annotiert werden müssen. Das Überwachen bezieht sich auf den Menschen.
+
+### 2. Überwachtes Machine Learning
+
+Bei Verfahren dieser Art, müssen Daten im 1. Schritt manuell begutachtet werden. Diese Begutachten bedeutet, dass Text von Menschen angesehen wird. Oft wird der gleiche Text von mehrer Menschen begutachtet, um ein finales Gutachten zu erreichen. Dann im weiteren Verlauf soll versucht werden, dass der Computer es lernt, von den annotierten Daten auf neues zu extrapolieren. Das Überwacht bezieht sich darauf, dass von Menschen manuell Daten begutachtet wurden.
+
+## Klassifikation von Kommentaren
+
+Für die automatisierte Klassifikation auf Kommentaren sind beide Notwendig. Mittels unüberwachtes Lernen wird dem Computer allgemein erklärt, was Sprache ist. Das geschieht auf großen Mengen von Text, Milliarden von Wörtern.
+
+In einem zweiten Schritt wird dann mittels überwachtem Machine Learning dem Computer beigebracht, was Hass-Kommentare sind. Dazu bedarf es in der Regel sehr viel weniger Wörtern.
 
 ![](/static/images/computer.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de))*
 
 ###### ignore please
 
+ Es geht zunächst darum, zu verstehen, wie ein Computer Wörter interpretiert.
+
 ## Sprache, Computer und Representation
 
-Für dem Computer gibt es nur Nullen oder Einzen. Entweder Strom fließt oder nicht. In den Betriebssytemen der Computer sind jedoch Abstraktionsmodelle eingebaut, sodass sich kein Entwickler mit dem Fließen von Strom beschäftigen muss. Wir gehen davon aus, dass Text vorliegt. Im ersten Schritt unterteilen wir den Text in Wörter.
+In diesem Abschnitt geht es darum, wie nun ein Computer mit Wörtern arbeitet. Damit dieser Text anaylsieren kann, benötigt man für die Auswertung eine gewisse Datenmenge. Je mehr Daten, umso besser für das maschinelle Lernen. In meinem konkreten Fall habe ich Kommentare verwendet aus der Kommentarspalte von Zeit-Online. Ich habe eine Anzahl von über 13 Millionen Kommentaren analysiert.
 
-Mit einem sogennanten Tokenizer wird der Text in  Wörter aufgeteilt. In einfachen Fällen, wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Ist ein Punkt nun ein Satzende (und damit das vorherigen Buchstaben ein Wort) oder teile einer Abkürzung (und damit nicht zwangsläufig ein eigenes Wort)? Die Schwierigkeit erkennt man an diesem Beispiel.
+Zunächs müssen die Trainingsdaten, hier die 13 Millionen Kommentaren, mithilfe eines Tokenizers in Wörter aufgeteilt werden. In einfachen Fällen, wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Zeigt zum Beispiel ein Punkt nun das Ende eines Satzes an oder die Abkürzung eines Wortes? Die Schwierigkeit wird anhand dieses Beispiels deutlich:
+
 
 [SVG src:"/static/images/tokenizer.svg" /]
 *Text wird durch einen Tokenizer in Wörter aufgeteilt*
 
 ###### ignore please
 
-Jetzt haben wir Wörter. Im nächsten Abschnitt führen wir uns, wie genau die Bedeutung entsteht.
+Jetzt haben wir Wörter. Für die Weiterverarbeitung muss der Text als eine Liste von Wörtern vorliegen. Im nächsten Abschnitt schauen wir uns an, wie genau die Bedeutung entsteht. 
 
-## Bedeutung durch Kontext
+## Word Embeddings: Bedeutung durch Kontext
 
-Die Grundlegende Ansatz: Die Kolokation von Wörtern. Also welche Wörter werden mit welchen anderen Wörter im gleichen Satz auf. Der englische Linguister [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) stellt Mitte des 20. Jahrhunerts einige Theoreme auf.
+Bei dem grundlegende Ansatz geht es um die Frage, welche Wörter treten häufig mit anderen Wörtern auf, die sogenannte Kollokation von Wörtern. Der englische Linguist [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) hat Mitte des 20. Jahrhunderts, einige Feststellungen dazu gemacht auf. Diese bilden noch heute die Basis für  das Fundament der  Computerlinguistik.
+
 
 [Aside]
 > You shall know a word by the company it keeps. 
 [/Aside]
 
-> Du sollst ein Wort von der Begleitung kennen, die sie führt. 
+> Du sollst ein Wort von der Begleitung (Umgebung) kennen, das es führt.
+
+Quelle: John Rupert Firth (1957). "A synopsis of linguistic theory 1930-1955." In Special Volume of the Philological Society. Oxford: Oxford University Press.;
 
 [Aside]
 > The complete meaning of a word is always contextual, and no study of meaning apart from context can be taken seriously. 
@@ -106,7 +124,7 @@ Die Grundlegende Ansatz: Die Kolokation von Wörtern. Also welche Wörter werden
 
 > Die vollständige Bedeutung eines Wortes ist immer kontextabhängig, und keine Studie über die Bedeutung außer dem Kontext kann ernst genommen werden. 
 
-Der Kontext entscheidet über die wahre Beudeutung eines Wortes. Und ein Wort kann durch 
+Quelle: J. R. Firth (1935). "The Technique of Semantics." Transactions of the Philological Society, 36-72; p. 37 (Reprinted in Firth (1957) Papers in Linguistics. London: Oxford University Press, 7-33).
 
 [Aside]
 > Meaning by collocation is an abstraction at the syntagmatic level and is not directly concerned with the conceptual or idea approach to the meaning of words. One of the meanings of _night_ is its collocability with _dark_, and of _dark_, of course, collocation with _night_.
@@ -114,7 +132,10 @@ Der Kontext entscheidet über die wahre Beudeutung eines Wortes. Und ein Wort ka
 
 > Die Bedeutung durch Kollokation ist eine Abstraktion auf der syntagmatischen Ebene und hat nichts mit der begrifflichen oder ideellen Annäherung an die Bedeutung von Wörtern zu tun. Eine der Bedeutungen von _Nacht_ ist die Kollokationsfähigkeit mit _dunkel_, und von _dunkel_ natürlich die Kollokation mit _Nacht_.
 
-Konrekt kann man das den Beispielen verstehen.
+Quelle: John Rupert Firth (1957). "A synopsis of linguistic theory 1930-1955." In Special Volume of the Philological Society. Oxford: Oxford University Press.;
+
+
+Der Kontext entscheidet also über die tatsächliche Bedeutung eines Wortes. Konkret kann man das an den folgenden Beispielen verstehen.
 
 > Ich esse gerne **Fisch**. 
 
@@ -122,21 +143,20 @@ Konrekt kann man das den Beispielen verstehen.
 
 > Ich esse gerne **Brot**.
 
-Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschiene, dass die beiden Wörter in einem gewissen Maaße ähnlich sind. In diesem Fall, geht es um Lebensmitteln. Und so erlernt die Maschiene die Wörter.
+Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschine, dass die beiden Wörter in einem gewissen Maaße ähnlich sind. In diesem Fall, geht es um Lebensmitteln. Und so erlernt die Maschine die Wörter.
+
+So weit so gut, doch ein Rechner arbeitet nur mit Einsen und Nullen. Um also Worte in eine Sprache des Rechners zu übersetzen, benutzt man das Word Embedding (“Wort-Einbettung”). Jedem Wort wird eine Reihe von Werten zugeschrieben. Es wird über alle Sätze hinweg gezählt, welche Wörter mit welchen anderen Wörtern innerhalb eines gewissen Abstands vorkommen. Als Abstand wird z. B. 2 Verwendelt. Alle Wörter, die maximal zwei Wörter Abstand haben, werden gezählt. Ein Beispiel:
 
 [SVG src:"/static/images/window.svg" /]
-*Über jedes Wort wird iteriert*
+*Jede Wortpaarung mit einem Abstand von zwei wird gezählt.*
 
 ###### ignore please
 
+Nach dem Zählen, folgen eine reihen weiterer Schritte, [die hier näher beschrieben werden](/). Grundsätzlich entsteht am Ende eine Word Embeddings, welches jedem Wort mehrer Zahlenwerden zuordnet. Oft zwischen 300 oder 500 Zahlenwerden. Diese sind sogennten Dimensionen. Mithilfe dieser Zahlen wird die Bedeutung zugewiesen. So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen. Etliche wissenschaftliche Studien haben gezeigt, dass so zumindestens Teile einer Sprache erechnet werden kann.
 
+## Wie gut kann die Maschine Bedeutungen erlernen? Ausprobieren!
 
-Also die Beudeutung kommt nur durch Wörtern. Mittels matematischer Verfahren wird ermittelt, welche Wörter in ähnlichen Kontexten vorkommt. Am Ende hat man ein Modell bei dem man zu jedem Wort 500 Werte von 0 bis 1 hat. Details werden hier nicht erklärt. Nur so viel: Es wird ein Matrix aufgestellt, in ertem Schritt gezählt.
-
-
-## Wie gut kann die Machine Beudeutungen erlenen? Ausprobieren!
-
-Auf Grundlage von über 13 Millionen deutscher Online-Kommentare, gibt es nachfolgend die Möglichkeit die Macht von Word Embeddings auszuprobieren.
+Wir haben nun ein Word Embedding trainiert und geben hier dir die Möglichkeit es auszuprobieren. Die Grundlage waren die über 13 Millionen deutschen Online-Kommentaren.
 
 ## Bitte ein Wort auswählen
 
@@ -183,9 +203,7 @@ Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/]:
     ]`
 /]
 
-## Strukturen abbilden
-
-Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es werden jedoch die Strukturen zwischen den Begriffen verschleiert. Eine Projektion auf die Ebene bietet hier besseren Einblick. Hier ist zu beachten, dass Begriffe desto ähnlicher sich die Begriffe sind, desto näher sind sie zusammen. Die Achsen haben hier keine Bedeutung. [Hier erklären wir, wie genau es eine Ebene abgebildet werden kann.](/hintergrund/#todo)
+[Infokasten/]
 
 [var name:"nearest_small" value:`{data: [], tokens:[]}` /]
 [DataLoader value:nearest_small small:true src:`"https://ptf-vecs.app.vis.one/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n="` timeout:2000/]
@@ -205,8 +223,7 @@ Die ähnlichsten Begriffe als Rank darzustellen, ist ein einfacher Einstieg. Es 
 
 [hr/]
 
-Das ist nur ein Auschhnitt. In der Folge ein größere Ausschnitt. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
-
+Das ist nur ein Auschhnitt. In dem Word Embedding sind 100.000 Wörter enthalten. Es ist nur unmöglich alle zu zeigen. Deswegen ist es besser nur Ausschnitt zu betrachten.  In der Folge ein größere Ausschnitt. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
 
 
 [hr/]
@@ -251,10 +268,14 @@ Das ist nur ein Auschhnitt. In der Folge ein größere Ausschnitt. [Oder ein and
 
 [hr/]
 
+### Erkennung von Hasskommentaren
+
+Okay, jetzt nachdem wir dem Computer die Bedeutung beigebracht haben, wollen wir verstehen, wie der Computer entscheidet, ob es sich um einen Hasskommentare handelt oder nicht? Dafür müssen zunächst Kommentare manuell annotiert werden. Das heißt Menschen entscheiden gemeinsam über eine Trainingsmenge, was ein Hasskommentar ist und was nicht. Dann baut man ein zweistufiges Verfahren. Im ersten überführt man die Kommentare in Zahlen. Dies geschieht mittels Word Embeddings. Aufbauend auf das Word Embedding folgt ein Modell. Und dieses Modell wird mithilfe der Trainingsdaten trainiert. Es gibt hier viele unterschiedliche Verfahren. Am Bekanntesten sind künstliche neuronale Netze. Da ist es so, dass ein Modell bestraft wird, wenn es Fehler macht. Das Modell  wird also aus den annotierten Trainingsdaten l gefüttert. Wenn das Modell die richtige Antwort gibt, passiert nichts. Wenn es aber die falsche gibt, also ein Hasskommentare als nicht Hass eingestuft, dann wird das Modell automatisiert angepasst. Dies passiert solange, bis das Modell fertig trainiert ist. In der Folge hat man ein fertig geschultes Modell  das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
+
 
 ## Veränderung über die Zeit
 
-Im weiteren Verlauf haben wir uns angesehen, wie sich die Sprache verändert hat.
+Im nächsten Teil zeige ich Ihnen,, wie sich Sprache im Laufe der Zeit verändert.
 
 [👉 Weiter mit Teil II](/zeit/)
 
