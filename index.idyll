@@ -80,7 +80,7 @@ Mit dem Maschinellen Lernen möchte man, dem Computer die Bedeutung von Wörtern
 
 ### 1. Unüberwachtes Machine Learning
 
-Für Verfahren dieser Art werden zum Beispiel große Textmengen werden aus dem Internet automatisiert heruntergeladen. Oder stammen z. B. von Artikeln aus digitalen Zeitungsarchiven. Hier wird versucht, irgendwas aus den großen Textmengen zu machen, ohne dass der Text von Menschen inspiziert bzw. annotiert werden müssen. Das Überwachen bezieht sich auf den Menschen.
+Für Verfahren dieser Art werden zum Beispiel große Textmengen werden aus dem Internet automatisiert heruntergeladen. Oder stammen z. B. von Artikeln aus digitalen Zeitungsarchiven. Verfahren dieser Art, benötigen kein inspizieren bzw. annotieren der Daten durch Menschen. Das Überwachen bezieht sich auf den Menschen.
 
 ### 2. Überwachtes Machine Learning
 
@@ -281,8 +281,9 @@ Das ist nur ein Auschhnitt. In dem Word Embedding sind 100.000 Wörter enthalten
 Okay, jetzt nachdem wir dem Computer die Bedeutung beigebracht haben, wollen wir verstehen, wie der Computer entscheidet, ob es sich um einen Hasskommentare handelt oder nicht? Dafür müssen zunächst Kommentare manuell annotiert werden. Das heißt Menschen entscheiden gemeinsam über eine Trainingsmenge, was ein Hasskommentar ist und was nicht. Dann baut man ein zweistufiges Verfahren. Im ersten überführt man die Kommentare in Zahlen. Dies geschieht mittels Word Embeddings. Aufbauend auf das Word Embedding folgt ein Modell. Und dieses Modell wird mithilfe der Trainingsdaten trainiert. Es gibt hier viele unterschiedliche Verfahren. Am Bekanntesten sind künstliche neuronale Netze. Da ist es so, dass ein Modell bestraft wird, wenn es Fehler macht. Das Modell  wird also aus den annotierten Trainingsdaten gefüttert. Wenn das Modell die richtige Antwort gibt, passiert nichts. Wenn es aber die falsche gibt, also ein Hasskommentare als nicht Hass eingestuft, dann wird das Modell automatisiert angepasst. Dies passiert solange, bis das Modell fertig trainiert ist. In der Folge hat man ein fertig geschultes Modell  das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
 
 [SVG src:"/static/images/ml.svg" /]
-*Der Kommentar links unten (rot) wird gefüttert.*
+*Der Kommentar links unten (rot) wird in das Modell gefüttert. Wenn das Modell den Kommentar so wie Menschen bewertet, passiert nichts. Mach das Modell einen Fehler, wird es angepasst.*
 
+###### ignore please
 
 
 ## Veränderung über die Zeit

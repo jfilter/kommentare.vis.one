@@ -21,6 +21,11 @@ body {
   font-family: Lato;
 }
 
+a {
+  color: #2a2a7b;
+  font-weight: bold;
+}
+
 .d3-component svg {
   background: #ddd;
   max-height: 300px;
@@ -99,4 +104,21 @@ video {
   .dek {
     padding: 0 0.5rem;
   }
+}
+
+.infokasten {
+  border: 1px solid #2a2a7b;
+  background-color: lightblue;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.infokasten a {
+  color: black;
+}
+
+.byline a {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
 }
