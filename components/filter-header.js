@@ -51,7 +51,9 @@ class FilterHeader extends React.PureComponent {
               padding: "0.5rem"
             }}
           >
-            von <a href={this.props.authorLink}>{this.props.author}</a>,{" "}
+            Online-Projekt von{" "}
+            <a href={this.props.authorLink}>{this.props.author}</a>
+            <br></br>
             {this.props.date}
           </div>
         )}

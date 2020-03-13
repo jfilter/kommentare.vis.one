@@ -52,7 +52,15 @@
 
 In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsredaktionen manuell die Kommentare. Das ist personal- und zeitaufwendig. Und bei manchen Themen, ist es für die Medienhäuser kaum noch möglich, die Vielzahl an Kommentaren zu moderieren. Da wird dann die Kommentarfunktion mitunter einfach ganz abgeschaltet, um sich vor einer Flut an Hass-Kommentaren zu schützen.  
 
-Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Mit dieser Webseite werden einzelne Verfahren des Machine Learning am Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprache. Die Diszipling heißt Computerlinguistik (oder engl. Natural-Language Processing). Machine Learning wird auch bei der Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt. Darüber geht es hier nicht.
+Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Mit dieser Webseite werden einzelne Verfahren des Machine Learning am
+          Beispiel von Kommentaren erklärt. Der Fokus liegt auf der Verarbeitung
+          von Sprache. Die Diszipling heißt Computerlinguistik (oder engl.
+          Natural-Language Processing). Machine Learning wird auch bei der
+          Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt.
+          Darüber geht es hier nicht.
+
+[Overview1/]
+
 
 ![](/static/images/news.png)
 *[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), [Christoph Hoppenbrock](https://bildbauer.de/), verändert ([Original](https://demokratielabore.de/workshops/newsbusters/))*
@@ -270,7 +278,11 @@ Das ist nur ein Auschhnitt. In dem Word Embedding sind 100.000 Wörter enthalten
 
 ### Erkennung von Hasskommentaren
 
-Okay, jetzt nachdem wir dem Computer die Bedeutung beigebracht haben, wollen wir verstehen, wie der Computer entscheidet, ob es sich um einen Hasskommentare handelt oder nicht? Dafür müssen zunächst Kommentare manuell annotiert werden. Das heißt Menschen entscheiden gemeinsam über eine Trainingsmenge, was ein Hasskommentar ist und was nicht. Dann baut man ein zweistufiges Verfahren. Im ersten überführt man die Kommentare in Zahlen. Dies geschieht mittels Word Embeddings. Aufbauend auf das Word Embedding folgt ein Modell. Und dieses Modell wird mithilfe der Trainingsdaten trainiert. Es gibt hier viele unterschiedliche Verfahren. Am Bekanntesten sind künstliche neuronale Netze. Da ist es so, dass ein Modell bestraft wird, wenn es Fehler macht. Das Modell  wird also aus den annotierten Trainingsdaten l gefüttert. Wenn das Modell die richtige Antwort gibt, passiert nichts. Wenn es aber die falsche gibt, also ein Hasskommentare als nicht Hass eingestuft, dann wird das Modell automatisiert angepasst. Dies passiert solange, bis das Modell fertig trainiert ist. In der Folge hat man ein fertig geschultes Modell  das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
+Okay, jetzt nachdem wir dem Computer die Bedeutung beigebracht haben, wollen wir verstehen, wie der Computer entscheidet, ob es sich um einen Hasskommentare handelt oder nicht? Dafür müssen zunächst Kommentare manuell annotiert werden. Das heißt Menschen entscheiden gemeinsam über eine Trainingsmenge, was ein Hasskommentar ist und was nicht. Dann baut man ein zweistufiges Verfahren. Im ersten überführt man die Kommentare in Zahlen. Dies geschieht mittels Word Embeddings. Aufbauend auf das Word Embedding folgt ein Modell. Und dieses Modell wird mithilfe der Trainingsdaten trainiert. Es gibt hier viele unterschiedliche Verfahren. Am Bekanntesten sind künstliche neuronale Netze. Da ist es so, dass ein Modell bestraft wird, wenn es Fehler macht. Das Modell  wird also aus den annotierten Trainingsdaten gefüttert. Wenn das Modell die richtige Antwort gibt, passiert nichts. Wenn es aber die falsche gibt, also ein Hasskommentare als nicht Hass eingestuft, dann wird das Modell automatisiert angepasst. Dies passiert solange, bis das Modell fertig trainiert ist. In der Folge hat man ein fertig geschultes Modell  das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
+
+[SVG src:"/static/images/ml.svg" /]
+*Der Kommentar links unten (rot) wird gefüttert.*
+
 
 
 ## Veränderung über die Zeit
