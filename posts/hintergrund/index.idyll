@@ -12,6 +12,13 @@
 
 Auf dieser Seite werden weitergehende Informationen aufgelistet. Und Fragen beantwortet. Bei offenen Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben. 
 
+### Erkennung von Hasskommentaren
+
+Okay, jetzt nachdem wir dem Computer die Bedeutung beigebracht haben, wollen wir verstehen, wie der Computer entscheidet, ob es sich um einen Hasskommentare handelt oder nicht? Dafür müssen zunächst Kommentare manuell annotiert werden. Das heißt Menschen entscheiden gemeinsam über eine Trainingsmenge, was ein Hasskommentar ist und was nicht. Dann baut man ein zweistufiges Verfahren. Im ersten überführt man die Kommentare in Zahlen. Dies geschieht mittels Word Embeddings. Aufbauend auf das Word Embedding folgt ein Modell. Und dieses Modell wird mithilfe der Trainingsdaten trainiert. Es gibt hier viele unterschiedliche Verfahren. Am Bekanntesten sind künstliche neuronale Netze. Da ist es so, dass ein Modell bestraft wird, wenn es Fehler macht. Das Modell  wird also aus den annotierten Trainingsdaten gefüttert. Wenn das Modell die richtige Antwort gibt, passiert nichts. Wenn es aber die falsche gibt, also ein Hasskommentare als nicht Hass eingestuft, dann wird das Modell automatisiert angepasst. Dies passiert solange, bis das Modell fertig trainiert ist. In der Folge hat man ein fertig geschultes Modell  das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
+
+[SVG src:"/static/ml.svg" /]
+*Der Kommentar links unten (rot) wird in das Modell gefüttert. Wenn das Modell den Kommentar so wie Menschen bewertet, passiert nichts. Mach das Modell einen Fehler, wird es angepasst.*
+
 ### Was sind Word Embeddings?
 
 Word Embedding stehen für Verfahren, bei denen Wörtern ein Vektor zugewiesen wird. Ein Vektor ist eine feste Anzahl (z. B. 300) von Werten zwischen -1 und 1. In diesem Vektorraum sind ähnliche Wörter enger zusammen. Mit Word Embeddings werden aus Wörter Zahlen.
