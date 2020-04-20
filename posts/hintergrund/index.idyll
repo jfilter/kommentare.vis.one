@@ -1,53 +1,57 @@
-[meta title:"Hintergrund – Kommentare.vis.one" description:"Maschinelles Lernen wird als Lösung verkauft, um Hass aus dem Internet zu filtern. Diese Webseite erklärt wie 'die Maschinen' die Bedeutung von Wörtern erlernen." url:"https://kommentare.vis.one/hintergrund" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/preview.png" /]
+[meta title:"Hintergrund – Kommentare.vis.one" description:"Mehr Informationen zu Daten & Verfahren" url:"https://kommentare.vis.one/hintergrund" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/preview.png" /]
 
 [Header
   fullWidth:true
-  title:"Hintergrund zu Daten & Verfahren"
-  subtitle:"Hier werden alle Fragen beantwortet"
+  title:"Hintergrund Kommentare.vis.one"
+  subtitle:"Mehr Informationen zu Daten & Verfahren"
   background:"#222222"
   color:"#ffffff"
    /]
 
-## Hintergrundinformationen zu Kommentare.vis.one
+Auf dieser Seite, dem dritten Teil, werden weitergehende Informationen aufgelistet und offene Fragen beantwortet. Bei weiteren Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben. 
 
-Auf dieser Seite werden weitergehende Informationen aufgelistet. Und Fragen beantwortet. Bei offenen Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben. 
+[Teil I](/) gibt eine generelle Einführung zum Machine Learning und [Teil II](/zeit/) geht um Änderung von Sprache über die Zeit.
 
-### Erkennung von Hasskommentaren
+### Wie genau werden mithilfe von Word Embeddings Kommentare klassifiziert?
 
-Okay, jetzt nachdem wir dem Computer die Bedeutung beigebracht haben, wollen wir verstehen, wie der Computer entscheidet, ob es sich um einen Hasskommentare handelt oder nicht? Dafür müssen zunächst Kommentare manuell annotiert werden. Das heißt Menschen entscheiden gemeinsam über eine Trainingsmenge, was ein Hasskommentar ist und was nicht. Dann baut man ein zweistufiges Verfahren. Im ersten überführt man die Kommentare in Zahlen. Dies geschieht mittels Word Embeddings. Aufbauend auf das Word Embedding folgt ein Modell. Und dieses Modell wird mithilfe der Trainingsdaten trainiert. Es gibt hier viele unterschiedliche Verfahren. Am Bekanntesten sind künstliche neuronale Netze. Da ist es so, dass ein Modell bestraft wird, wenn es Fehler macht. Das Modell  wird also aus den annotierten Trainingsdaten gefüttert. Wenn das Modell die richtige Antwort gibt, passiert nichts. Wenn es aber die falsche gibt, also ein Hasskommentare als nicht Hass eingestuft, dann wird das Modell automatisiert angepasst. Dies passiert solange, bis das Modell fertig trainiert ist. In der Folge hat man ein fertig geschultes Modell  das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
+Word Embeddings sind dazu da, Wörter in Zahlen zu überführen. Das ist notwendig, damit "die Zahlen" in ein Modell überführt werden und trainiert werden können. Das Modell besteht aus Parameter, die angepasst werden können. In einer Trainingsphase werden dem Modell Kommentare präsentiert und das Modell muss raten. Ist es Hasskommentar (mit Beleidigung) oder nicht? Wenn das Modell richtig liegt, passiert nichts. Wenn es falsch liegt, dann werden automatisiert die Parameter angepasst.
+
+In der Folge hat man ein Modell, das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
 
 [SVG src:"/static/ml.svg" /]
 *Der Kommentar links unten (rot) wird in das Modell gefüttert. Wenn das Modell den Kommentar so wie Menschen bewertet, passiert nichts. Mach das Modell einen Fehler, wird es angepasst.*
 
 ### Was sind Word Embeddings?
 
-Word Embedding stehen für Verfahren, bei denen Wörtern ein Vektor zugewiesen wird. Ein Vektor ist eine feste Anzahl (z. B. 300) von Werten zwischen -1 und 1. In diesem Vektorraum sind ähnliche Wörter enger zusammen. Mit Word Embeddings werden aus Wörter Zahlen.
+Word Embedding stehen für Verfahren, bei denen Wörtern ein Vektor zugewiesen wird. Ein Vektor ist eine feste Anzahl (z. B. 300 oder 500) von Werten zwischen -1 und 1. In diesem Vektorraum sind ähnliche Wörter enger zusammen. Mit Word Embeddings werden aus Wörter Zahlen. Ähnliche Wörter haben idealerweise auch ähnliche Vektoren.
 
 ### Wie genau wurden die Word Embeddings erstellt?
 
-Es gibt unterschiedliche Verfahren wie Word Embeddings erstellt werden, doch das Grundprinzip ist das Gleiche. Basierend auf einer großen Menge an Text wird automatisch analysiery, werde Wörtern mit welchen anderen Wörter vorkommt. Das wird dadurch erreicht, indem man über alle Sätze iterirt. In einer gewissen Fenstegrößer werden Koolokatione vermerkt.
+Es gibt unterschiedliche Verfahren wie Word Embeddings erstellt werden, doch das Grundprinzip ist das Gleiche. Basierend auf einer großen Menge an Text wird automatisch analysiert, welche Wörtern mit welchen anderen Wörtern zusammen vorkommen, sogenannte Kollokation. [Die Süddeutsche Zeitung erklärt Word Embeddings in einem aktuellen Artikel ausführlich.](https://projekte.sueddeutsche.de/artikel/politik/so-haben-wir-den-bundestag-ausgerechnet-e893391/)
 
-[Die Süddeutsche Zeitung erklärt Word Embeddings für ihne Auswertung ausführlich.](https://projekte.sueddeutsche.de/artikel/politik/so-haben-wir-den-bundestag-ausgerechnet-e893391/)
-
-Im Gegensatz zu der der Süddeutsche Zeitung wurden für diese Analyse ein Verfahrn verwendet, welches Wordpaare zählt (PPMI/SVD). Für Interessierte gibt ein [wissenschaftliche Paper Hintergrundinformationen](https://www.aclweb.org/anthology/Q15-1016/).
+Aber im Gegensatz zu dem Ansatz der Süddeutsche Zeitung wurden für diese Analyse ein leicht anderes Verfahren verwendet (PPMI/SVD statt Word2Vec). Für Interessierte gibt ein [wissenschaftliches Paper Hintergrundinformationen](https://www.aclweb.org/anthology/Q15-1016/).
 
 ### Bilden Word Embeddings die Realität ab?
 
-Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten ab. Die Sprache in den Kommentaren steht nichts zwangsläufig würde die Wahrheit oder Realität ab. 
+Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten ab. Die Sprache in den Kommentaren (wie in diesem Fall) steht nicht zwangsläufig für die Wahrheit oder die Realität. Und auch andere große Textmengen, wie z. B. alle englischen Wikipedia-Artikel, sind in ihre Gesamtheit nicht neutral.
 
-Ein Problem ist, dass bei großer Textmenge dann auch zum Bias kommen kann. So hat ein Forscher herausgefunden, dass eine Google-API, die zu ähnliches bentuzen. Das Word Mexiso negativ eingeordetnet. Das kam dadurch dass auf Hasskommentaren traniert wurd. Und es gab viel mehr negative Kommentem zu Mexio als zu anderern Ländern.
+Ein Problem ist es, dass bei großen Textmengen häufig zu einem Bias kommet. [So hat ein Forscher-Team herausgefunden](https://techcrunch.com/2019/08/14/racial-bias-observed-in-hate-speech-detection-algorithm-from-google/), dass eine API von Google, die Hatespeech erkennen soll, rassistisch ist. So wird das Englisch, welche von Afroamerikanern genutzt wird, häufiger mit negativ konnotierte Wörtern in Verbindung gebracht.
+
+Zudem kommen heutige Verfahren kommen noch nicht menschliche Fähigkeiten ran ([auch wenn es weitere Fortschritte gibt](https://www.nytimes.com/2018/11/18/technology/artificial-intelligence-language.html)).
 
 ### Wie wird die Ähnlichkeit zwischen Wörtern errechnet?
 
-Da die Wörter aus Vektoren (eine Reihe von Zahlen (z. B. 500)) bestehen, dient der Winkel als Zeichen der Ähnlichkeit. Mithilfe des [Kosinus-Ähnlichkeit](https://de.wikipedia.org/wiki/Kosinus-%C3%84hnlichkeit) wird diese errechnet.
+Da die Wörter aus Vektoren (eine Reihe von Zahlen (z. B. 500)) bestehen, dient der Winkel zwischen zwei Vektoren als Maß der Ähnlichkeit. Zum Beispiel mithilfe der [Kosinus-Ähnlichkeit](https://de.wikipedia.org/wiki/Kosinus-%C3%84hnlichkeit) wird dies errechnet.
 
-### Wie kann die ähnliches Begriffe auf einer Ebene dargestellt werden?
+### Wie kann ein Word Embedding auf einer Ebene dargestellt werden?
 
-Um die Begriffe auf einer Ebene zubringen, brauch man Vektoren die aus zwei Dimensionen bestehen (für die X-Ache und Y-Achse). Dazu benutzen wird das Verfahen der Dimeionsreduktion. Dieses "komprimiert" die Daten so, dass möglichst wenige Informationen verloren werden. Es wird [Hauptkomponentenanalyse (Principal Component Analyse (PCA))](https://de.wikipedia.org/wiki/Hauptkomponentenanalyse) verwendet.
+Um die Begriffe auf einer Ebene zubringen, brauch man Vektoren die aus zwei Dimensionen bestehen (für die x-Ache und y-Achse). Dazu benutzen wird das Verfahren der Dimensionsreduktion. Dieses "komprimiert" die Daten so, dass möglichst wenige Informationen verloren werden. Es wird [Hauptkomponentenanalyse (Principal Component Analyse (PCA))](https://de.wikipedia.org/wiki/Hauptkomponentenanalyse) verwendet.
+
+Damit man sinnvolle Ergebnisse erhält, kann man nur auf einen Ausschnitt der Daten machen. Alle (z. B. 100.000) Wörter können sowieso nicht auf einmal dargestellt werden. Zudem funktioniert die Kompression so besser, auf desto weniger Wörtern gearbeitet wird. Daher werden z. B. zu einem gegebenen Begriff nur z. B. 10 Wörter dargestellt.
 
 ### Woher kommen die Daten?
 
-Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019. Ingesamt gibt es über 13 Millionen Kommentare bestehend aus rund 45 Millionen Sätze. Die Sätze verteilen sich auf folgendermaßen über die Zeit:
+Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019. Insgesamt gibt es über 13 Millionen Kommentare bestehend aus rund 45 Millionen Sätze. Die Sätze verteilen sich auf folgendermaßen über die Zeit:
 
 2010-2011:  ~3 Millionen Sätze
 
@@ -60,9 +64,9 @@ Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019. 
 2018-2019:  ~15 Millionen Sätze
 
 
-### Wie wurde der Text bearbeitet?
+### Wie wurde der Text der Kommentare bearbeitet?
 
-Zunächste wurden Wörter ohne Bedeutung, sogennante "Stop Words", wie z. B. Artikel entfernt. Zudem wurden alle Wörter auf ihren Wortstamm zurückgeführt ("lemmatized"). Also z. B. das Plural-S entfernt bei Verben auf den Infinitiv ersetzt. Hier kommt es durch die automatiserte Verabeitung manchmal zu Fehlern. Zudem wurden alle Wörter klein geschrieben und Ziffern durch 0 ersetzt. Da im Deutschen Wörter in unterschiedliche Formen vorkommen (z. B. Konjugation), wurden somit die Anzahl an unterschiedlichen Wörter reduziert, um bessere Ergebnisse auf kleinen Text-Corpora zu erzielen.
+Zunächst wurden Wörter ohne Bedeutung, sogenannte “Stop Words”, wie z. B. Artikel (der, die das) entfernt. Zudem wurden alle Wörter auf ihren Wortstamm zurückgeführt (“lemmatized”). Also z. B. das Plural-S entfernt bei Verben auf den Infinitiv ersetzt. Hier kommt es durch die automatisierte Verarbeitung manchmal zu Fehlern. Zudem wurden alle Wörter kleingeschrieben und Ziffern durch 0 ersetzt. Da im Deutschen Wörter in unterschiedliche Formen vorkommen (z. B. Konjugation), wurden somit die Anzahl an unterschiedlichen Wörter reduziert, um bessere Ergebnisse auf kleinen Textkorpora zu erzielen.
 
 ### Kann ich die Word Embeddings haben?
 
@@ -72,13 +76,13 @@ Ja, sie stehen zum Download bereit. Es gibt ein Embedding für alle Kommentare. 
 
 Die Word Embeddings wurden mit der eigens entwickelten Bibliothek [hyperhyper](https://github.com/jfilter/hyperhyper) entwickelt. 
 
-Folgende Parameter wurden für das Embedding mit allen Kommentaren verwendet: 
+Folgende Parameter wurden für das Embedding mit allen Kommentaren (2010 - 2019) verwendet: 
 
 ```
 window: 10, dynamic_window: 'decay', decay_rate: 0.375, delete_oov: true, subsample: 'deter', subsample_factor: 7.268e-05, neg: 1.5, eig: 0.3, dim: 500
 ```
 
-Und diese 
+Und diese für die fünf anderen Embeddings für je zwei Jahre
 
 ```
 window: 10, dynamic_window: 'decay', decay_rate: 0.33, delete_oov: true, subsample: 'deter', subsample_factor: 7e-05, neg: 1, eig: 0.35, dim: 500
@@ -90,7 +94,7 @@ Die Hyperparameter wurden durch Experimente auf [Evaluationsdaten](https://githu
 
 Ja, sämtliche verwendete und programmierte Software steht unter Open-Source-Lizenz.
 
-Hier eine Übersicht über den verwendeten Code: https://github.com/jfilter/ptf
+Hier eine Übersicht über den verwendeten Code: https://github.com/jfilter/ptf-kommentare
 
 [hr /]
 
@@ -103,7 +107,7 @@ Bei offenen Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi
 
 * [Teil I: Einführung](/)
 * [Teil II: Veränderung in den Kommentaren](/zeit/)
-* **[Teil III: Hintergrund zu Daten & Verfahren](/hintergrund/)**
+* *[Teil III: Hintergrund zu Daten & Verfahren](/hintergrund/)*
 
 [hr /]
 

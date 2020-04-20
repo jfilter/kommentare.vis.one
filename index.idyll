@@ -66,18 +66,18 @@ Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus de
 
 Mit dem Aufkommen der Informationstechnologie im 20. Jahrhundert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mit Hilfe von Programmcodes gelöst. Programmier:innen formulieren einen sogenannten Algorithmus, der Hasskommentare finden soll. Das könnte etwa mit einer langen Liste funktionieren, in der alle beleidigenden Worte gesammelt sind.  Immer dann, wenn ein Wort aus der Liste in einem Kommentar auftaucht, markiert der Algorithmus den Kommentar als Hasskommentar.
 
-Nur lässt sich dieser Ansatz leicht austricksen. Hasskommentare, die leichte Abwandlungen beinhalten, erkennt der Algorithmus nicht. Es reicht schon, wenn einzelne Buchstaben durch Zahlen ersetzt werden. Also aus Beleidigung wird etwa “Bele1digung” und der Kommentar wird nicht als Hasskommentar erkannt. Für den Menschen ist es einfach die Manipulation zu erkennen, für den Algorithmus ist das nicht möglich, da er sich an die vorgegebene Liste hält.. Auch ist es sehr zeitaufwendig, eine solch umfassende Liste anzufertigen, da sich Sprache immer verändert und immer neue Beleidigungen kreiert werden können. . Zudem kommt es auf den Kontext an, ggf. ist ein sonst beleidigendes Wort im Zusammenhang mit Satire, Ironie oder Humor anders zu verstehen. Dadurch kann es passieren, dass scherzhaft gemeinte Kommentare durch den Algorithmus als Hasskommentare gekennzeichnet werden.
+Nur lässt sich dieser Ansatz leicht austricksen. Hasskommentare, die leichte Abwandlungen beinhalten, erkennt der Algorithmus nicht. Es reicht schon, wenn einzelne Buchstaben durch Zahlen ersetzt werden. Also aus "Beleidigung" wird etwa “Bele1digung” und der Kommentar wird nicht als Hasskommentar erkannt. Für den Menschen ist es einfach die Manipulation zu erkennen, für den Algorithmus ist das nicht möglich, da er sich an die vorgegebene Liste hält. Auch ist es sehr zeitaufwendig, eine solch umfassende Liste anzufertigen, da sich Sprache immer verändert und immer neue Beleidigungen kreiert werden können. Zudem kommt es auf den Kontext an, ggf. ist ein sonst beleidigendes Wort im Zusammenhang mit Satire, Ironie oder Humor anders zu verstehen. Dadurch kann es passieren, dass scherzhaft gemeinte Kommentare durch den Algorithmus als Hasskommentare gekennzeichnet werden.
 
 
 Diese Probleme könnten durch die Anwendung von Machine Learning überwunden werden. Mit Machine Learning sollen Computer die Bedeutung von Wörtern erlernen, damit der Computer die Zusammenhänge verstehen kann. Es gibt zwei Arten von Machine Learning.
 
-### 1. Unüberwachtes Machine Learning
+### 1. Überwachtes Machine Learning
 
-Beim überwachten Machine Learning geht es darum, den Algorithmus auf eine Problemstellung einzuspielen, damit er dann innerhalb dieses Rahmens Antworten ausspucken kann. Beispielsweise soll der Algorithmus erkennen, ob auf Bildern Katzen oder Hunde zu erkennen sind. In einem ersten Schritt müssen die Bilder von einem Menschen benannt werden. Die Bilder werden also als Katzen- oder Hundebilder gelabelt oder annotiert. Nur so kann der Computer dann lernen, was auf dem Bild abgebildet ist. Die richtige Antwort ist also vorgegeben. Dadurch weiß der Algorithmus immer, ob seine eigene Antwort richtig oder falsch ist und er kann seine Parameter anhand dessen anpassen.
+Beim überwachten Machine Learning geht es darum, den Computerprogramm auf eine Problemstellung einzuspielen, damit er dann innerhalb dieses Rahmens automatisiert Antworten ausspucken kann. Beispielhafter Anwendungsfall für Bilder: Ein Programm soll erkennen, ob auf Bildern Katzen oder Hunde zu erkennen sind. In einem ersten Schritt müssen die Bilder von einem Menschen benannt werden. Die Bilder werden also als Katzen- oder Hundebilder annotiert oder gelabelt. Nur so kann der Computer dann lernen, was auf dem Bild abgebildet ist. Die richtige Antwort ist also vorgegeben. Dadurch weiß das Programm immer, ob seine eigene Antwort richtig oder falsch ist und er kann seine Parameter anhand dessen anpassen. Die Parameter eines programmes sind das Gehirn, sie werden auch als Modell bezeichnet. Im echten Betrieb, soll das Programm mit einem Modell dann ohne menschliche Hilfe Hunde von Katzen unterscheiden.
 
-### 2. Überwachtes Machine Learning
+### 2. Unüberwachtes Machine Learning
 
-Beim unüberwachten Machine Learning gibt es diese Vorgaben nicht. Der Algorithmus wird mit einer großen Menge an Daten gefüttert und hat keine spezifischen Anweisungen, was die Daten bedeuten sollen.  Der Algorithmus wird mit automatisch aus dem Internet heruntergeladenen Texten, zum  Beispiel aus digitalen Zeitungsarchiven gefüttert. Die Maschine selbst erkundet die Strukturen der Daten und soll für den Menschen daraus sinnvolle Informationen bilden. Das passiert etwa bei Clustering Verfahren.
+Beim unüberwachten Machine Learning gibt es diese Vorgaben nicht. Ein Programm wird mit einer großen Menge an Daten gefüttert und hat keine spezifischen Anweisungen, was die Daten bedeuten sollen. Zum Beispiel: Ein Programm wird mit automatisch aus dem Internet heruntergeladenen Texten, aus digitalen Zeitungsarchiven gefüttert. Die Maschine selbst erkundet die Strukturen der Daten und soll für den Menschen daraus sinnvolle Informationen bilden.
 
 ## Klassifikation von Kommentaren
 
@@ -92,7 +92,7 @@ Um nun Hasskommentare automatisiert erkennen zu können, müssen das unüberwach
 
 ## Sprache, Computer und Repräsentation
 
-Wörter sind keine Zahlen. Aber ein Computer rechnet nur mit Zahlen. Wie werden also aus Wörter Zahlen? Damit ein Computer  Text analysieren kann, benötigt man für die Auswertung eine gewisse Datenmenge. Je mehr Daten der Algorithmus auswerten kann, umso besser sind die Ergebnisse aus dem Machine Learning. Zunächst müssen die Trainingsdaten mithilfe eines Tokenizers in Wörter aufgeteilt werden. In einfachen Fällen wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Zeigt zum Beispiel ein Punkt nun das Ende eines Satzes an oder die Abkürzung eines Wortes? Die Schwierigkeit wird anhand dieses Beispiels deutlich:
+Wörter sind keine Zahlen. Aber ein Computer rechnet nur mit Zahlen. Wie werden also aus Wörter Zahlen? Damit ein Computer Text analysieren kann, benötigt man für die Auswertung eine gewisse Datenmenge. Je mehr Daten der Algorithmus auswerten kann, umso besser sind die Ergebnisse aus dem Machine Learning. Zunächst müssen die Trainingsdaten mithilfe eines Tokenizers in Wörter aufgeteilt werden. In einfachen Fällen wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Zeigt zum Beispiel ein Punkt nun das Ende eines Satzes an oder die Abkürzung eines Wortes? Die Schwierigkeit wird anhand dieses Beispiels deutlich:
 
 
 [SVG src:"/static/images/tokenizer.svg" /]
@@ -104,34 +104,27 @@ Jetzt haben wir Wörter. Für die Weiterverarbeitung muss der Text als eine List
 
 ## Word Embeddings: Bedeutung durch Kontext
 
-Bei dem grundlegenden Ansatz geht es um die Frage, welche Wörter treten häufig mit anderen Wörtern auf, die sogenannte Kollokation von Wörtern. Der englische Linguist [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) hat Mitte des 20. Jahrhunderts, einige Feststellungen dazu gemacht auf. Diese bilden noch heute die Basis für das Fundament der Computerlinguistik.
+Bei dem grundlegenden Ansatz geht es um die Frage, welche Wörter treten häufig mit anderen Wörtern auf, die sogenannte Kollokation von Wörtern. Der englische Linguist [John Rupert Firth](https://en.wikipedia.org/wiki/John_Rupert_Firth) hat Mitte des 20. Jahrhunderts, einige Überlegungen dazu gemacht auf. Diese bilden noch heute das Fundament der Computerlinguistik. Zwei Zitate als Auszug:
 
 [Aside]
 > You shall know a word by the company it keeps. 
 [/Aside]
 
-> Du sollst ein Wort von der Begleitung (Umgebung) kennen, das es führt.
+> Du sollst ein Wort von seiner Umgebung kennen.
 
-Quelle: John Rupert Firth (1957). "A synopsis of linguistic theory 1930-1955." In Special Volume of the Philological Society. Oxford: Oxford University Press.;
+und auch
 
 [Aside]
 > The complete meaning of a word is always contextual, and no study of meaning apart from context can be taken seriously. 
 [/Aside]
 
-> Die vollständige Bedeutung eines Wortes ist immer kontextabhängig, und keine Studie über die Bedeutung außer dem Kontext kann ernst genommen werden. 
-
-Quelle: J. R. Firth (1935). "The Technique of Semantics." Transactions of the Philological Society, 36-72; p. 37 (Reprinted in Firth (1957) Papers in Linguistics. London: Oxford University Press, 7-33).
-
-[Aside]
-> Meaning by collocation is an abstraction at the syntagmatic level and is not directly concerned with the conceptual or idea approach to the meaning of words. One of the meanings of _night_ is its collocability with _dark_, and of _dark_, of course, collocation with _night_.
-[/Aside]
-
-> Die Bedeutung durch Kollokation ist eine Abstraktion auf der syntagmatischen Ebene und hat nichts mit der begrifflichen oder ideellen Annäherung an die Bedeutung von Wörtern zu tun. Eine der Bedeutungen von _Nacht_ ist die Kollokationsfähigkeit mit _dunkel_, und von _dunkel_ natürlich die Kollokation mit _Nacht_.
-
-Quelle: John Rupert Firth (1957). "A synopsis of linguistic theory 1930-1955." In Special Volume of the Philological Society. Oxford: Oxford University Press.;
-
+> Die vollständige Bedeutung eines Wortes ist immer kontextabhängig, und keine kontextunabhänige Untersuchungen über Bedeutungen kann ernst genommen werden. 
 
 Der Kontext entscheidet also über die tatsächliche Bedeutung eines Wortes. Konkret kann man das an den folgenden Beispielen verstehen.
+
+[Aside]
+Quelle: J. R. Firth (1935) "The Technique of Semantics." und John Rupert Firth (1957) "A synopsis of linguistic theory 1930-1955."
+[/Aside]
 
 > Ich esse gerne **Fisch**. 
 
@@ -146,7 +139,7 @@ Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschine
 
 ###### ignore please
 
-Nach dem Zählen, folgen eine Reihe weiterer Schritte, [die wir hier näher beschreiben](/). Grundsätzlich steht am Ende eine Word Embeddings links eine lange Liste an Wörtern, und auf der rechten Seite sind jedem Wort lange Zahlenkolonnen zugeordnet. Oft sind das pro Wort zwischen 300 oder 500 Zahlen werden. Anhand dieser Zahlenreihen versteht der Algorithmus die Bedeutung der Wörter. So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen. Da der Algorithmus nun den Worten konkrete Zahlen zugeordnet hat, kann mit diesen Werten gerechnet werden.
+Nach dem Zählen, folgen eine Reihe weiterer Schritte, [die wir hier näher beschreiben](/) TODO. Grundsätzlich steht am Ende eine Word Embeddings links eine lange Liste an Wörtern, und auf der rechten Seite sind jedem Wort lange Zahlenkolonnen zugeordnet. Oft sind das pro Wort zwischen 300 oder 500 Zahlen werden. Anhand dieser Zahlenreihen versteht der Algorithmus die Bedeutung der Wörter. So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen. Da der Algorithmus nun den Worten konkrete Zahlen zugeordnet hat, kann mit diesen Werten gerechnet werden.
 
 ## Wie gut kann die Maschine Bedeutungen erlernen? Ausprobieren!
 
@@ -173,7 +166,7 @@ oder eigenes Wort eingeben:
 
 [br /]
 
-Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/]:
+Die 10 ähnlichsten Wörter (wie der Computer sie sieht) zu [Display value:`(chooseQ.tokens[0] ||  q)`/]:
 
 [Table
     data:`qTable.tokens.map((k, i) => ({token: k, sim: qTable.sims[i]}));`
@@ -217,7 +210,7 @@ Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/]:
 
 [hr/]
 
-Das ist nur ein Auschhnitt. In dem Word Embedding sind 100.000 Wörter enthalten. Es ist nur unmöglich alle zu zeigen. Deswegen ist es besser nur Ausschnitt zu betrachten.  In der Folge ein größere Ausschnitt. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
+Das ist nur ein Auschhnitt aus einem Word Embedding. In dem Word Embedding sind 100.000 Wörter enthalten, es ist nur unmöglich alle zu zeigen. Deswegen ist es besser nur Ausschnitt zu betrachten. In der Folge ein größere Ausschnitt, um mehr auf einmal zu sehen. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
 
 
 [hr/]
@@ -260,12 +253,14 @@ Das ist nur ein Auschhnitt. In dem Word Embedding sind 100.000 Wörter enthalten
   [Ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
 [/Conditional]
 
-[hr/]
+[hr /]
 
+
+Für Interessierte gibt es einen Exkurs zur Klassifizierung. Ansonsten geht es weiter mit...
 
 ## Veränderung über die Zeit
 
-Im nächsten Teil zeige ich Ihnen, wie sich Sprache im Laufe der Zeit verändert.
+Im nächsten Teil wird gezeigt, wie sich Sprache im Laufe der Zeit verändert.
 
 [👉 Weiter mit Teil II](/zeit/)
 
@@ -273,7 +268,7 @@ Im nächsten Teil zeige ich Ihnen, wie sich Sprache im Laufe der Zeit verändert
 
 ## Übersicht
 
-* **[Teil I: Einführung](/)**
+* *[Teil I: Einführung](/)*
 * [Teil II: Veränderung in den Kommentaren](/zeit/)
 * [Teil III: Hintergrund zu Daten & Verfahren](/hintergrund/)
 

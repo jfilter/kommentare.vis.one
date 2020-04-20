@@ -8,8 +8,8 @@ class Overview1 extends React.PureComponent {
         <h3>Übersicht über das Projekt</h3>
         <p>
           Im ersten Teil (diese Seite) werden Grundlagen von Machine Learning
-          eklärt. <a href="/zeit/">Im zweiten Teil</a> wird mithilfe von Machine
-          Learning die Veränderung der Sprache in den Kommentarenspalte
+          erklärt. <a href="/zeit/">Im zweiten Teil</a> wird mithilfe von
+          Machine Learning die Veränderung der Sprache in den Kommentarenspalte
           visualisiert.
           <div
             style={{
@@ -29,11 +29,11 @@ class Overview1 extends React.PureComponent {
               style={{ margin: "1rem auto" }}
             >
               <source
-                src={`http://kommentare.vis.one/videos/mittelmeer.mp4`}
+                src={`https://kommentare.vis.one/videos/mittelmeer.mp4`}
                 type="video/mp4"
               />
               <source
-                src={`http://kommentare.vis.one/videos/404.mp4`}
+                src={`https://kommentare.vis.one/videos/404.mp4`}
                 type="video/mp4"
               />
               Bitte einen anderen Browser, z. B. Firefox oder Chrome, benutzen.
