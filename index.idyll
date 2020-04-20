@@ -139,7 +139,7 @@ Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschine
 
 ###### ignore please
 
-Nach dem Zählen, folgen eine Reihe weiterer Schritte, [die wir hier näher beschreiben](/) TODO. Grundsätzlich steht am Ende eine Word Embeddings links eine lange Liste an Wörtern, und auf der rechten Seite sind jedem Wort lange Zahlenkolonnen zugeordnet. Oft sind das pro Wort zwischen 300 oder 500 Zahlen werden. Anhand dieser Zahlenreihen versteht der Algorithmus die Bedeutung der Wörter. So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen. Da der Algorithmus nun den Worten konkrete Zahlen zugeordnet hat, kann mit diesen Werten gerechnet werden.
+Nach dem Zählen, folgen eine [Reihe weiterer Schritte](/hintergrund#wie-genau-wurden-die-word-embeddings-erstellt?). Grundsätzlich steht am Ende eine Word Embeddings links eine lange Liste an Wörtern, und auf der rechten Seite sind jedem Wort lange Zahlenkolonnen zugeordnet. Oft sind das pro Wort zwischen 300 oder 500 Zahlen werden. Anhand dieser Zahlenreihen versteht der Algorithmus die Bedeutung der Wörter. So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen. Da der Algorithmus nun den Worten konkrete Zahlen zugeordnet hat, kann mit diesen Werten gerechnet werden.
 
 ## Wie gut kann die Maschine Bedeutungen erlernen? Ausprobieren!
 
@@ -147,26 +147,26 @@ Wir haben nun ein Word Embedding trainiert und geben hier dir die Möglichkeit e
 
 ## Bitte ein Wort auswählen
 
-[Radio value:q options:`['merkel', 'mittelmeer', 'mieten', 'afd', 'migrant', 'überwachung']` /]
+[Radio value:q options:`['auto', 'berlin', 'merkel', 'mittelmeer', 'mieten', 'afd', 'migrant', 'überwachung']` /]
 
 oder eigenes Wort eingeben:
 
-[var name:"q" value:"merkel" /]
+[var name:"q" value:"auto" /]
 [TextInput value:q  /]
 
 [var name:"chooseQ" value:`{tokens:[]}` /]
-[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead_videos/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:500/]
+[DataLoader value:chooseQ src:`"https://ptf-vecs.app.vis.one/typeahead_videos/german_comments_2010_2019_100k?q=" + q + "&n=100"` timeout:300/]
 
 // cut of first token if it's the same
 
 [Radio value:q options:`q === '' ? [] : (chooseQ.tokens[0] == q ? chooseQ.tokens.slice(1) : chooseQ.tokens)` /]
 
 [var name:"qTable" value:`{tokens:[], sims: []}` /]
-[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n=10"` timeout:1000 /]
+[DataLoader value:qTable src:`"https://ptf-vecs.app.vis.one/sim/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n=10"` timeout:600 /]
 
 [br /]
 
-Die 10 ähnlichsten Wörter (wie der Computer sie sieht) zu [Display value:`(chooseQ.tokens[0] ||  q)`/]:
+Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/] (so wie es der Computer sieht):
 
 [Table
     data:`qTable.tokens.map((k, i) => ({token: k, sim: qTable.sims[i]}));`
@@ -202,15 +202,17 @@ Die 10 ähnlichsten Wörter (wie der Computer sie sieht) zu [Display value:`(cho
       [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` /]
   [/Graphic]
 
-  [Step]#### nur der Fokus [/Step]
-  [Step]#### die nähesten Wörter[/Step]
+  [Step]#### zu diesem Wort wollen wir ähnliche Begriffe anzeigen [/Step]
+  [Step]#### das sind die nähesten Wörter[/Step]
   [Step]#### mehr Wörter[/Step]
-  [Step]#### noch mehr Wörter[/Step]
+  [Step]#### diese Wörter sind unähnliche (bzw. sieht das der Computer so)[/Step]
 [/Scroller]
 
 [hr/]
 
-Das ist nur ein Auschhnitt aus einem Word Embedding. In dem Word Embedding sind 100.000 Wörter enthalten, es ist nur unmöglich alle zu zeigen. Deswegen ist es besser nur Ausschnitt zu betrachten. In der Folge ein größere Ausschnitt, um mehr auf einmal zu sehen. [Oder ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
+Das ist nur ein kleiner Auschhnitt aus einem Word Embedding. In dem Word Embedding sind 100.000 Wörter enthalten, es ist nur unmöglich alle zu zeigen. In der Folge ein größerer Ausschnitt, um mehr auf einmal zu sehen.
+
+[Oder wähle ein anderes Wort aus](#bitte-ein-wort-auswählen)
 
 
 [hr/]
@@ -256,11 +258,7 @@ Das ist nur ein Auschhnitt aus einem Word Embedding. In dem Word Embedding sind 
 [hr /]
 
 
-Für Interessierte gibt es einen Exkurs zur Klassifizierung. Ansonsten geht es weiter mit...
-
-## Veränderung über die Zeit
-
-Im nächsten Teil wird gezeigt, wie sich Sprache im Laufe der Zeit verändert.
+Für Interessierte gibt es einen [Exkurs zur Klassifizierung](/hintergrund#wie-genau-werden-mithilfe-von-word-embeddings-kommentare-klassifiziert?). Ansonsten geht es weiter mit der Veränderung über die Zeit. Im nächsten Teil wird gezeigt, wie sich Sprache im Laufe der Zeit verändert.
 
 [👉 Weiter mit Teil II](/zeit/)
 

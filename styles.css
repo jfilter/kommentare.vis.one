@@ -52,7 +52,7 @@ a {
 
 .article-header .dek {
   max-width: 30rem;
-  margin: 20rem auto 1rem;
+  margin: 15rem auto 1rem;
 }
 
 .idyll-pub-date,
@@ -63,7 +63,7 @@ a {
 
 .article-header .fancy-text {
   display: block;
-  font: 2rem "Lato";
+  font: 2.5rem "Lato";
   font-weight: bold;
   width: 100%;
   margin: 0rem auto;
@@ -73,7 +73,7 @@ a {
   fill: none;
   stroke: white;
   stroke-dasharray: 6% 29%;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
   stroke-dashoffset: 0%;
   animation: stroke-offset 21s infinite linear;
 }
@@ -269,4 +269,16 @@ video {
   color: inherit;
   text-decoration: inherit;
   font-weight: inherit;
+}
+
+.overview_video {
+  width: 60%;
+  height: 60%;
+}
+
+@media (max-width: 992px) {
+  .overview_video {
+    width: 100%;
+    height: 100%;
+  }
 }

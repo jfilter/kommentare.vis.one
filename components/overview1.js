@@ -24,8 +24,7 @@ class Overview1 extends React.PureComponent {
               autoPlay
               loop
               playsInline
-              width="60%"
-              height="60%"
+              className="overview_video"
               style={{ margin: "1rem auto" }}
             >
               <source
