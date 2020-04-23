@@ -3,15 +3,11 @@ const d3 = require("d3");
 
 class MovingTexts extends D3Component {
   initialize(divNode, props) {
-    const width = d3
-      .select(".article-header")
-      .node()
-      .getBoundingClientRect().width;
+    const width = d3.select(".article-header").node().getBoundingClientRect()
+      .width;
 
-    const height = d3
-      .select(".article-header")
-      .node()
-      .getBoundingClientRect().height;
+    const height = d3.select(".article-header").node().getBoundingClientRect()
+      .height;
 
     const simHeight = width > 768 ? height / 2 : window.innerHeight / 3;
 
@@ -32,15 +28,15 @@ class MovingTexts extends D3Component {
     let tokens = [...Array(numTexts).keys()];
 
     d3.json(
-      "https://ptf-vecs.app.vis.one/token_random/german_comments_2010_2019_100k?n=" +
+      "https://kommentare.vis.one/vectors/token_random/german_comments_2010_2019_100k?n=" +
         numTexts
-    ).then(jsonResponse => {
+    ).then((jsonResponse) => {
       tokens = jsonResponse.tokens;
-      let nodes = tokens.map(x => {
+      let nodes = tokens.map((x) => {
         return { name: x, id: x, x: width / 2, y: simHeight };
       });
 
-      nodes.forEach(function(d) {
+      nodes.forEach(function (d) {
         d.cx = d.x;
         d.cy = d.y;
       });
@@ -57,14 +53,14 @@ class MovingTexts extends D3Component {
       // Text to nodes
       const texts = node
         .append("text")
-        .text(d => d.id)
+        .text((d) => d.id)
         .attr("text-anchor", "middle")
         .style("font-size", "10px")
         .style("fill", "white")
-        .attr("cx", function(d) {
+        .attr("cx", function (d) {
           return d.cx;
         })
-        .attr("cy", function(d) {
+        .attr("cy", function (d) {
           return d.cy;
         });
 
@@ -79,8 +75,8 @@ class MovingTexts extends D3Component {
       simulation.on("tick", () => {
         node
           .select("text")
-          .attr("x", d => d.x)
-          .attr("y", d => d.y);
+          .attr("x", (d) => d.x)
+          .attr("y", (d) => d.y);
       });
 
       const removeLast = (_, i) => i < Math.floor(nodes.length * 0.95);

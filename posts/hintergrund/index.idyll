@@ -18,7 +18,7 @@ Word Embeddings sind dazu da, Wörter in Zahlen zu überführen. Das ist notwend
 
 In der Folge hat man ein Modell, das man gezielt einsetzen kann. In der Theorie soll es dann in der Lage sein, auch bei neuen und bislang unbekannten Daten zwischen Beleidigungen und nicht-Beleidigungen unterscheiden zu können. 
 
-[SVG src:"/static/ml.svg" /]
+[SVG src:"/hintergrund/static/ml.svg" /]
 *Der Kommentar links unten (rot) wird in das Modell gefüttert. Wenn das Modell den Kommentar so wie Menschen bewertet, passiert nichts. Mach das Modell einen Fehler, wird es angepasst.*
 
 ### Was sind Word Embeddings?
