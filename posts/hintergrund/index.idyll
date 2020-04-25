@@ -10,7 +10,7 @@
 
 Auf dieser Seite, dem dritten Teil, werden weitergehende Informationen aufgelistet und offene Fragen beantwortet. Bei weiteren Fragen bitte ein E-Mail an [link text:"hi@jfilter.de" url:"mailto:hi@jfilter.de" /] schreiben. 
 
-[Teil I](/) gibt eine generelle Einführung zum Machine Learning und [Teil II](/zeit/) geht um Änderung von Sprache über die Zeit.
+[Im ersten Teil des Online-Projekts](/) gibt eine generelle Einführung zum Machine Learning und [im zweiten Teil](/zeit/) geht um Änderung von Sprache über die Zeit.
 
 ### Wie genau werden mithilfe von Word Embeddings Kommentare klassifiziert?
 
@@ -51,7 +51,7 @@ Damit man sinnvolle Ergebnisse erhält, kann man nur auf einen Ausschnitt der Da
 
 ### Woher kommen die Daten?
 
-Die Kommentare stammen aus deutschen Kommentarspalten von 2010 bis Sommer 2019. Insgesamt gibt es über 13 Millionen Kommentare bestehend aus rund 45 Millionen Sätze. Die Sätze verteilen sich auf folgendermaßen über die Zeit:
+Die Kommentare stammen aus der Kommentarspalte von Zeit Online und wurden zwischen 2010 bis Sommer 2019 erstellt. Insgesamt gibt es über 13 Millionen Kommentare bestehend aus rund 45 Millionen Sätze. Die Sätze verteilen sich folgendermaßen über die Zeit:
 
 2010-2011:  ~3 Millionen Sätze
 

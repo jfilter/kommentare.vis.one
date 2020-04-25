@@ -58,22 +58,21 @@ In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsr
 ###### ignore please
 
 
-Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Mit dieser Webseite werden einzelne Verfahren des Machine Learning am Beispiel von Hasskommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprache. Die Disziplin heißt Computerlinguistik (oder engl. Natural-Language Processing). Machine Learning wird auch bei der Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt.
+Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Mit dieser Webseite wird ein Verfahren des Machine Learning am Beispiel von Hasskommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprache. Die Disziplin heißt Computerlinguistik (oder engl. Natural-Language Processing). Machine Learning wird auch bei der Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt.
 
 [Overview1/]
 
 ## Was ist Machine Learning?
 
-Mit dem Aufkommen der Informationstechnologie im 20. Jahrhundert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mit Hilfe von Programmcodes gelöst. Programmier:innen formulieren einen sogenannten Algorithmus, der Hasskommentare finden soll. Das könnte etwa mit einer langen Liste funktionieren, in der alle beleidigenden Worte gesammelt sind.  Immer dann, wenn ein Wort aus der Liste in einem Kommentar auftaucht, markiert der Algorithmus den Kommentar als Hasskommentar.
+Mit dem Aufkommen der Informationstechnologie im 20. Jahrhundert wurden immer mehr Entscheidungen an Computer abgegeben. Aufgaben wurden mithilfe von Programmcodes gelöst. Programmier:innen formulieren einen sogenannten Algorithmus, der Hasskommentare finden soll. Das könnte etwa mit einer langen Liste funktionieren, in der alle beleidigenden Worte gesammelt sind.  Immer dann, wenn ein Wort aus der Liste in einem Kommentar auftaucht, markiert der Algorithmus den Kommentar als Hasskommentar.
 
-Nur lässt sich dieser Ansatz leicht austricksen. Hasskommentare, die leichte Abwandlungen beinhalten, erkennt der Algorithmus nicht. Es reicht schon, wenn einzelne Buchstaben durch Zahlen ersetzt werden. Also aus "Beleidigung" wird etwa “Bele1digung” und der Kommentar wird nicht als Hasskommentar erkannt. Für den Menschen ist es einfach die Manipulation zu erkennen, für den Algorithmus ist das nicht möglich, da er sich an die vorgegebene Liste hält. Auch ist es sehr zeitaufwendig, eine solch umfassende Liste anzufertigen, da sich Sprache immer verändert und immer neue Beleidigungen kreiert werden können. Zudem kommt es auf den Kontext an, ggf. ist ein sonst beleidigendes Wort im Zusammenhang mit Satire, Ironie oder Humor anders zu verstehen. Dadurch kann es passieren, dass scherzhaft gemeinte Kommentare durch den Algorithmus als Hasskommentare gekennzeichnet werden.
+Nur lässt sich dieser Ansatz leicht austricksen. Hasskommentare, die leichte Abwandlungen beinhalten, erkennt der Algorithmus nicht. Es reicht schon, wenn einzelne Buchstaben durch Zahlen ersetzt werden. Also aus "Beleidigung" wird etwa “Bele1digung” und der Kommentar wird nicht als Hasskommentar erkannt. Für den Menschen ist es einfach die Manipulation zu erkennen, für den Algorithmus ist das nicht möglich, da er sich an die vorgegebene Liste hält. Auch ist es sehr zeitaufwendig, eine solch umfassende Liste anzufertigen, da sich Sprache immer verändert und immer neue Beleidigungen kreiert werden können. Zudem kommt es auf den Kontext an, ein einzelnes Wort ist eventuell nur im Zusammenhang mit anderen Wörtern problematisch.
 
-
-Diese Probleme könnten durch die Anwendung von Machine Learning überwunden werden. Mit Machine Learning sollen Computer die Bedeutung von Wörtern erlernen, damit der Computer die Zusammenhänge verstehen kann. Es gibt zwei Arten von Machine Learning.
+Diese Probleme könnten durch die Anwendung von Machine Learning überwunden werden. Mit Machine Learning sollen Computer die Bedeutung von Wörtern und ganzen Sätzen erlernen, damit der Computer die Zusammenhänge verstehen kann. Es gibt zwei Arten von Machine Learning.
 
 ### 1. Überwachtes Machine Learning
 
-Beim überwachten Machine Learning geht es darum, den Computerprogramm auf eine Problemstellung einzuspielen, damit er dann innerhalb dieses Rahmens automatisiert Antworten ausspucken kann. Beispielhafter Anwendungsfall für Bilder: Ein Programm soll erkennen, ob auf Bildern Katzen oder Hunde zu erkennen sind. In einem ersten Schritt müssen die Bilder von einem Menschen benannt werden. Die Bilder werden also als Katzen- oder Hundebilder annotiert oder gelabelt. Nur so kann der Computer dann lernen, was auf dem Bild abgebildet ist. Die richtige Antwort ist also vorgegeben. Dadurch weiß das Programm immer, ob seine eigene Antwort richtig oder falsch ist und er kann seine Parameter anhand dessen anpassen. Die Parameter eines programmes sind das Gehirn, sie werden auch als Modell bezeichnet. Im echten Betrieb, soll das Programm mit einem Modell dann ohne menschliche Hilfe Hunde von Katzen unterscheiden.
+Beim überwachten Machine Learning geht es darum, den Computerprogramm auf eine Problemstellung einzuspielen, damit er dann innerhalb dieses Rahmens automatisiert Antworten ausspucken kann. Beispielhafter Anwendungsfall für Bilder: Ein Programm soll erkennen, ob auf Bildern Katzen oder Hunde zu erkennen sind. In einem ersten Schritt müssen die Bilder von einem Menschen benannt werden. Die Bilder werden also als Katzen- oder Hundebilder annotiert oder gelabelt. Nur so kann der Computer dann lernen, was auf dem Bild abgebildet ist. Die richtige Antwort ist also vorgegeben. Dadurch weiß das Programm immer, ob seine eigene Antwort richtig oder falsch ist und er kann seine Parameter anhand dessen anpassen. Die Parameter eines Programmes sind das Gehirn, sie werden auch als Modell bezeichnet. Im echten Betrieb, soll das Programm mit einem Modell dann ohne menschliche Hilfe Hunde von Katzen unterscheiden.
 
 ### 2. Unüberwachtes Machine Learning
 
@@ -92,7 +91,7 @@ Um nun Hasskommentare automatisiert erkennen zu können, müssen das unüberwach
 
 ## Sprache, Computer und Repräsentation
 
-Wörter sind keine Zahlen. Aber ein Computer rechnet nur mit Zahlen. Wie werden also aus Wörter Zahlen? Damit ein Computer Text analysieren kann, benötigt man für die Auswertung eine gewisse Datenmenge. Je mehr Daten der Algorithmus auswerten kann, umso besser sind die Ergebnisse aus dem Machine Learning. Zunächst müssen die Trainingsdaten mithilfe eines Tokenizers in Wörter aufgeteilt werden. In einfachen Fällen wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Zeigt zum Beispiel ein Punkt nun das Ende eines Satzes an oder die Abkürzung eines Wortes? Die Schwierigkeit wird anhand dieses Beispiels deutlich:
+Wörter sind keine Zahlen. Aber ein Computer rechnet nur mit Zahlen. Wie werden also aus Wörter Zahlen? Damit ein Computer Text analysieren kann, benötigt man für die Auswertung eine gewisse Datenmenge. Je mehr Daten der Algorithmus auswerten kann, umso besser sind die Ergebnisse aus dem Machine Learning. Zunächst wird eine große Mengen an Fließtext gebraucht, wie z. B. tausende Nachrichtenartikel. Dann müssen die Trainingsdaten mithilfe eines Tokenizers in Wörter aufgeteilt werden. In einfachen Fällen wird am Leerzeichen getrennt. Aber schon bei Satzzeichen wird es kompliziert. Zeigt zum Beispiel ein Punkt nun das Ende eines Satzes an oder die Abkürzung eines Wortes? Die Schwierigkeit wird anhand dieses Beispiels deutlich:
 
 
 [SVG src:"/static/images/tokenizer.svg" /]
@@ -100,7 +99,7 @@ Wörter sind keine Zahlen. Aber ein Computer rechnet nur mit Zahlen. Wie werden 
 
 ###### ignore please
 
-Jetzt haben wir Wörter. Für die Weiterverarbeitung muss der Text als eine Liste von Wörtern vorliegen. Im nächsten Abschnitt schauen wir uns an, wie genau die Bedeutung entsteht.
+Durch den Tokenizer sind die Texte in eine Liste von Wörtern zerlegt. Im nächsten Abschnitt wird erklärt, wie genau die Bedeutung entsteht.
 
 ## Word Embeddings: Bedeutung durch Kontext
 
@@ -120,11 +119,14 @@ und auch
 
 > Die vollständige Bedeutung eines Wortes ist immer kontextabhängig, und keine kontextunabhänige Untersuchungen über Bedeutungen kann ernst genommen werden. 
 
-Der Kontext entscheidet also über die tatsächliche Bedeutung eines Wortes. Konkret kann man das an den folgenden Beispielen verstehen.
-
 [Aside]
-Quelle: J. R. Firth (1935) "The Technique of Semantics." und John Rupert Firth (1957) "A synopsis of linguistic theory 1930-1955."
+
+Quelle: John Rupert Firth "The Technique of Semantics." (1935) "A synopsis of linguistic theory 1930-1955." (1957)
+
 [/Aside]
+
+Durch die Analyse von Kollokation von Wörter kann automatisiert die Bedeutung von Wörtern abgeleitet werden. Anbei ein Beispiel.
+
 
 > Ich esse gerne **Fisch**. 
 
@@ -132,18 +134,25 @@ Quelle: J. R. Firth (1935) "The Technique of Semantics." und John Rupert Firth (
 
 > Ich esse gerne **Brot**.
 
-Die drei Wörter kommen in ähnlichen Kontexten vor und daher weiß die Maschine, dass die beiden Wörter in einem gewissen Maße ähnlich sind. In diesem Fall, geht es um Lebensmittel. So versteht der Algorithmus, dass diese Worte zur selben Kategorie gehören. So weit so gut, doch ein Rechner arbeitet nur mit Einsen und Nullen. Um also Worte in eine Sprache des Rechners zu übersetzen, benutzt man das Word Embedding (“Wort-Einbettung”). Jedem Wort wird eine Reihe von Werten zugeschrieben. Es wird über alle Sätze hinweg gezählt, welche Wörter mit welchen anderen Wörtern verwendet werden. Als Abstand wird z. B. 2 verwendet. Alle Wörter, die maximal zwei Wörter Abstand haben, werden gezählt. Ein Beispiel:
+Die drei Wörter (Fisch, Bananen, Brot) kommen in ähnlichen Kontexten vor und daher weiß die Maschine, dass die beiden Wörter in einem gewissen Maße ähnlich sind. In diesem Fall, geht es um Lebensmittel. So versteht der Algorithmus, dass diese Worte zur selben Kategorie gehören.
+
+Es wird über alle Sätze hinweg gezählt, welche Wörter mit welchen anderen Wörtern verwendet werden. Als Abstand wird z. B. 2 verwendet. Alle Wörter, die maximal zwei Wörter Abstand haben, werden gezählt. Ein Beispiel:
 
 [SVG src:"/static/images/window.svg" /]
 *Jede Wortpaarung mit einem Abstand von zwei wird gezählt.*
 
 ###### ignore please
 
-Nach dem Zählen, folgen eine [Reihe weiterer Schritte](/hintergrund#wie-genau-wurden-die-word-embeddings-erstellt?). Grundsätzlich steht am Ende eine Word Embeddings links eine lange Liste an Wörtern, und auf der rechten Seite sind jedem Wort lange Zahlenkolonnen zugeordnet. Oft sind das pro Wort zwischen 300 oder 500 Zahlen werden. Anhand dieser Zahlenreihen versteht der Algorithmus die Bedeutung der Wörter. So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen. Da der Algorithmus nun den Worten konkrete Zahlen zugeordnet hat, kann mit diesen Werten gerechnet werden.
+Nach dem Zählen folgen eine [Reihe weiterer mathematischer Schritte](/hintergrund#wie-genau-wurden-die-word-embeddings-erstellt?).
+Am Ende entsteht ein Word Embedding (“Wort-Einbettung”), um Worte in eine Sprache des Rechners (Zahlen) zu übersetzen.
+Grundsätzlich ordnet ein Word Embeddings jedem Wort eine Reihe von Werten zugeschrieben. Oft sind das pro Wort lange Zahlenkolonnen zwischen 300 oder 500 Zahlen.
+Anhand dieser Zahlenreihen versteht der Algorithmus die Bedeutung der Wörter.
+So sollen ähnliche Begriffe auch ähnliche Zahlenwerte umfassen.
+Da der Algorithmus nun den Worten konkrete Zahlen zugeordnet hat, kann mit diesen Werten gerechnet werden.
 
 ## Wie gut kann die Maschine Bedeutungen erlernen? Ausprobieren!
 
-Wir haben nun ein Word Embedding trainiert und geben hier dir die Möglichkeit es auszuprobieren. Die Grundlage ist die Auswertung von über 13 Millionen Kommentaren von Zeit-Online.
+Ich habe ein Word Embedding trainiert und gebe hier dir die Möglichkeit es auszuprobieren. Die Grundlage bilden über 13 Millionen deutsche Online-Kommentaren von 2010 bis 2019. Es gibt keine reine Zahlendarstellung weil dies nicht anschaulich ist. Jedoch werden zu einem ausgewählen Wort ähnliche Begriffe angezeigt. *Ähnlich* bedeutet hier, dass der Computer (durch das Word Embedding) das so sieht.
 
 ## Bitte ein Wort auswählen
 
@@ -202,10 +211,10 @@ Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/] (so 
       [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` /]
   [/Graphic]
 
-  [Step]#### zu diesem Wort wollen wir ähnliche Begriffe anzeigen [/Step]
+  [Step]#### zu diesem Wort zeigen wir ähnliche Begriffe [/Step]
   [Step]#### das sind die nähesten Wörter[/Step]
   [Step]#### mehr Wörter[/Step]
-  [Step]#### diese Wörter sind unähnliche (bzw. sieht das der Computer so)[/Step]
+  [Step]#### noch mehr Wörter [/Step]
 [/Scroller]
 
 [hr/]
@@ -252,15 +261,15 @@ Das ist nur ein kleiner Auschhnitt aus einem Word Embedding. In dem Word Embeddi
 [/Conditional]
 
 [Conditional if:`nearest_small.data.length === 7`]
-  [Ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
+  Auf mobilen Geräten erfolgt nur eine reduzierte Darstellung. [Ein anderes Wort auswählen](#bitte-ein-wort-auswählen)
 [/Conditional]
 
 [hr /]
 
 
-Für Interessierte gibt es einen [Exkurs zur Klassifizierung](/hintergrund#wie-genau-werden-mithilfe-von-word-embeddings-kommentare-klassifiziert?). Ansonsten geht es weiter mit der Veränderung über die Zeit. Im nächsten Teil wird gezeigt, wie sich Sprache im Laufe der Zeit verändert.
+Das war es für den ersten Teil. Für Interessierte gibt es einen weitern [Exkurs zur Klassifizierung](/hintergrund#wie-genau-werden-mithilfe-von-word-embeddings-kommentare-klassifiziert?). Im nächsten Teil wird gezeigt, wie sich die Sprache in den Kommentaren im Laufe der Zeit veränderte.
 
-[👉 Weiter mit Teil II](/zeit/)
+[👉 Weiter zu Teil II](/zeit/)
 
 [hr /]
 

@@ -1,4 +1,4 @@
-[meta title:"Wie sich Sprache in Kommentaren änderte – Kommentare.vis.one" description:"Wie sich die Bedeutung von Wörtern in Online-Kommentaren ändert (2010 – 2019)" url:"https://kommentare.vis.one/zeit/" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/images/preview_zeit.png" /]
+[meta title:"Wie sich Sprache in Kommentaren änderte – Kommentare.vis.one" description:"Analyse von 13 Millionen Online-Kommentare mithilfe von Machine Learning" url:"https://kommentare.vis.one/zeit/" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/images/preview_zeit.png" /]
 
 [Header
   fullWidth:true
@@ -9,9 +9,9 @@
    /]
 
 
-Für 50.000 Wörter zeigen wir, wie sich Sprache in der Kommentarspalte geändert hat. Dafür haben wir über 13 Millionen Online-Kommentare analysiert datiert zwischen 2010 und 2019 ausgewertet.
+Für 50.000 Wörter habe ich, Johannes Filter, Visualisierungen erstellt, wie sich Sprache in der Kommentarspalte geändert hat. Zu einem gegebenen Wort werden ähnliche Wörter pro Zeitintervall gezeigt. Die animierten Visualisierungen wurden automatisiert mithilfe von Machine Learning erstellt. Grundlage sind über 13 Millionen Online-Kommentare, die zwischen 2010 und 2019 erstellt wurden.
 
-Dies ist der zweite dieses Online-Projekts zu Kommentaren und Machine Learning. In [ersten Teil](/) haben wir in Grundlage des Themas eingeführt, jetzt haben wir es angewant.
+Dies ist der zweite Teil dieses Online-Projekts zu Kommentaren und Machine Learning. Im [ersten Teil](/) habe ich in die Grundlage des Themas eingeführt.
 
 ## Bitte ein Wort auswählen
 
@@ -37,13 +37,26 @@ oder eigenes Wort eingeben:
 
 ## Was genau sehe ich hier?
 
-Das Bild zeigt jeweils die Mitte und dann wie sich das verändert. Über 10 Jahre, dabei wurden immer 2 Jahre zusammengefasst. Im Fokus (rot) steht ein Wort, zudem ähnliche Wörter (so wie es der Computer sieht). Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise Synonyme sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe. Die Achsen habe keine Bedeutung.
+Im Fokus (rot) steht ein Wort, zudem ähnliche Wörter (so wie es der Computer sieht). Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise Synonyme sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe. Die Achsen habe keine Bedeutung.
 
-## Wie genau wurde die Videos erstellt?
+## Wie genau wurde die Visualisierung erstellt?
 
-Im ersten Schritt wurden fünf Word Embeddings erstellt. Dafür wurden die Daten in zwei-jährige Epochen von 2010 bis 2019 geteilt. Dann wurde für jede Epoche die umliegenden Wörter bestimmt und auf eine 2D-Ebene projeziert. Dann wurden die ein Video gerendet. Zudem gibt es Wörter die auftauchen oder verschwinden.
+Im ersten Schritt wurden fünf Word Embeddings erstellt.
+Die Zeitspanne von 2010 bis 2019 wurden in fünf Intervallen à zwei Jahren zusammengefasst.
+Dann wurde für jede Epoche die umliegenden Wörter bestimmt und auf eine 2D-Ebene projiziert.
+In der Folge wurde ein Video gerendert, in dem zwischen den fünf Darstellungen interpoliert wurde.
 
-Es gibt teilweise ein Zooming-Effekt, der verwirrend sein kann. Das kommt dadruch zustanden, dass die gesamte Fläche ausgefült werdden soll.
+Zudem gibt es Wörter die auftauchen oder verschwinden.
+Für die Word Embeddings wurden nur die 50.000 häufigsten Wörter (pro Zeitintervall) genutzt.
+Teilweise sind neue Wörter aufgetaucht ("Flüchtlingsstrom") oder alte verschwunden, da sie weniger genutzt wurden.
+
+Die Darstellung ist nicht perfekt.
+So gibt es teilweise ein Zooming-Effekt, der verwirrend sein kann.
+Der kommt dadurch zustande, dass die gesamte Fläche ausgefüllt werden soll.
+
+[hr /]
+
+Weitere Fragen beantworte ich im [dritten Teil des Online-Projekts](/hintergrund/).
 
 [hr /]
 
