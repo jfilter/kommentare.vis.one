@@ -8,9 +8,9 @@ class Overview1 extends React.PureComponent {
         <h3>Übersicht über das Projekt</h3>
         <p>
           Im ersten Teil (diese Seite) werden Grundlagen von Machine Learning
-          erklärt. <a href="/zeit/">Im zweiten Teil</a> wird mithilfe von
-          Machine Learning die Veränderung der Sprache in den Kommentarenspalte
-          visualisiert.
+          erklärt. <a href="/zeit/">Im zweiten Teil (nächste Seite)</a> wird
+          mithilfe von Machine Learning die Veränderung der Sprache in den
+          Kommentarenspalte visualisiert.
           <div
             style={{
               display: "flex",

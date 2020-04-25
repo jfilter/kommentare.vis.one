@@ -31,14 +31,6 @@ Es gibt unterschiedliche Verfahren wie Word Embeddings erstellt werden, doch das
 
 Aber im Gegensatz zu dem Ansatz der Süddeutsche Zeitung wurden für diese Analyse ein leicht anderes Verfahren verwendet (PPMI/SVD statt Word2Vec). Für Interessierte gibt ein [wissenschaftliches Paper Hintergrundinformationen](https://www.aclweb.org/anthology/Q15-1016/).
 
-### Bilden Word Embeddings die Realität ab?
-
-Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten ab. Die Sprache in den Kommentaren (wie in diesem Fall) steht nicht zwangsläufig für die Wahrheit oder die Realität. Und auch andere große Textmengen, wie z. B. alle englischen Wikipedia-Artikel, sind in ihre Gesamtheit nicht neutral.
-
-Ein Problem ist es, dass bei großen Textmengen häufig zu einem Bias kommet. [So hat ein Forscher-Team herausgefunden](https://techcrunch.com/2019/08/14/racial-bias-observed-in-hate-speech-detection-algorithm-from-google/), dass eine API von Google, die Hatespeech erkennen soll, rassistisch ist. So wird das Englisch, welche von Afroamerikanern genutzt wird, häufiger mit negativ konnotierte Wörtern in Verbindung gebracht.
-
-Zudem kommen heutige Verfahren kommen noch nicht menschliche Fähigkeiten ran ([auch wenn es weitere Fortschritte gibt](https://www.nytimes.com/2018/11/18/technology/artificial-intelligence-language.html)).
-
 ### Wie wird die Ähnlichkeit zwischen Wörtern errechnet?
 
 Da die Wörter aus Vektoren (eine Reihe von Zahlen (z. B. 500)) bestehen, dient der Winkel zwischen zwei Vektoren als Maß der Ähnlichkeit. Zum Beispiel mithilfe der [Kosinus-Ähnlichkeit](https://de.wikipedia.org/wiki/Kosinus-%C3%84hnlichkeit) wird dies errechnet.
@@ -89,6 +81,12 @@ window: 10, dynamic_window: 'decay', decay_rate: 0.33, delete_oov: true, subsamp
 ```
 
 Die Hyperparameter wurden durch Experimente auf [Evaluationsdaten](https://github.com/jfilter/hyperhyper/tree/master/hyperhyper/evaluation_datasets/de) herausgefunden.
+
+### Warum hast du eine eigene Software-Bibliothek entwickelt?
+
+Für die Verfahren [Word2Vec](https://code.google.com/archive/p/word2vec/) von Google und [fastText](https://github.com/facebookresearch/fastText) von Facebook gibt es effiziente Implementierungen. Aber die Methoden orientieren sich an den Bedürfnissen großer Tech-Unternehmen, diese sind im Besitz sehr großer Datenmengen. Das ist nicht immer der Fall, wie hier.
+
+Für alternative Verfahren, gab es bereits [wissenschaftliche Erkenntnisse](https://www.aclweb.org/anthology/Q15-1016/), aber keine effiziente Implementierung. [Das habe ich geändert](https://github.com/jfilter/hyperhyper).
 
 ### Kann ich die Software benutzen?
 

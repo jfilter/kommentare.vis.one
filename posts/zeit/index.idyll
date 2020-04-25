@@ -11,7 +11,6 @@
 
 Für 50.000 Wörter habe ich, Johannes Filter, Visualisierungen erstellt, wie sich Sprache in der Kommentarspalte geändert hat. Zu einem gegebenen Wort werden ähnliche Wörter pro Zeitintervall gezeigt. Die animierten Visualisierungen wurden automatisiert mithilfe von Machine Learning erstellt. Grundlage sind über 13 Millionen Online-Kommentare, die zwischen 2010 und 2019 erstellt wurden.
 
-Dies ist der zweite Teil dieses Online-Projekts zu Kommentaren und Machine Learning. Im [ersten Teil](/) habe ich in die Grundlage des Themas eingeführt.
 
 ## Bitte ein Wort auswählen
 
@@ -31,13 +30,15 @@ oder eigenes Wort eingeben:
 
 [hr/]
 
-[Video q:`q.toLowerCase().replace(new RegExp("[0-9]", "g"), "0")` fullWidth:true/]
+[Video q:`q.toLowerCase().trim().replace(new RegExp("[0-9]", "g"), "0")` fullWidth:true/]
 
 [hr /]
 
 ## Was genau sehe ich hier?
 
 Im Fokus (rot) steht ein Wort, zudem ähnliche Wörter (so wie es der Computer sieht). Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise Synonyme sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe. Die Achsen habe keine Bedeutung.
+
+Dies ist der zweite Teil dieses Online-Projekts zu Kommentaren und Machine Learning. Im [ersten Teil](/) habe ich in die Grundlage des Themas eingeführt.
 
 ## Wie genau wurde die Visualisierung erstellt?
 
@@ -53,6 +54,14 @@ Teilweise sind neue Wörter aufgetaucht ("Flüchtlingsstrom") oder alte verschwu
 Die Darstellung ist nicht perfekt.
 So gibt es teilweise ein Zooming-Effekt, der verwirrend sein kann.
 Der kommt dadurch zustande, dass die gesamte Fläche ausgefüllt werden soll.
+
+## Bilden die Resultate die Realität ab?
+
+Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten ab. Die Sprache in den Kommentaren (wie in diesem Fall) steht nicht zwangsläufig für die Wahrheit oder die Realität. Und auch andere große Textmengen, wie z. B. alle englischen Wikipedia-Artikel, [sind in ihre Gesamtheit nicht neutral](https://de.wikipedia.org/wiki/Geschlechterkluft_in_der_englischsprachigen_Wikipedia).
+
+Ein Problem ist es, dass bei großen Textmengen häufig zu einem Bias kommet. [Ein Forscher-Team hat herausgefunden](https://techcrunch.com/2019/08/14/racial-bias-observed-in-hate-speech-detection-algorithm-from-google/), dass eine API von Google, die Hatespeech erkennen soll, rassistisch ist. So wird das Englisch, welche von Afroamerikanern genutzt wird, häufiger mit negativ konnotierte Wörtern in Verbindung gebracht.
+
+Zudem kommen heutige Verfahren kommen noch nicht menschliche Fähigkeiten ran ([auch wenn es weitere Fortschritte gibt](https://www.nytimes.com/2018/11/18/technology/artificial-intelligence-language.html)).
 
 [hr /]
 
