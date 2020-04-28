@@ -16,11 +16,11 @@ class Video extends React.PureComponent {
             height="100%"
           >
             <source
-              src={`http://kommentare.vis.one/videos/${q}.mp4`}
+              src={`https://kommentare.vis.one/videos/${q}.mp4`}
               type="video/mp4"
             />
             <source
-              src={`http://kommentare.vis.one/videos/404.mp4`}
+              src={`https://kommentare.vis.one/videos/404.mp4`}
               type="video/mp4"
             />
             Bitte einen anderen Browser, z. B. Firefox oder Chrome, benutzen.
