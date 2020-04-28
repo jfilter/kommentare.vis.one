@@ -58,7 +58,9 @@ In den Kommentarspalten tobt der Hass. Um diesen einzudämmen, prüfen Zeitungsr
 ###### ignore please
 
 
-Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Auf dieser Webseite wird ein Verfahren des Machine Learning am Beispiel von Hasskommentaren erklärt. Der Fokus liegt auf der Verarbeitung von Sprache, die Disziplin heißt Computerlinguistik (oder engl. Natural-Language Processing). Machine Learning wird aber auch bei der Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt.
+Wie praktisch wäre es da, wenn ein Algorithmus einfach die Beleidigungen aus den Kommentaren herausfiltern könnte. Das ist grundlegend möglich mit dem sogenannten Machine Learning (Maschinelles Lernen). Auf dieser Webseite wird ein Verfahren des Machine Learning am Beispiel von Hasskommentaren erklärt. 
+Machine Learning wird aber auch bei der Verarbeitung von Bildern, z. B. der Gesichtserkennung angewandt.
+Jedoch liegt der Fokus auf der Verarbeitung von Sprache, in Fachkreisen heißt die Disziplin Computerlinguistik (oder engl. Natural-Language Processing). 
 
 [Overview1/]
 
@@ -267,7 +269,7 @@ Das ist nur ein kleiner Auschhnitt aus einem Word Embedding. In dem Word Embeddi
 [hr /]
 
 
-Das war es für den ersten Teil. Für Interessierte gibt es einen weitern [Exkurs zur Klassifizierung](/hintergrund#wie-genau-werden-mithilfe-von-word-embeddings-kommentare-klassifiziert?). Im nächsten Teil wird gezeigt, wie sich die Sprache in den Kommentaren im Laufe der Zeit veränderte.
+Das war es für den ersten Teil. Für Interessierte gibt es einen [Exkurs zur Klassifizierung](/hintergrund#wie-genau-werden-mithilfe-von-word-embeddings-kommentare-klassifiziert?). Im nächsten Teil wird gezeigt, wie sich die Sprache in den Kommentaren im Laufe der Zeit veränderte.
 
 [👉 Weiter zu Teil II](/zeit/)
 

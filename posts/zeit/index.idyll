@@ -6,10 +6,12 @@
   subtitle:"Analyse von 13 Millionen Online-Kommentare mithilfe von Machine Learning"
   background:"#222222"
   color:"#ffffff"
+  author: "Johannes Filter"
+  authorLink: "https://johannesfilter.com"
+  byLineTemplate: `{ prefix: "von ", joint: ",", suffix: "and" }`
    /]
 
-
-Für 50.000 Wörter habe ich, Johannes Filter, Visualisierungen erstellt, wie sich Sprache in der Kommentarspalte geändert hat. Zu einem gegebenen Wort werden ähnliche Wörter pro Zeitintervall gezeigt. Die animierten Visualisierungen wurden automatisiert mithilfe von Machine Learning erstellt. Grundlage sind über 13 Millionen Online-Kommentare, die zwischen 2010 und 2019 erstellt wurden.
+Für 50.000 Wörter habe ich Visualisierungen erstellt, wie sich Sprache in der Kommentarspalte geändert hat. Zu einem gegebenen Wort werden ähnliche Wörter pro Zeitintervall gezeigt. Die animierten Visualisierungen wurden automatisiert mithilfe von Machine Learning erstellt. Grundlage sind über 13 Millionen Online-Kommentare, die zwischen 2010 und 2019 erstellt wurden.
 
 
 ## Bitte ein Wort auswählen
@@ -59,7 +61,7 @@ Der kommt dadurch zustande, dass die gesamte Fläche ausgefüllt werden soll.
 
 Nein, erst einmal bilden Word Embeddings nur die Sprache in den Trainingsdaten ab. Die Sprache in den Kommentaren (wie in diesem Fall) steht nicht zwangsläufig für die Wahrheit oder die Realität. Und auch andere große Textmengen, wie z. B. alle englischen Wikipedia-Artikel, [sind in ihre Gesamtheit nicht neutral](https://de.wikipedia.org/wiki/Geschlechterkluft_in_der_englischsprachigen_Wikipedia).
 
-Ein Problem ist es, dass bei großen Textmengen häufig zu einem Bias kommet. [Ein Forscher-Team hat herausgefunden](https://techcrunch.com/2019/08/14/racial-bias-observed-in-hate-speech-detection-algorithm-from-google/), dass eine API von Google, die Hatespeech erkennen soll, rassistisch ist. So wird das Englisch, welche von Afroamerikanern genutzt wird, häufiger mit negativ konnotierte Wörtern in Verbindung gebracht.
+Ein Problem ist es, dass oft bei großen Textmengen ein Bias (z. B. Rassismus) gibt. [Ein Forscher-Team hat herausgefunden](https://techcrunch.com/2019/08/14/racial-bias-observed-in-hate-speech-detection-algorithm-from-google/), dass eine API von Google, die Hatespeech erkennen soll, rassistisch ist. So wird das Englisch, welche von Afroamerikanern genutzt wird, häufiger mit negativ konnotierte Wörtern in Verbindung gebracht. Machine Learning greift den Rassismus, der in den Trainingsdaten vorhanden ist, auf und repliziert ihn.
 
 Zudem kommen heutige Verfahren kommen noch nicht menschliche Fähigkeiten ran ([auch wenn es weitere Fortschritte gibt](https://www.nytimes.com/2018/11/18/technology/artificial-intelligence-language.html)).
 

@@ -84,9 +84,9 @@ Die Hyperparameter wurden durch Experimente auf [Evaluationsdaten](https://githu
 
 ### Warum hast du eine eigene Software-Bibliothek entwickelt?
 
-Für die Verfahren [Word2Vec](https://code.google.com/archive/p/word2vec/) von Google und [fastText](https://github.com/facebookresearch/fastText) von Facebook gibt es effiziente Implementierungen. Aber die Methoden orientieren sich an den Bedürfnissen großer Tech-Unternehmen, diese sind im Besitz sehr großer Datenmengen. Das ist nicht immer der Fall, wie hier.
+Für die bekannten Verfahren [Word2Vec](https://code.google.com/archive/p/word2vec/) von Google und [fastText](https://github.com/facebookresearch/fastText) von Facebook gibt es effiziente Implementierungen. Aber die Methoden orientieren sich an den Bedürfnissen großer Tech-Unternehmen, diese sind im Besitz sehr großer Datenmengen. Das ist nicht immer der Fall, wie hier. 
 
-Für alternative Verfahren, gab es bereits [wissenschaftliche Erkenntnisse](https://www.aclweb.org/anthology/Q15-1016/), aber keine effiziente Implementierung. [Das habe ich geändert](https://github.com/jfilter/hyperhyper).
+Für alternative Verfahren, für die es weniger Daten brauch, gab es bereits [wissenschaftliche Paper](https://www.aclweb.org/anthology/Q15-1016/), aber keine effiziente Implementierung. [Das habe ich geändert](https://github.com/jfilter/hyperhyper).
 
 ### Kann ich die Software benutzen?
 
