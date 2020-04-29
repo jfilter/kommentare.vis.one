@@ -12,7 +12,7 @@ class FilterHeader extends React.PureComponent {
       const width = this.myInput.current.offsetWidth;
       const height = width > 768 ? 400 : (window.innerHeight * 2) / 3;
       this.setState({
-        svgElement: `<svg class="fancy-text" viewBox="0 0 ${width} ${height}"><symbol id="s-text"><text text-anchor="middle" x="50%" y="50%">Machine Learning</text></symbol><g class="g-ants">  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use></g></svg>`
+        svgElement: `<svg class="fancy-text" viewBox="0 0 ${width} ${height}"><symbol id="s-text"><text text-anchor="middle" x="50%" y="50%">Machine Learning</text></symbol><g class="g-ants">  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use>  <use xlink:href="#s-text" class="text-copy"></use></g></svg>`,
       });
     }, 10);
   }
@@ -35,7 +35,7 @@ class FilterHeader extends React.PureComponent {
             style={{
               background: "#222222",
               position: "relative",
-              padding: "0.5rem"
+              padding: "0.5rem",
             }}
           >
             <h2>am Beispiel von Kommentaren</h2>
@@ -48,7 +48,7 @@ class FilterHeader extends React.PureComponent {
             style={{
               background: "#222222",
               position: "relative",
-              padding: "0.5rem"
+              padding: "0.5rem",
             }}
           >
             Online-Projekt von{" "}

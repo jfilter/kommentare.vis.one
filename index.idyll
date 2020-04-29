@@ -40,7 +40,7 @@
       },
       labels: {
         fontFamily: 'lato',
-        fontSize: () => Math.max(window.screen.width, window.innerWidth) < 768 ? 20 :  8,
+        fontSize: function() { return Math.max(window.screen.width, window.innerWidth) < 768 ? 20 :  8},
         letterSpacing: 'normal',
         padding: 3,
         fill: 'charcoal',
@@ -180,7 +180,7 @@ oder eigenes Wort eingeben:
 Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/] (so wie es der Computer sieht):
 
 [Table
-    data:`qTable.tokens.map((k, i) => ({token: k, sim: qTable.sims[i]}));`
+    data:`qTable.tokens.map(function(k, i) { return {token: k, sim: qTable.sims[i]} });`
     columns:`[
         {
             Header: 'Wort',
@@ -188,8 +188,8 @@ Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/] (so 
         },{
             Header: 'Ähnlichkeit',
             accessor: 'sim',
-            Cell: props => (props.row.sim * 100).toFixed(2) + " %",
-            getProps: (state, rowInfo, column) => {
+            Cell: function(props) { return (props.row.sim * 100).toFixed(2) + " %" },
+            getProps: function(state, rowInfo, column) {
                 return {
                     style: {
                         background: window.chroma.scale(['white', [42,42,123]])(rowInfo.row.sim),
@@ -210,7 +210,7 @@ Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/] (so 
 
 [Scroller currentStep:scrollerIndex]
   [Graphic]
-      [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` /]
+      [Chart type:`"scatter"` data:`nearest_small.data.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` labels:`nearest_small.tokens.slice(0, 1 + scrollerIndex * (nearest_small.data.length === 7 ? 2 : 3))` theme:scatter-theme size:`function() { return  Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2 }` /]
   [/Graphic]
 
   [Step]#### zu diesem Wort zeigen wir ähnliche Begriffe [/Step]
@@ -232,22 +232,22 @@ Das ist nur ein kleiner Auschhnitt aus einem Word Embedding. In dem Word Embeddi
 [DataLoader value:nearest_large src:`"https://kommentare.vis.one/vectors/nearest/german_comments_2010_2019_100k?q=" + (chooseQ.tokens[0] || q) + "&n=100"` timeout:2500 /]
 
 [Graphic fullWidth:true]
-  [Chart type:`"scatter"` data:`nearest_large.data` size:`() => Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2` labels:`[nearest_large.tokens[0]]` theme:scatter-theme events:`[
+  [Chart type:`"scatter"` data:`nearest_large.data` size:`function() { return Math.max(window.screen.width, window.innerWidth) < 768 ? 4: 2 }` labels:`[nearest_large.tokens[0]]` theme:scatter-theme events:`[
       {
         target: "data",
         eventHandlers: {
-          onMouseOver: () => {
+          onMouseOver: function() {
             return [{
               target: "labels",
-              mutation: (props) => {
+              mutation: function(props) {
                 return {text: nearest_large.tokens[props.index]};
               }
             }];
           },
-          onMouseOut: () => {
+          onMouseOut: function() {
             return [{
               target: "labels",
-              mutation: (props) => {
+              mutation: function(props) {
                 return {text: props.index === 0 ? nearest_large.tokens[0] : null}
               }
             }];
