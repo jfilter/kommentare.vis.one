@@ -13,6 +13,8 @@
 
 [MovingTexts /]
 
+[Oldbrowsers /]
+
 // https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/victory-theme/grayscale.js
 
 [derived name:'scatter-theme' value:`{

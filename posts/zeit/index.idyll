@@ -11,6 +11,9 @@
   byLineTemplate: `{ prefix: "von ", joint: ",", suffix: "and" }`
    /]
 
+[Oldbrowsers /]
+
+
 Für 50.000 Wörter habe ich Visualisierungen erstellt, wie sich Sprache in der Kommentarspalte geändert hat. Zu einem gegebenen Wort werden ähnliche Wörter pro Zeitintervall gezeigt. Die animierten Visualisierungen wurden automatisiert mithilfe von Machine Learning erstellt. Grundlage sind über 13 Millionen Online-Kommentare, die zwischen 2010 und 2019 erstellt wurden.
 
 

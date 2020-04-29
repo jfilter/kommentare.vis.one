@@ -6,7 +6,7 @@ class Overview1 extends React.PureComponent {
     return (
       <div className="infokasten">
         <h3>Übersicht über das Projekt</h3>
-        <p>
+        <div>
           Im ersten Teil (diese Seite) werden Grundlagen von Machine Learning
           erklärt. <a href="/zeit/">Im zweiten Teil (nächste Seite)</a> wird
           mithilfe von Machine Learning die Veränderung der Sprache in den
@@ -50,7 +50,7 @@ class Overview1 extends React.PureComponent {
             Bundesministerium für Bildung und Forschung
           </a>{" "}
           finanziert.
-        </p>
+        </div>
       </div>
     );
   }
