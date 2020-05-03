@@ -56,3 +56,7 @@ a {
   text-decoration: inherit;
   font-weight: inherit;
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
