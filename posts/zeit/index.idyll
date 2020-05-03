@@ -16,6 +16,7 @@
 
 Für 50.000 Wörter habe ich Visualisierungen erstellt, wie sich Sprache in der Kommentarspalte geändert hat. Zu einem gegebenen Wort werden ähnliche Wörter pro Zeitintervall gezeigt. Die animierten Visualisierungen wurden automatisiert mithilfe von Machine Learning erstellt. Grundlage sind über 13 Millionen Online-Kommentare, die zwischen 2010 und 2019 erstellt wurden.
 
+Dies ist der zweite Teil dieses Online-Projekts zu Kommentaren und Machine Learning. Im [ersten Teil](/) habe ich in die Grundlage des Themas eingeführt.
 
 ## Bitte ein Wort auswählen
 
@@ -43,7 +44,7 @@ oder eigenes Wort eingeben:
 
 Im Fokus (rot) steht ein Wort, zudem ähnliche Wörter (so wie es der Computer sieht). Ähnlich bedeutet hier, dass sie in ähnlichen Kontexten benutzt wird. Das können teilweise Synonyme sein und manchmal sind es nur Begriffe aus dem gleichen Themengebiet. Je näher sich zwei Punkte sind, desto ähnlicher sind die Begriffe. Die Achsen habe keine Bedeutung.
 
-Dies ist der zweite Teil dieses Online-Projekts zu Kommentaren und Machine Learning. Im [ersten Teil](/) habe ich in die Grundlage des Themas eingeführt.
+
 
 ## Wie genau wurde die Visualisierung erstellt?
 
