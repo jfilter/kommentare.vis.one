@@ -4,6 +4,7 @@ class Thanks extends React.PureComponent {
   render() {
     return (
       <p>
+        <script defer src="/static/js/matomo.js" />
         Ein Online-Projekt{" "}
         <a href="//johannesfilter.com">von Johannes Filter</a>, Johannes{" "}
         <a href="//twitter.com/fil_ter">auf Twitter folgen</a>
