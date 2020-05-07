@@ -11,9 +11,15 @@
     "output": "docs/"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
     "d3": "^5.14.2",
     "idyll": "^4.11.0",
     "idyll-d3-component": "^2.1.0",
     "idyll-plugin-url-state": "^2.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-object-assign": "^7.8.3",
+    "@babel/preset-env": "^7.9.6"
   }
 }

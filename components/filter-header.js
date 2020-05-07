@@ -27,6 +27,8 @@ class FilterHeader extends React.PureComponent {
       >
         {/* this is dirty */}
         <script defer src="/static/js/chroma.min.js" />
+        {/* uncomment below to aim for IE11 */}
+        {/* <script defer src="/static/js/proxy.min.js" /> */}
         <div dangerouslySetInnerHTML={{ __html: this.state.svgElement }} />
 
         {this.props.subtitle && (
