@@ -32,6 +32,13 @@ class Thanks extends React.PureComponent {
         finanziert.
         <br></br>
         <br></br>
+        <small>
+          Das Vorhaben wurde mit Mitteln des Bundesministeriums für Bildung und
+          Forschung unter dem Förderkennzeichen 01IS18S65 gefördert. Die
+          Verantwortung für den Inhalt dieser Veröffentlichung liegt beim Autor.
+        </small>
+        <br></br>
+        <br></br>
         <a href="https://www.bmbf.de/">
           <img
             style={{ width: "45%", float: "left", height: "20rem" }}
