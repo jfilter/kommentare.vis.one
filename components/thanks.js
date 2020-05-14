@@ -41,7 +41,7 @@ class Thanks extends React.PureComponent {
         <br></br>
         <a href="https://www.bmbf.de/">
           <img
-            style={{ width: "45%", float: "left", height: "20rem" }}
+            style={{ width: "55%", float: "left", height: "20rem" }}
             src="/static/logo-bmbf.svg"
           />
         </a>
