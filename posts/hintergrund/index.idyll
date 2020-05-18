@@ -1,4 +1,4 @@
-[meta title:"Hintergrund – Kommentare.vis.one" description:"Mehr Informationen zu Daten & Verfahren" url:"https://kommentare.vis.one/hintergrund" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/preview.png" /]
+[meta title:"Hintergrund – Kommentare.vis.one" description:"Mehr Informationen zu Daten & Verfahren" url:"https://kommentare.vis.one/hintergrund/" twitterHandle:"@fil_ter" shareImageUrl:"https://kommentare.vis.one/static/images/preview.png" /]
 
 [Header
   fullWidth:true
@@ -55,6 +55,7 @@ Die Kommentare stammen aus der Kommentarspalte von Zeit Online und wurden zwisch
 
 2018-2019:  ~15 Millionen Sätze
 
+Zeit Online ist eine der wenigen Zeitungen, die noch Kommentare unter ihren Artikeln zulassen.
 
 ### Wie wurde der Text der Kommentare bearbeitet?
 
@@ -92,7 +93,7 @@ Für alternative Verfahren, für die es weniger Daten brauch, gab es bereits ein
 
 Ja, sämtliche verwendete und programmierte Software steht unter Open-Source-Lizenz.
 
-Hier eine Übersicht über den verwendeten Code: https://github.com/jfilter/ptf-kommentare
+Hier eine Übersicht über den verwendeten Code und eine detaillierte Anleitung: https://github.com/jfilter/ptf-kommentare
 
 [hr /]
 

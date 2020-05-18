@@ -20,7 +20,7 @@ Dies ist der zweite Teil dieses Online-Projekts zu Kommentaren und Machine Learn
 
 ## Bitte ein Wort auswählen
 
-[Radio value:q options:`['mittelmeer', 'mieten', 'fdp', 'cdu', 'afd', 'spd', 'csu', 'migrant', 'überwachung', 'investmentbanker', 'flüchtlingswelle']` /]
+[Radio value:q options:`['mittelmeer', 'mieten', 'fdp', 'cdu', 'afd', 'spd', 'csu', 'migrant', 'überwachung', 'investmentbanker', 'flüchtlingswelle', 'krise']` /]
 
 oder eigenes Wort eingeben:
 
