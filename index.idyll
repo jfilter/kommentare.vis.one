@@ -6,7 +6,7 @@
   fullWidth:true
   author:"Johannes Filter"
   authorLink:"https://johannesfilter.com"
-  date:"20. April 2020"
+  date:"20. Mai 2020"
   background:"#222222"
   color:"#ffffff"
 /]
@@ -223,7 +223,7 @@ Die 10 ähnlichsten Wörter zu [Display value:`(chooseQ.tokens[0] ||  q)`/] (so 
 
 [hr/]
 
-Das ist nur ein kleiner Auschhnitt aus einem Word Embedding. In dem Word Embedding sind 100.000 Wörter enthalten, es ist nur unmöglich alle zu zeigen. In der Folge ein größerer Ausschnitt, um mehr auf einmal zu sehen.
+Das ist nur ein kleiner Ausschnitt aus einem Word Embedding. In dem Word Embedding sind 100.000 Wörter enthalten, es ist nur unmöglich alle zu zeigen. In der Folge ein größerer Ausschnitt, um mehr auf einmal zu sehen.
 
 [Oder wähle ein anderes Wort aus](#bitte-ein-wort-auswählen)
 
